@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Outwerk Solutions | Build Your Career</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', monospace;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(16, 185, 129, 0.6);
+            }
+        }
+        
+        @keyframes rotateSlow {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease forwards;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .career-glow {
+            animation: textGlow 3s ease-in-out infinite;
+        }
+        
+        .rotate-slow {
+            animation: rotateSlow 20s linear infinite;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+        
+        /* Navbar Styles */
+        #navbar {
+            transition: all 0.3s ease;
+        }
+        #navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Card Hover Effects */
+        .value-card {
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .job-card {
+            transition: all 0.3s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Talent Card Styles */
+        .circuit-node.active-node {
+            transform: translateY(-50%) scale(1.5);
+            background-color: #22c55e !important;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+        }
+        
+        .group.simulated-hover .absolute.inset-0.bg-gradient-to-br {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+        
+        /* Form Styles */
+        input, select, textarea {
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center">
+                    <span class="text-white font-bold text-xl">O</span>
+                </div>
+                <span class="font-bold text-xl text-gray-800">Outwerk<span class="text-emerald-500">Solutions</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Home</a>
+                <a href="#values" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Values</a>
+                <a href="#culture" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Culture</a>
+                <a href="#jobs" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Openings</a>
+                <a href="#apply" class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Apply</a>
+            </div>
+            <button class="bg-emerald-500 text-white px-5 py-2 rounded-full font-semibold hover:bg-emerald-600 transition-all shadow-md hover:shadow-lg">
+                <i class="fas fa-paper-plane mr-2"></i>Apply Now
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Simplified with "Career" focus -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-emerald-50/30">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl rotate-slow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl rotate-slow" style="animation-direction: reverse;"></div>
+            <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-emerald-400/10 rounded-full blur-2xl"></div>
+            <div class="absolute top-20 left-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
+            <div class="absolute top-40 right-1/3 w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
+            <div class="absolute bottom-32 left-1/3 w-2 h-2 bg-emerald-300 rounded-full animate-bounce"></div>
+            <div class="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" style="animation-delay: 1s;"></div>
+            <div class="absolute bottom-1/4 right-1/5 w-2 h-2 bg-emerald-500 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 bg-emerald-100 rounded-full px-5 py-2.5 mb-8" data-aos="fade-up">
+                <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                <span class="text-sm font-medium text-emerald-700 tracking-wide">JOIN OUR TEAM</span>
+            </div>
+            
+            <h1 class="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight" data-aos="fade-up" data-aos-delay="100">
+                <span class="gradient-text career-glow inline-block">Career</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                Build your future with us
+            </p>
+            
+            <div class="flex flex-wrap gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="#jobs" class="inline-flex items-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-600 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-300">
+                    Explore Opportunities <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#culture" class="inline-flex items-center gap-2 border-2 border-emerald-500 text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-emerald-50 transition-all hover:scale-105 duration-300">
+                    Learn More <i class="fas fa-heart"></i>
+                </a>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" data-aos="fade-up" data-aos-delay="400">
+                <span class="text-xs text-gray-400 tracking-wider uppercase">Scroll to explore</span>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7m14-6l-7 7-7-7"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talent We Value Section -->
+    <section id="values" class="py-20 sm:py-24 md:py-28 lg:py-32 relative bg-white overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-emerald-200/40"></div>
+            <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-emerald-200/40"></div>
+            <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-emerald-200/40"></div>
+            <div class="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-emerald-200/40"></div>
+            <div class="absolute top-1/3 -left-32 w-80 h-80 bg-emerald-100/30 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/3 -right-32 w-80 h-80 bg-emerald-50/40 rounded-full blur-3xl"></div>
+            <div class="absolute inset-0 opacity-[0.02]">
+                <div class="w-full h-full" style="background-image: radial-gradient(circle at 1px 1px, #22c55e 1px, transparent 1px); background-size: 32px 32px;"></div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <div class="w-2 h-2 bg-emerald-500 rotate-45"></div>
+                    <span class="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-emerald-600">OUR CULTURE DNA</span>
+                    <div class="w-2 h-2 bg-emerald-500 rotate-45"></div>
+                </div>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+                    Talent We <span class="text-emerald-500">Value</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-emerald-500 mx-auto my-6 rounded-full"></div>
+                <p class="text-gray-500 text-base sm:text-lg leading-relaxed">
+                    We've built a workplace where <span class="font-semibold text-emerald-600">collaboration</span>,
+                    <span class="font-semibold text-emerald-600">growth</span>, and
+                    <span class="font-semibold text-emerald-600">balance</span> create exceptional results.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-6">
+                <!-- Card 1 -->
+                <div class="group relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-500/20 hover:border-emerald-400/50">
+                    <div class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=450&fit=crop" alt="Energetic Innovators" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-800/50 to-transparent"></div>
+                    </div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                        <div class="mb-3">
+                            <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full border border-white/30">01</span>
+                        </div>
+                        <i class="fas fa-lightbulb text-3xl text-emerald-300 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Energetic Innovators</h3>
+                        <p class="text-white/80 text-sm leading-relaxed mb-4">Creative minds solving complex problems with fresh perspectives.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/20">
+                            <span class="text-white/70 text-xs tracking-wide">PROBLEM SOLVING</span>
+                            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center">
+                                <i class="fas fa-bolt text-white/80 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-700 p-6 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between z-20">
+                        <div>
+                            <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full mb-4">01</span>
+                            <i class="fas fa-lightbulb text-2xl text-white/80 mb-3"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Energetic Innovators</h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-4">Creative minds who thrive on solving complex problems with fresh perspectives and innovative approaches.</p>
+                            <div class="space-y-2 mt-4">
+                                <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Problem Solving</span></div>
+                                <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Creativity & Innovation</span></div>
+                                <div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Fresh Perspectives</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/20"><div class="text-white/70 text-xs tracking-wide">INNOVATION CULTURE</div></div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-500/20 hover:border-emerald-400/50">
+                    <div class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=450&fit=crop" alt="Seasoned Experts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-800/50 to-transparent"></div>
+                    </div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full border border-white/30 w-fit mb-3">02</span>
+                        <i class="fas fa-user-graduate text-3xl text-emerald-300 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Seasoned Experts</h3>
+                        <p class="text-white/80 text-sm leading-relaxed mb-4">Professionals with diverse backgrounds and deep industry expertise.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/20">
+                            <span class="text-white/70 text-xs tracking-wide">EXPERIENCE</span>
+                            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center"><i class="fas fa-user-clock text-white/80 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-700 p-6 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between z-20">
+                        <div><span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full mb-4">02</span><i class="fas fa-user-graduate text-2xl text-white/80 mb-3"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Seasoned Experts</h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-4">Professionals with diverse backgrounds and deep industry expertise gained through years of practical experience.</p>
+                            <div class="space-y-2 mt-4"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Industry Expertise</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Practical Knowledge</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Mentorship</span></div></div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/20"><div class="text-white/70 text-xs tracking-wide">PROFESSIONAL EXCELLENCE</div></div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-500/20 hover:border-emerald-400/50">
+                    <div class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=600&h=450&fit=crop" alt="Educated Specialists" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-800/50 to-transparent"></div>
+                    </div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full border border-white/30 w-fit mb-3">03</span>
+                        <i class="fas fa-graduation-cap text-3xl text-emerald-300 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Educated Specialists</h3>
+                        <p class="text-white/80 text-sm leading-relaxed mb-4">Formally trained experts bringing academic excellence to practical challenges.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/20">
+                            <span class="text-white/70 text-xs tracking-wide">EDUCATION</span>
+                            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center"><i class="fas fa-graduation-cap text-white/80 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-700 p-6 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between z-20">
+                        <div><span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full mb-4">03</span><i class="fas fa-graduation-cap text-2xl text-white/80 mb-3"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Educated Specialists</h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-4">Formally trained experts who bring academic excellence, specialized knowledge, and research-based approaches to practical challenges.</p>
+                            <div class="space-y-2 mt-4"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Academic Excellence</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Specialized Knowledge</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Research-Based</span></div></div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/20"><div class="text-white/70 text-xs tracking-wide">ACADEMIC EXCELLENCE</div></div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-500/20 hover:border-emerald-400/50">
+                    <div class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=450&fit=crop" alt="Growth Champions" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-800/50 to-transparent"></div>
+                    </div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full border border-white/30 w-fit mb-3">04</span>
+                        <i class="fas fa-chart-line text-3xl text-emerald-300 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Growth Champions</h3>
+                        <p class="text-white/80 text-sm leading-relaxed mb-4">Individuals committed to continuous learning and professional development.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/20">
+                            <span class="text-white/70 text-xs tracking-wide">LEARNING</span>
+                            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center"><i class="fas fa-seedling text-white/80 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-700 p-6 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between z-20">
+                        <div><span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full mb-4">04</span><i class="fas fa-chart-line text-2xl text-white/80 mb-3"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Growth Champions</h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-4">Individuals passionately committed to continuous learning, skill development, and helping others grow.</p>
+                            <div class="space-y-2 mt-4"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Continuous Learning</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Skill Development</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Helping Others Grow</span></div></div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/20"><div class="text-white/70 text-xs tracking-wide">CONTINUOUS GROWTH</div></div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group relative h-[400px] overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 shadow-lg hover:shadow-2xl transition-all duration-500 border border-emerald-500/20 hover:border-emerald-400/50">
+                    <div class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=450&fit=crop" alt="Global Thinkers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-800/50 to-transparent"></div>
+                    </div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end z-10">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full border border-white/30 w-fit mb-3">05</span>
+                        <i class="fas fa-globe text-3xl text-emerald-300 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Global Thinkers</h3>
+                        <p class="text-white/80 text-sm leading-relaxed mb-4">Professionals with international outlook who understand global markets.</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-white/20">
+                            <span class="text-white/70 text-xs tracking-wide">GLOBAL MINDSET</span>
+                            <div class="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center"><i class="fas fa-globe text-white/80 text-xs"></i></div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500 to-emerald-700 p-6 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 flex flex-col justify-between z-20">
+                        <div><span class="inline-block px-3 py-1 text-xs font-bold text-white bg-white/20 backdrop-blur-sm rounded-full mb-4">05</span><i class="fas fa-globe text-2xl text-white/80 mb-3"></i>
+                            <h3 class="text-xl font-bold text-white mb-2">Global Thinkers</h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-4">Professionals with international outlook and cultural intelligence who understand global markets and diverse perspectives.</p>
+                            <div class="space-y-2 mt-4"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Global Mindset</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">Cultural Intelligence</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-white rotate-45"></div><span class="text-white text-sm">International Outlook</span></div></div>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-white/20"><div class="text-white/70 text-xs tracking-wide">INTERNATIONAL OUTLOOK</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16 lg:mt-20">
+                <div class="inline-block">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Ready to Make an Impact?</h3>
+                    <p class="text-gray-500 mb-6">Discover opportunities to grow with us and shape the future</p>
+                    <a href="#apply" class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-md">
+                        <span>View Open Positions</span>
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workplace Excellence Section -->
+    <section id="culture" class="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <span class="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Our Culture</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-3 mb-6">Where <span class="text-emerald-400">Innovation</span> Meets Collaboration</h2>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">We've built an environment where creativity flourishes and every voice matters.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4"><div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-users text-emerald-400 text-xl"></i></div><div><h3 class="text-xl font-bold mb-2">Teamwork Excellence</h3><p class="text-gray-400">Together we achieve more. Our supportive environment creates highly productive collaboration across all teams.</p></div></div>
+                        <div class="flex gap-4"><div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-chart-line text-emerald-400 text-xl"></i></div><div><h3 class="text-xl font-bold mb-2">Continuous Development</h3><p class="text-gray-400">We shape brighter futures through continuous learning and advancement opportunities.</p></div></div>
+                        <div class="flex gap-4"><div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-heart text-emerald-400 text-xl"></i></div><div><h3 class="text-xl font-bold mb-2">Work-Life Balance</h3><p class="text-gray-400">Human connections drive our success. We provide a safe, welcoming environment that respects well-being.</p></div></div>
+                        <div class="flex gap-4"><div class="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-star text-emerald-400 text-xl"></i></div><div><h3 class="text-xl font-bold mb-2">Unwavering Commitment</h3><p class="text-gray-400">Delivering world-class services with utmost client satisfaction is our core mission.</p></div></div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-2xl overflow-hidden shadow-xl"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=300&fit=crop" alt="Office" class="w-full h-48 object-cover"></div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl mt-8"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Team" class="w-full h-48 object-cover"></div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop" alt="Meeting" class="w-full h-48 object-cover"></div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl mt-8"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop" alt="Collaboration" class="w-full h-48 object-cover"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4"><div class="text-2xl font-bold text-emerald-500">Join Us</div><div class="text-sm text-gray-600">Be part of something exceptional</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions Section -->
+    <section id="jobs" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-emerald-500 font-semibold text-sm uppercase tracking-wider">Opportunities</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mt-2 mb-4">Open <span class="gradient-text">Positions</span></h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 text-lg">Join our growing team. Find your perfect role below.</p>
+            </div>
+            
+            <div class="space-y-4 max-w-4xl mx-auto">
+                <div class="job-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all" data-aos="fade-up">
+                    <div class="flex flex-wrap justify-between items-start gap-4"><div class="flex-1"><div class="flex items-center gap-2 mb-2"><span class="bg-emerald-100 text-emerald-600 text-xs font-semibold px-3 py-1 rounded-full">Full-time</span><span class="bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">Remote/Hybrid</span></div><h3 class="text-xl font-bold text-gray-800 mb-2">Senior Full Stack Developer</h3><p class="text-gray-500">Lead development of cutting-edge web applications using React, Node.js, and cloud technologies.</p><div class="flex flex-wrap gap-3 mt-3"><span class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i> Lahore/PK</span><span class="text-sm text-gray-400"><i class="fas fa-briefcase mr-1"></i> 5+ years</span></div></div><button class="bg-emerald-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-emerald-600 transition-all whitespace-nowrap">Apply Now <i class="fas fa-arrow-right ml-1"></i></button></div>
+                </div>
+                <div class="job-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-wrap justify-between items-start gap-4"><div class="flex-1"><div class="flex items-center gap-2 mb-2"><span class="bg-emerald-100 text-emerald-600 text-xs font-semibold px-3 py-1 rounded-full">Full-time</span><span class="bg-purple-100 text-purple-600 text-xs font-semibold px-3 py-1 rounded-full">On-site</span></div><h3 class="text-xl font-bold text-gray-800 mb-2">UI/UX Designer</h3><p class="text-gray-500">Create beautiful, intuitive interfaces that delight users and solve real problems.</p><div class="flex flex-wrap gap-3 mt-3"><span class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i> Karachi/PK</span><span class="text-sm text-gray-400"><i class="fas fa-briefcase mr-1"></i> 3+ years</span></div></div><button class="bg-emerald-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-emerald-600 transition-all whitespace-nowrap">Apply Now <i class="fas fa-arrow-right ml-1"></i></button></div>
+                </div>
+                <div class="job-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-wrap justify-between items-start gap-4"><div class="flex-1"><div class="flex items-center gap-2 mb-2"><span class="bg-emerald-100 text-emerald-600 text-xs font-semibold px-3 py-1 rounded-full">Full-time</span><span class="bg-emerald-100 text-emerald-600 text-xs font-semibold px-3 py-1 rounded-full">Remote</span></div><h3 class="text-xl font-bold text-gray-800 mb-2">DevOps Engineer</h3><p class="text-gray-500">Build and maintain scalable infrastructure, CI/CD pipelines, and cloud architecture.</p><div class="flex flex-wrap gap-3 mt-3"><span class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i> Remote</span><span class="text-sm text-gray-400"><i class="fas fa-briefcase mr-1"></i> 4+ years</span></div></div><button class="bg-emerald-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-emerald-600 transition-all whitespace-nowrap">Apply Now <i class="fas fa-arrow-right ml-1"></i></button></div>
+                </div>
+                <div class="job-card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-lg transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex flex-wrap justify-between items-start gap-4"><div class="flex-1"><div class="flex items-center gap-2 mb-2"><span class="bg-emerald-100 text-emerald-600 text-xs font-semibold px-3 py-1 rounded-full">Full-time</span><span class="bg-orange-100 text-orange-600 text-xs font-semibold px-3 py-1 rounded-full">Hybrid</span></div><h3 class="text-xl font-bold text-gray-800 mb-2">Project Manager</h3><p class="text-gray-500">Lead cross-functional teams to deliver exceptional digital products on time and budget.</p><div class="flex flex-wrap gap-3 mt-3"><span class="text-sm text-gray-400"><i class="fas fa-map-marker-alt mr-1"></i> Islamabad/PK</span><span class="text-sm text-gray-400"><i class="fas fa-briefcase mr-1"></i> 6+ years</span></div></div><button class="bg-emerald-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-emerald-600 transition-all whitespace-nowrap">Apply Now <i class="fas fa-arrow-right ml-1"></i></button></div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12"><p class="text-gray-500 mb-4">Don't see the right fit?</p><button class="inline-flex items-center gap-2 border-2 border-emerald-500 text-emerald-600 px-8 py-3 rounded-full font-semibold hover:bg-emerald-50 transition-all"><i class="fas fa-envelope"></i> Send Speculative Application</button></div>
+        </div>
+    </section>
+
+    <!-- Apply Now Section -->
+    <section id="apply" class="py-32 relative bg-gradient-to-br from-gray-900 to-gray-800 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-24">
+                <div data-aos="fade-down" class="inline-flex items-center gap-2 mb-8"><div class="w-3 h-3 rotate-45 bg-emerald-400"></div><span class="text-xs font-medium tracking-widest uppercase text-white/80">JOIN OUR TEAM</span><div class="w-3 h-3 rotate-45 bg-emerald-500"></div></div>
+                <h1 data-aos="fade-up" class="font-['Space_Grotesk'] text-5xl md:text-7xl font-bold mb-8 tracking-tight text-emerald-400">START YOUR<div class="block mt-2"><span class="font-light text-emerald-500">JOURNEY</span></div></h1>
+                <p data-aos="fade-up" class="text-base max-w-xl mx-auto leading-relaxed text-white/80">Take the first step toward an exciting career. Submit your application today and let's build the future together.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div data-aos="fade-right" class="relative">
+                    <div class="border-2 border-emerald-400 p-8 lg:p-12 rounded-2xl bg-white/5 backdrop-blur-sm">
+                        <form id="applicationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                            <input type="hidden" name="access_key" value="1f36ea7f-dfc5-4a71-8189-a7b6aa03d0c6">
+                            <input type="hidden" name="to" value="hr@outwerksolutions.com">
+                            <input type="hidden" name="subject" value="New Career Application from Website">
+                            
+                            <div class="border-2 border-emerald-400 rounded-xl p-6 bg-white/5"><h3 class="font-['Space_Grotesk'] font-bold text-xl mb-6 text-emerald-400">PERSONAL INFORMATION</h3>
+                                <div class="grid md:grid-cols-2 gap-4"><div><label class="block text-sm text-white/70 mb-2">First Name <span class="text-emerald-500">*</span></label><input type="text" name="first_name" class="w-full px-4 py-3 rounded-lg text-white bg-white/10 border border-emerald-500/30 focus:border-emerald-400" required></div>
+                                <div><label class="block text-sm text-white/70 mb-2">Last Name <span class="text-emerald-500">*</span></label><input type="text" name="last_name" class="w-full px-4 py-3 rounded-lg text-white bg-white/10 border border-emerald-500/30 focus:border-emerald-400" required></div></div>
+                                <div class="mt-4"><label class="block text-sm text-white/70 mb-2">Email Address <span class="text-emerald-500">*</span></label><input type="email" name="email" class="w-full px-4 py-3 rounded-lg text-white bg-white/10 border border-emerald-500/30 focus:border-emerald-400" required></div>
+                                <div class="mt-4"><label class="block text-sm text-white/70 mb-2">Phone Number</label><input type="tel" name="phone" class="w-full px-4 py-3 rounded-lg text-white bg-white/10 border border-emerald-500/30 focus:border-emerald-400"></div>
+                            </div>
+
+                            <div class="border-2 border-emerald-500 rounded-xl p-6 bg-white/5"><h3 class="font-['Space_Grotesk'] font-bold text-xl mb-6 text-emerald-500">APPLICATION DETAILS</h3>
+                                <div><label class="block text-sm text-white/70 mb-2">Position Applying For <span class="text-emerald-400">*</span></label>
+                                    <select name="position" required class="w-full px-4 py-3 rounded-lg text-white bg-white/10 border border-emerald-500/30 focus:border-emerald-400"><option value="">Select a position</option><option value="Web Developer">Web Developer</option><option value="UI/UX Designer">UI/UX Designer</option><option value="DevOps Engineer">DevOps Engineer</option><option value="Project Manager">Project Manager</option></select>
+                                </div>
+                                <div class="mt-4"><label class="block text-sm text-white/70 mb-2">Cover Letter <span class="text-emerald-400">*</span></label><textarea rows="5" name="cover_letter" required class="w-full px-4 py-3 rounded-lg text-white bg-white/10 border border-emerald-500/30 focus:border-emerald-400" placeholder="Tell us about your experience..."></textarea></div>
+                                <div class="mt-4"><label class="block text-sm text-white/70 mb-2">Resume/CV Link</label><input type="url" name="resume_link" class="w-full px-4 py-3 rounded-lg text-white bg-white/10 border border-emerald-500/30 focus:border-emerald-400" placeholder="https://drive.google.com/..."></div>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all">SUBMIT APPLICATION <i class="fas fa-paper-plane ml-2"></i></button>
+                            <p class="text-xs text-center text-white/60">By submitting, you agree to our <a href="#" class="text-emerald-400">Privacy Policy</a></p>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="border-2 border-emerald-500 rounded-xl p-6 bg-white/5"><h3 class="font-bold text-xl text-emerald-500 mb-4">OUR HIRING PROCESS</h3>
+                        <div class="space-y-4"><div class="flex gap-4"><div class="w-10 h-10 border-2 border-emerald-400 rounded-lg flex items-center justify-center"><span class="text-emerald-400 font-bold">01</span></div><div><h4 class="font-bold text-emerald-400">Application Review</h4><p class="text-sm text-white/70">We review each application for passion, skills, and cultural fit.</p></div></div>
+                        <div class="flex gap-4"><div class="w-10 h-10 border-2 border-emerald-500 rounded-lg flex items-center justify-center"><span class="text-emerald-500 font-bold">02</span></div><div><h4 class="font-bold text-emerald-500">Initial Screening</h4><p class="text-sm text-white/70">Brief call to discuss expectations and mutual fit.</p></div></div>
+                        <div class="flex gap-4"><div class="w-10 h-10 border-2 border-emerald-400 rounded-lg flex items-center justify-center"><span class="text-emerald-400 font-bold">03</span></div><div><h4 class="font-bold text-emerald-400">Technical Assessment</h4><p class="text-sm text-white/70">Role-specific evaluation of practical skills.</p></div></div>
+                        <div class="flex gap-4"><div class="w-10 h-10 border-2 border-emerald-500 rounded-lg flex items-center justify-center"><span class="text-emerald-500 font-bold">04</span></div><div><h4 class="font-bold text-emerald-500">Final Interview & Offer</h4><p class="text-sm text-white/70">Meet leadership and receive your offer.</p></div></div></div>
+                    </div>
+
+                    <div class="border-2 border-emerald-400 rounded-xl p-6 bg-white/5"><h3 class="font-bold text-xl text-emerald-400 mb-4">WHY JOIN US</h3>
+                        <div class="space-y-3"><div class="flex gap-3"><i class="fas fa-dollar-sign text-emerald-400 mt-1"></i><div><h4 class="font-bold text-emerald-400">Competitive Compensation</h4><p class="text-sm text-white/70">Industry-leading salary with bonuses</p></div></div>
+                        <div class="flex gap-3"><i class="fas fa-chart-line text-emerald-500 mt-1"></i><div><h4 class="font-bold text-emerald-500">Growth Opportunities</h4><p class="text-sm text-white/70">Training and clear career progression</p></div></div>
+                        <div class="flex gap-3"><i class="fas fa-laptop-code text-emerald-400 mt-1"></i><div><h4 class="font-bold text-emerald-400">Modern Workspace</h4><p class="text-sm text-white/70">State-of-the-art facilities</p></div></div>
+                        <div class="flex gap-3"><i class="fas fa-balance-scale text-emerald-500 mt-1"></i><div><h4 class="font-bold text-emerald-500">Work-Life Balance</h4><p class="text-sm text-white/70">Flexible hours and remote options</p></div></div></div>
+                        <div class="mt-6 pt-4 border-t border-emerald-500/20"><div class="grid grid-cols-3 text-center"><div><div class="text-2xl font-bold text-emerald-400">97%</div><div class="text-xs text-white/60">HAPPINESS</div></div><div><div class="text-2xl font-bold text-emerald-500">24/7</div><div class="text-xs text-white/60">SUPPORT</div></div><div><div class="text-2xl font-bold text-emerald-400">100+</div><div class="text-xs text-white/60">MEMBERS</div></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center"><a href="mailto:hr@outwerksolutions.com" class="inline-flex items-center gap-2 border-2 border-emerald-400 px-6 py-3 rounded-full text-emerald-400 hover:bg-emerald-400 hover:text-white transition-all">EMAIL US <i class="fas fa-envelope"></i></a></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div><div class="flex items-center gap-2 mb-4"><div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center"><span class="text-white font-bold">O</span></div><span class="font-bold text-white text-lg">OutwerkSolutions</span></div><p class="text-sm">Building digital excellence since 2012.</p></div>
+                <div><h4 class="text-white font-semibold mb-3">Company</h4><ul class="space-y-2 text-sm"><li><a href="#" class="hover:text-emerald-400">About Us</a></li><li><a href="#" class="hover:text-emerald-400">Careers</a></li><li><a href="#" class="hover:text-emerald-400">Contact</a></li></ul></div>
+                <div><h4 class="text-white font-semibold mb-3">Resources</h4><ul class="space-y-2 text-sm"><li><a href="#" class="hover:text-emerald-400">Blog</a></li><li><a href="#" class="hover:text-emerald-400">Portfolio</a></li><li><a href="#" class="hover:text-emerald-400">Testimonials</a></li></ul></div>
+                <div><h4 class="text-white font-semibold mb-3">Connect</h4><div class="flex gap-4"><a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500"><i class="fab fa-linkedin-in"></i></a><a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500"><i class="fab fa-twitter"></i></a><a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-emerald-500"><i class="fab fa-github"></i></a></div></div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm"><p>&copy; 2024 Outwerk Solutions. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const navbarHeight = navbar?.offsetHeight || 80;
+                    window.scrollTo({ top: target.offsetTop - navbarHeight, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
