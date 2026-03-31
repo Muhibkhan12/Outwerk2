@@ -24,23 +24,19 @@
     <div class="absolute inset-0 pointer-events-none opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)" opacity="0.4"/%3E%3C/svg%3E'); background-size: 120px;"></div>
 
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 h-20 lg:h-24 flex items-center justify-between relative z-10">
-        <!-- Logo - Larger & More Prominent -->
+        <!-- Logo -->
         <a href="index.html" class="flex items-center gap-4 group relative">
-            <!-- Animated Background Glow -->
             <div class="absolute -inset-2 bg-emerald-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
             
-            <!-- Logo Container with Depth -->
             <div class="relative">
                 <div class="absolute inset-0 bg-emerald-500/30 -skew-x-12 blur-md group-hover:blur-xl transition-all duration-500"></div>
                 <div class="relative w-14 h-14 lg:w-16 lg:h-16 overflow-hidden border-2 border-emerald-500/60 group-hover:border-emerald-400 transition-all duration-300 shadow-xl group-hover:shadow-emerald-500/20">
                     <img src="images/logo-main.webp" alt="One Stop Solutions Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                 </div>
-                <!-- Corner Accent on Logo -->
                 <div class="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-emerald-400"></div>
                 <div class="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-emerald-400"></div>
             </div>
             
-            <!-- Brand Text with Modern Typography -->
             <div class="leading-tight">
                 <div class="font-mono text-white text-xl lg:text-2xl font-bold tracking-tighter group-hover:tracking-tight transition-all duration-300">
                     OUTWERK
@@ -50,17 +46,16 @@
             </div>
         </a>
 
-        <!-- Desktop Navigation - Unique Design -->
+        <!-- Desktop Navigation -->
         <ul class="hidden lg:flex items-center gap-1">
             <li>
-                <a href="index.html" 
-                    class="nav-link relative px-5 py-2.5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-mono font-medium tracking-wide group">
+                <a href="index.html" class="nav-link relative px-5 py-2.5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-mono font-medium tracking-wide group">
                     <span class="relative z-10">HOME</span>
                     <span class="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
             </li>
 
-            <!-- Services Dropdown - Unique Design -->
+            <!-- Services Dropdown -->
             <li class="relative group">
                 <button class="nav-link relative px-5 py-2.5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-mono font-medium tracking-wide flex items-center gap-2 group">
                     <span>SERVICES</span>
@@ -74,7 +69,6 @@
                     <div class="relative">
                         <div class="absolute -top-2 left-8 w-4 h-4 bg-gray-900 rotate-45 border-l border-t border-emerald-500/40 shadow-lg"></div>
                         <div class="bg-gray-900/95 backdrop-blur-sm border border-emerald-500/30 shadow-2xl min-w-[320px] overflow-hidden">
-                            <!-- Header with Accent -->
                             <div class="px-5 pt-4 pb-2 border-b border-gray-800">
                                 <div class="flex items-center gap-2">
                                     <div class="w-6 h-px bg-emerald-500"></div>
@@ -111,7 +105,7 @@
                 </div>
             </li>
 
-            <!-- Careers Dropdown - Unique Design -->
+            <!-- Careers Dropdown -->
             <li class="relative group">
                 <button class="nav-link relative px-5 py-2.5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-mono font-medium tracking-wide flex items-center gap-2 group">
                     <span>CAREERS</span>
@@ -157,10 +151,9 @@
                 </div>
             </li>
 
-            <!-- Contact Button - Bold & Distinctive -->
+            <!-- Contact Button -->
             <li class="ml-4">
-                <a href="contact.html" 
-                    class="group relative px-7 py-2.5 flex items-center gap-2 overflow-hidden transition-all duration-300 text-white text-sm font-mono font-semibold tracking-wide">
+                <a href="contact.html" class="group relative px-7 py-2.5 flex items-center gap-2 overflow-hidden transition-all duration-300 text-white text-sm font-mono font-semibold tracking-wide">
                     <span class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500"></span>
                     <span class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     <span class="absolute inset-x-0 bottom-0 h-0.5 bg-white/50 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
@@ -172,7 +165,7 @@
             </li>
         </ul>
 
-        <!-- Mobile Menu Button - Enhanced Design -->
+        <!-- Mobile Menu Button -->
         <button id="mobileMenuBtn" class="lg:hidden relative w-12 h-12 flex flex-col items-center justify-center gap-1.5 group" aria-label="Toggle mobile menu">
             <div class="absolute inset-0 border-2 border-gray-700 group-hover:border-emerald-500 transition-all duration-300"></div>
             <div class="absolute inset-1 border border-gray-800 group-hover:border-emerald-500/30 transition-all duration-300"></div>
@@ -182,10 +175,9 @@
         </button>
     </nav>
 
-    <!-- Mobile Menu - Premium Panel -->
+    <!-- Mobile Menu Panel -->
     <div id="mobileMenu" class="fixed lg:hidden inset-0 bg-gray-950 z-40 transform translate-x-full transition-transform duration-500 ease-out">
         <div class="flex flex-col h-full">
-            <!-- Header with Larger Logo -->
             <div class="flex items-center justify-between px-6 pt-8 pb-6 border-b border-gray-800">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 overflow-hidden border-2 border-emerald-500/50 shadow-xl">
@@ -203,14 +195,10 @@
                 </button>
             </div>
 
-            <!-- Navigation Links -->
             <div class="flex-1 overflow-y-auto py-8 px-6">
                 <div class="space-y-2">
-                    <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">
-                        HOME
-                    </a>
+                    <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">HOME</a>
 
-                    <!-- Services Accordion -->
                     <div>
                         <button id="mobileServicesBtn" class="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">
                             SERVICES
@@ -227,7 +215,6 @@
                         </div>
                     </div>
 
-                    <!-- Careers Accordion -->
                     <div>
                         <button id="mobileCareersBtn" class="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">
                             CAREERS
@@ -242,24 +229,15 @@
                         </div>
                     </div>
 
-                    <a href="contact.html" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">
-                        CONTACT
-                    </a>
+                    <a href="contact.html" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">CONTACT</a>
                 </div>
             </div>
 
-            <!-- Footer Actions -->
             <div class="border-t border-gray-800 px-6 py-6 space-y-4">
-                <a href="career.html#apply" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-mono font-semibold py-3.5 transition-all border border-emerald-500 text-base">
-                    APPLY NOW →
-                </a>
+                <a href="career.html#apply" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-mono font-semibold py-3.5 transition-all border border-emerald-500 text-base">APPLY NOW →</a>
                 <div class="grid grid-cols-2 gap-3">
-                    <a href="tel:+923001234567" class="flex items-center justify-center border-2 border-gray-700 hover:border-emerald-500 hover:bg-gray-900 py-3 text-gray-400 hover:text-white text-sm font-mono transition-all">
-                        CALL US
-                    </a>
-                    <a href="mailto:info@onestopsolutions.com" class="flex items-center justify-center border-2 border-gray-700 hover:border-emerald-500 hover:bg-gray-900 py-3 text-gray-400 hover:text-white text-sm font-mono transition-all">
-                        EMAIL US
-                    </a>
+                    <a href="tel:+923001234567" class="flex items-center justify-center border-2 border-gray-700 hover:border-emerald-500 hover:bg-gray-900 py-3 text-gray-400 hover:text-white text-sm font-mono transition-all">CALL US</a>
+                    <a href="mailto:info@onestopsolutions.com" class="flex items-center justify-center border-2 border-gray-700 hover:border-emerald-500 hover:bg-gray-900 py-3 text-gray-400 hover:text-white text-sm font-mono transition-all">EMAIL US</a>
                 </div>
             </div>
         </div>
@@ -288,10 +266,13 @@
     .nav-link {
         transition: all 0.3s ease;
     }
+    
+    #navbar * {
+        box-sizing: border-box;
+    }
 </style>
 
 <script>
-    // Navbar scroll hide/show effect
     let lastScrollTop = 0;
     const navbar = document.getElementById('navbar');
     let ticking = false;
@@ -320,7 +301,6 @@
         }
     });
 
-    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const closeMobileMenu = document.getElementById('closeMobileMenu');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -343,7 +323,7 @@
         document.body.classList.remove('menu-open');
     }
 
-    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
     if (closeMobileMenu) closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
 
     if (mobileServicesBtn) {
@@ -351,9 +331,7 @@
             servicesOpen = !servicesOpen;
             mobileServicesMenu.classList.toggle('hidden');
             const icon = mobileServicesBtn.querySelector('svg');
-            if (icon) {
-                icon.style.transform = servicesOpen ? 'rotate(180deg)' : 'rotate(0)';
-            }
+            if (icon) icon.style.transform = servicesOpen ? 'rotate(180deg)' : 'rotate(0)';
         });
     }
 
@@ -362,13 +340,10 @@
             careersOpen = !careersOpen;
             mobileCareersMenu.classList.toggle('hidden');
             const icon = mobileCareersBtn.querySelector('svg');
-            if (icon) {
-                icon.style.transform = careersOpen ? 'rotate(180deg)' : 'rotate(0)';
-            }
+            if (icon) icon.style.transform = careersOpen ? 'rotate(180deg)' : 'rotate(0)';
         });
     }
 
-    // Close mobile menu on link click
     document.querySelectorAll('#mobileMenu a').forEach(link => {
         link.addEventListener('click', closeMobileMenuFunc);
     });
