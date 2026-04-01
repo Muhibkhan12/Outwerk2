@@ -609,64 +609,119 @@
         </div>
     </nav>
 
-    <!-- ─── HERO ─── -->
-    <section class="section-px min-h-screen flex flex-col justify-end pb-16 pt-32 overflow-hidden relative">
-        <div class="glow-dark-green" style="top:-100px; right:-100px;"></div>
-        <div class="glow-forest" style="bottom:100px; left:-80px;"></div>
+    <!-- Hero Section - Services Page (Matching Outwerk Design) -->
+    <section class="relative overflow-hidden min-h-[70vh] flex items-center">
+        <!-- Background Glow Effects -->
+        <div class="glow-dark-green absolute top-0 left-0 w-[600px] h-[600px] opacity-40 pointer-events-none"></div>
+        <div class="glow-forest absolute bottom-0 right-0 w-[500px] h-[500px] opacity-30 pointer-events-none"></div>
 
-        <div class="flex items-center gap-4 mb-6 fade-up">
-            <span class="mono text-xs tracking-widest text-green-500 uppercase">— Est. 2019</span>
-            <div class="thin-line" style="width:60px;"></div>
-            <span class="mono text-xs tracking-widest text-zinc-500 uppercase">BPO Solutions</span>
-        </div>
+        <!-- Grid Texture Overlay -->
+        <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(rgba(46, 125, 50, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 125, 50, 0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
-        <div class="hero-text text-white leading-none mb-6">
-            <div class="fade-up" style="transition-delay:0.05s">WE ARE THE TEAM</div>
-            <div class="fade-up" style="transition-delay:0.1s">OF
-                <span class="scribble-wrap" id="scribble-word">
-                    BUSINESS
-                    <svg viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="110" cy="30" rx="105" ry="26" class="scribble-path" id="scribble-el" />
-                    </svg>
-                </span>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-16 py-20 md:py-28 w-full">
+            <!-- Breadcrumb / Navigation Hint -->
+            <div class="flex items-center gap-2 mb-8 fade-up">
+                <span class="mono text-xs tracking-widest text-green-500 uppercase">Services</span>
+                <div class="thin-line w-12"></div>
+                <span class="mono text-xs tracking-widest text-zinc-500 uppercase">What We Deliver</span>
             </div>
-            <div class="fade-up" style="transition-delay:0.15s">PROCESS</div>
-            <div class="fade-up flex flex-wrap items-baseline gap-x-4" style="transition-delay:0.2s">
-                <span>OUTSOURCING</span>
-                <span class="gradient-dark-green">EXPERTS</span>
-            </div>
-        </div>
 
-        <div class="hero-sub-row flex flex-col md:flex-row md:items-end justify-between gap-6 mt-6 fade-up" style="transition-delay:0.25s">
-            <p class="text-zinc-400 text-sm md:text-base max-w-xs md:max-w-sm leading-relaxed">
-                Streamlining operations. Amplifying growth. We handle your back-office so you can focus on what matters.
-            </p>
-            <a href="#contact" class="pill-btn text-white self-start">
-                Start a project ↗
-            </a>
-        </div>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Column - Heading with Scribble Effect -->
+                <div class="fade-up">
+                    <h1 class="hero-text text-white leading-tight">
+                        <span class="block">Our</span>
+                        <span class="gradient-dark-green inline-flex items-center gap-2">
+                            Services
+                            <span class="scribble-wrap inline-block relative">
+                                <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[110%] h-[150%] pointer-events-none">
+                                    <ellipse cx="60" cy="20" rx="55" ry="16" class="scribble-path" stroke="#2e7d32" stroke-width="2.5" fill="none" stroke-dasharray="500" stroke-dashoffset="500" />
+                                </svg>
+                            </span>
+                        </span>
+                    </h1>
+                </div>
 
-        <div class="thin-line mt-12 fade-up" style="transition-delay:0.3s"></div>
+                <!-- Right Column - Description with Modern Styling -->
+                <div class="fade-up" style="transition-delay: 0.1s">
+                    <div class="relative">
+                        <!-- Decorative accent line -->
+                        <div class="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-green-500 via-emerald-600 to-transparent"></div>
 
-        <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 fade-up" style="transition-delay:0.35s">
-            <div>
-                <div class="stat-num" data-target="250">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">CLIENTS SERVED</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="12">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">COUNTRIES</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="98">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">% RETENTION</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="6">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">YEARS OF EXCELLENCE</div>
+                        <div class="space-y-6 pl-6">
+                            <p class="text-gray-300 leading-relaxed text-base md:text-lg font-light">
+                                We are a creative agency with several services focused on quality and innovation for your business — turning bold ideas into digital realities.
+                            </p>
+
+
+
+                            <!-- CTA Button -->
+                            <div class="pt-4">
+                                <a href="#contact" class="pill-btn text-white inline-flex items-center gap-2 group">
+                                    Explore Services
+                                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <style>
+        /* Ensure the scribble animation works */
+        .scribble-path.animated {
+            animation: draw-scribble 1.2s cubic-bezier(.4, 0, .2, 1) forwards;
+        }
+
+        @keyframes draw-scribble {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Fade-up animation (if not already defined) */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <script>
+        // Trigger scribble animation when the section comes into view
+        (function() {
+            const heroSection = document.querySelector('.hero-section, section.relative');
+            const scribblePaths = document.querySelectorAll('.scribble-path');
+
+            const scribbleObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        scribblePaths.forEach(path => {
+                            setTimeout(() => {
+                                path.classList.add('animated');
+                            }, 400);
+                        });
+                        scribbleObserver.disconnect();
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            if (scribblePaths.length) {
+                scribbleObserver.observe(document.querySelector('.hero-section') || document.querySelector('section.relative'));
+            }
+        })();
+    </script>
 
     <!-- ─── MARQUEE ─── -->
     <div class="overflow-hidden py-4 border-y border-green-900/30 relative z-10">
@@ -1021,6 +1076,490 @@
         </div>
     </section>
 
+
+    <!-- ─── DEVELOPMENT JOURNEY SECTION (ENHANCED PREMIUM VERSION) ─── -->
+    <section id="development-journey" class="section-px px-8 md:px-16 py-24 relative overflow-hidden">
+        <!-- Background Glow Effects - Enhanced -->
+        <div class="glow-dark-green absolute top-1/4 left-1/4 w-[600px] h-[600px] opacity-30 pointer-events-none animate-pulse-slow"></div>
+        <div class="glow-forest absolute bottom-0 right-0 w-[500px] h-[500px] opacity-25 pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-20 left-[10%] w-1 h-1 bg-green-500/30 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-[15%] w-2 h-2 bg-emerald-500/20 rounded-full animate-float" style="animation-delay: 1s; animation-duration: 6s;"></div>
+            <div class="absolute bottom-32 left-[20%] w-1.5 h-1.5 bg-green-400/20 rounded-full animate-float" style="animation-delay: 2s; animation-duration: 7s;"></div>
+            <div class="absolute top-1/2 right-[25%] w-1 h-1 bg-emerald-500/25 rounded-full animate-float" style="animation-delay: 3s; animation-duration: 5s;"></div>
+        </div>
+
+        <!-- Section Header with Animated Underline -->
+        <div class="text-center max-w-4xl mx-auto mb-16 fade-up">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <span class="dark-green-dot animate-pulse-gentle"></span>
+                <span class="mono text-xs text-green-500 tracking-widest uppercase relative">
+                    Our Workflow
+                    <span class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></span>
+                </span>
+                <span class="dark-green-dot animate-pulse-gentle"></span>
+            </div>
+            <h2 class="hero-text text-white mb-6 relative inline-block" style="font-size: clamp(42px, 8vw, 80px);">
+                DEVELOPMENT <span class="gradient-dark-green relative inline-block">
+                    JOURNEY
+                    <svg class="absolute -bottom-2 left-0 w-full" height="4" viewBox="0 0 200 4" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2 L200 2" stroke="url(#gradientLine)" stroke-width="2" stroke-dasharray="6 6" stroke-dashoffset="0">
+                            <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1.5s" repeatCount="indefinite" />
+                        </path>
+                        <defs>
+                            <linearGradient id="gradientLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#2e7d32" />
+                                <stop offset="50%" stop-color="#4caf50" />
+                                <stop offset="100%" stop-color="#2e7d32" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+            </h2>
+            <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                A streamlined workflow that transforms ideas into exceptional solutions through a structured, transparent process.
+            </p>
+            <div class="thin-line w-24 mx-auto mt-8 relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-green-500 to-transparent animate-shimmer"></div>
+            </div>
+        </div>
+
+        <!-- Timeline Journey - Enhanced with Cards -->
+        <div class="relative max-w-7xl mx-auto mt-12">
+
+            <!-- Vertical Line with Gradient Animation -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-green-500/60 to-transparent hidden lg:block">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-500 rounded-full animate-ping" style="animation-delay: 3s;"></div>
+            </div>
+
+            <!-- Journey Steps with Enhanced Cards -->
+            <div class="space-y-16 lg:space-y-24">
+
+                <!-- Step 1 - Discovery & Planning -->
+                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up">
+                    <div class="lg:text-right order-2 lg:order-1">
+                        <div class="lg:pr-12">
+                            <div class="flex items-center gap-3 lg:justify-end mb-4">
+                                <span class="relative">
+                                    <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                                    <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 01</span>
+                                </span>
+                                <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[-8px] lg:group-hover:translate-x-0 transition-transform duration-300">
+                                Discovery & <span class="gradient-dark-green">Planning</span>
+                            </h3>
+                            <div class="flex items-center gap-3 mb-4 lg:justify-end">
+                                <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
+                                    <span class="relative z-10">TIMELINE</span>
+                                </span>
+                                <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors">2-3 WEEKS</span>
+                            </div>
+                            <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
+                                Comprehensive analysis and strategic planning to establish project foundations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 lg:justify-end">
+                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Requirement Analysis</span>
+                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Strategy Formulation</span>
+                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Roadmap Creation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Node - Enhanced -->
+                    <div class="relative order-1 lg:order-2 flex justify-center lg:justify-start">
+                        <div class="relative cursor-pointer">
+                            <!-- Outer Glow Ring -->
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <!-- Main Node -->
+                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
+                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">01</span>
+                            </div>
+                            <!-- Pulsing Rings -->
+                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
+                            <!-- Glow Effect -->
+                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        </div>
+                    </div>
+
+                    <div class="hidden lg:block order-3"></div>
+                </div>
+
+                <!-- Step 2 - Design & Development -->
+                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up" style="transition-delay: 0.1s">
+                    <div class="hidden lg:block"></div>
+
+                    <div class="relative flex justify-center lg:justify-end order-1">
+                        <div class="relative cursor-pointer">
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
+                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">02</span>
+                            </div>
+                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
+                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        </div>
+                    </div>
+
+                    <div class="lg:pl-12">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
+                            <span class="relative">
+                                <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                                <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 02</span>
+                            </span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[8px] transition-transform duration-300">
+                            Design & <span class="gradient-dark-green">Development</span>
+                        </h3>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
+                                <span class="relative z-10">TIMELINE</span>
+                            </span>
+                            <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors">3-4 WEEKS</span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
+                            Crafting exceptional digital experiences through innovative design and development.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">UI/UX Design</span>
+                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Agile Development</span>
+                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Code Implementation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 - Testing & Implementation -->
+                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up" style="transition-delay: 0.2s">
+                    <div class="lg:text-right order-2 lg:order-1">
+                        <div class="lg:pr-12">
+                            <div class="flex items-center gap-3 lg:justify-end mb-4">
+                                <span class="relative">
+                                    <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                                    <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 03</span>
+                                </span>
+                                <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
+                            </div>
+                            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[-8px] lg:group-hover:translate-x-0 transition-transform duration-300">
+                                Testing & <span class="gradient-dark-green">Implementation</span>
+                            </h3>
+                            <div class="flex items-center gap-3 mb-4 lg:justify-end">
+                                <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
+                                    <span class="relative z-10">TIMELINE</span>
+                                </span>
+                                <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors">1-2 WEEKS</span>
+                            </div>
+                            <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
+                                Comprehensive testing protocols and smooth deployment strategies.
+                            </p>
+                            <div class="flex flex-wrap gap-2 lg:justify-end">
+                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Quality Assurance</span>
+                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Performance Testing</span>
+                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative order-1 lg:order-2 flex justify-center lg:justify-start">
+                        <div class="relative cursor-pointer">
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
+                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">03</span>
+                            </div>
+                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
+                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        </div>
+                    </div>
+
+                    <div class="hidden lg:block order-3"></div>
+                </div>
+
+                <!-- Step 4 - Support & Optimization -->
+                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up" style="transition-delay: 0.3s">
+                    <div class="hidden lg:block"></div>
+
+                    <div class="relative flex justify-center lg:justify-end order-1">
+                        <div class="relative cursor-pointer">
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
+                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">04</span>
+                            </div>
+                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
+                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
+                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        </div>
+                    </div>
+
+                    <div class="lg:pl-12">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
+                            <span class="relative">
+                                <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                                <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 04</span>
+                            </span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[8px] transition-transform duration-300">
+                            Support & <span class="gradient-dark-green">Optimization</span>
+                        </h3>
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
+                                <span class="relative z-10">TIMELINE</span>
+                            </span>
+                            <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors relative">
+                                ONGOING
+                                <span class="absolute -bottom-1 left-0 w-full h-px bg-emerald-500/50 animate-pulse"></span>
+                            </span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
+                            Continuous improvement and maintenance for optimal performance.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Ongoing Support</span>
+                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Performance Optimization</span>
+                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Continuous Updates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journey Stats / CTA - Enhanced -->
+        <div class="max-w-6xl mx-auto mt-20 pt-8 fade-up" style="transition-delay: 0.4s">
+            <!-- Stats with Animated Counters -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center group-stats">
+                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2 relative inline-block">
+                        <span class="stat-number" data-target="98">0</span>%
+                        <div class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                    </div>
+                    <div class="mono text-xs text-gray-500 mt-1">Project Success Rate</div>
+                </div>
+                <div class="text-center group-stats">
+                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2">
+                        <span class="stat-number" data-target="250">0</span>+
+                    </div>
+                    <div class="mono text-xs text-gray-500 mt-1">Delivered Projects</div>
+                </div>
+                <div class="text-center group-stats">
+                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2">24<span class="stat-number" data-target="7">0</span></div>
+                    <div class="mono text-xs text-gray-500 mt-1">Support Coverage</div>
+                </div>
+                <div class="text-center group-stats">
+                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2">
+                        <span class="stat-number" data-target="100">0</span>%
+                    </div>
+                    <div class="mono text-xs text-gray-500 mt-1">Client Satisfaction</div>
+                </div>
+            </div>
+
+            <!-- Enhanced CTA -->
+            <div class="text-center relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
+                </div>
+                <a href="#contact" class="relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-green-700 to-emerald-600 text-white font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 group overflow-hidden">
+                    <span class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                    <span class="relative z-10">Start Your Journey Today</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+                <p class="text-xs text-gray-600 mt-4">No obligation. Free consultation to discuss your vision.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Enhanced Animations */
+        @keyframes growLine {
+            0% {
+                height: 0%;
+                opacity: 0;
+            }
+
+            100% {
+                height: 100%;
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes ping-slow {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            75%,
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes ping-slower {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            75%,
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 4s ease-in-out infinite;
+        }
+
+        .animate-ping-slow {
+            animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .animate-ping-slower {
+            animation: ping-slow 3.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .animate-shimmer {
+            animation: shimmer 2s infinite;
+        }
+
+        .shadow-glow {
+            box-shadow: 0 0 20px rgba(46, 125, 50, 0.5);
+        }
+
+        /* Stat Counter Animation */
+        .stat-number {
+            display: inline-block;
+        }
+
+        /* Hover Effects */
+        .group-stats {
+            transition: all 0.3s ease;
+        }
+
+        .group-stats:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1023px) {
+
+            .group:hover .w-24,
+            .group:hover .lg\:w-28 {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+
+    <script>
+        // Enhanced Intersection Observer with Counter Animation
+        (function() {
+            // Timeline items animation
+            const timelineItems = document.querySelectorAll('#development-journey .group');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2,
+                rootMargin: '50px'
+            });
+
+            timelineItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15}s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15}s`;
+                observer.observe(item);
+            });
+
+            // Stat counter animation
+            const statNumbers = document.querySelectorAll('.stat-number');
+
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.getAttribute('data-target'));
+                        let current = 0;
+                        const increment = target / 50;
+                        const duration = 2000;
+                        const stepTime = duration / 50;
+
+                        const counter = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                el.textContent = target;
+                                clearInterval(counter);
+                            } else {
+                                el.textContent = Math.floor(current);
+                            }
+                        }, stepTime);
+
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            statNumbers.forEach(el => counterObserver.observe(el));
+        })();
+    </script>
+
     <!-- ─── CONTACT CTA ─── -->
     <section id="contact" class="section-px py-28 relative overflow-hidden">
         <div class="glow-dark-green" style="top:0; left:50%; transform:translateX(-50%); width:min(800px, 100vw); opacity:0.4;"></div>
@@ -1115,13 +1654,17 @@
         if (isPointer) {
             cursor.style.display = 'block';
             ring.style.display = 'block';
-            let mx = -100, my = -100, rx = -100, ry = -100;
+            let mx = -100,
+                my = -100,
+                rx = -100,
+                ry = -100;
             document.addEventListener('mousemove', e => {
                 mx = e.clientX;
                 my = e.clientY;
                 cursor.style.left = (mx - 5) + 'px';
                 cursor.style.top = (my - 5) + 'px';
             });
+
             function animateRing() {
                 rx += (mx - rx - 18) * 0.12;
                 ry += (my - ry - 18) * 0.12;
@@ -1171,7 +1714,9 @@
             entries.forEach(e => {
                 if (e.isIntersecting) e.target.classList.add('visible');
             });
-        }, { threshold: 0.1 });
+        }, {
+            threshold: 0.1
+        });
         document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
         // SCRIBBLE ANIMATION
@@ -1184,7 +1729,9 @@
                     scribbleObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, {
+            threshold: 0.5
+        });
         document.querySelectorAll('.scribble-wrap').forEach(el => scribbleObserver.observe(el));
 
         // SERVICE TOGGLE
@@ -1199,6 +1746,7 @@
         // STAT COUNTER
         function animateCount(el, target, duration = 1800) {
             let start = null;
+
             function step(ts) {
                 if (!start) start = ts;
                 const progress = Math.min((ts - start) / duration, 1);
@@ -1216,7 +1764,9 @@
                     statObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, {
+            threshold: 0.5
+        });
         document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
 
         // SMOOTH SCROLL
@@ -1225,7 +1775,9 @@
                 const target = document.querySelector(a.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
