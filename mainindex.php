@@ -541,116 +541,92 @@
             background: #4caf50;
         }
 
-        /* ── RESPONSIVE OVERRIDES ── */
-
-        /* Floating cards: hide on small screens to avoid overflow */
-        @media (max-width: 640px) {
-            .floating-card {
-                display: none;
-            }
+        /* Contact Form Styles */
+        .contact-form-card {
+            backdrop-filter: blur(12px);
+            background: rgba(3, 10, 5, 0.65);
+            border: 1px solid rgba(46, 125, 50, 0.35);
+            border-radius: 32px;
         }
 
-        /* Stats grid: 2x2 on mobile */
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .form-input {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(46, 125, 50, 0.4);
+            border-radius: 60px;
+            padding: 12px 20px;
+            width: 100%;
+            color: #eef5e8;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
         }
 
-        /* Process grid: single column on mobile */
+        .form-input:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 0 12px rgba(46, 125, 50, 0.3);
+            background: rgba(10, 20, 8, 0.8);
+        }
+
+        .form-textarea {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(46, 125, 50, 0.4);
+            border-radius: 28px;
+            padding: 14px 20px;
+            width: 100%;
+            color: #eef5e8;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+            resize: vertical;
+        }
+
+        .form-textarea:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 0 12px rgba(46, 125, 50, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            border: none;
+            border-radius: 60px;
+            padding: 12px 28px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+            background: linear-gradient(135deg, #3c8c40, #2e7d32);
+        }
+
+        .toast-notify {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            background: #1e2a1c;
+            backdrop-filter: blur(16px);
+            border-left: 4px solid #2e7d32;
+            padding: 12px 20px;
+            border-radius: 60px;
+            font-size: 13px;
+            font-weight: 500;
+            z-index: 1100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            color: #e0f2e0;
+        }
+
+        .toast-notify.show {
+            transform: translateX(0);
+        }
+
         @media (max-width: 768px) {
-            .process-grid {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .process-card {
-                border-radius: 0 !important;
-            }
-
-            .process-card:first-child {
-                border-radius: 12px 12px 0 0 !important;
-            }
-
-            .process-card:last-child {
-                border-radius: 0 0 12px 12px !important;
-            }
-        }
-
-        /* About grid: stack on mobile */
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr !important;
-                gap: 48px !important;
-            }
-        }
-
-        /* Contact grid: single column */
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr !important;
-                gap: 24px !important;
-            }
-        }
-
-        /* Footer grid */
-        @media (max-width: 640px) {
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 24px !important;
-            }
-        }
-
-        /* Padding adjustments */
-        @media (max-width: 768px) {
-            .section-px {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-
-            .section-py-hero {
-                padding-top: 100px !important;
-                padding-bottom: 48px !important;
-            }
-
-            .section-py {
-                padding-top: 64px !important;
-                padding-bottom: 64px !important;
-            }
-
-            .section-py-contact {
-                padding-top: 64px !important;
-                padding-bottom: 64px !important;
-            }
-        }
-
-        /* Hero sub row on mobile */
-        @media (max-width: 640px) {
-            .hero-sub-row {
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                gap: 16px !important;
-            }
-        }
-
-        /* Service row touch-friendly */
-        @media (max-width: 768px) {
-            .service-row {
-                padding-top: 8px;
-            }
-        }
-
-        /* Marquee on small screens — slightly faster */
-        @media (max-width: 480px) {
-            .marquee-track {
-                animation-duration: 15s;
-            }
-        }
-
-        /* About main card aspect ratio on mobile */
-        @media (max-width: 640px) {
-            .about-card-inner {
-                aspect-ratio: 3/2 !important;
+            .contact-form-card {
+                padding: 24px !important;
             }
         }
     </style>
@@ -684,20 +660,16 @@
             <span class="dark-green-dot"></span>
             <span class="mono text-sm tracking-widest uppercase text-white">Outwerk<span class="gradient-dark-green">.</span></span>
         </div>
-
-        <!-- Desktop nav -->
         <div class="desktop-nav hidden md:flex items-center gap-10">
             <a href="#services" class="nav-link">Services</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#work" class="nav-link">Work</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
-
         <div class="flex items-center gap-4">
             <a href="#contact" class="nav-get-in-touch pill-btn text-white hidden md:inline-flex">
                 Get in touch <span>↗</span>
             </a>
-            <!-- Hamburger -->
             <div class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
             </div>
@@ -706,16 +678,13 @@
 
     <!-- ─── HERO ─── -->
     <section class="section-px section-py-hero min-h-screen flex flex-col justify-end pb-16 pt-32 px-8 md:px-16 overflow-hidden">
-
         <div class="glow-dark-green" style="top:-100px; right:-100px;"></div>
         <div class="glow-forest" style="bottom:100px; left:-80px;"></div>
-
         <div class="flex items-center gap-4 mb-6 fade-up">
             <span class="mono text-xs tracking-widest text-green-500 uppercase">— Est. 2019</span>
             <div class="thin-line" style="width:60px;"></div>
             <span class="mono text-xs tracking-widest text-zinc-500 uppercase">BPO Solutions</span>
         </div>
-
         <div class="hero-text text-white leading-none mb-6">
             <div class="fade-up" style="transition-delay:0.05s">WE ARE THE TEAM</div>
             <div class="fade-up" style="transition-delay:0.1s">OF
@@ -732,7 +701,6 @@
                 <span class="gradient-dark-green">EXPERTS</span>
             </div>
         </div>
-
         <div class="hero-sub-row flex flex-col md:flex-row md:items-end justify-between gap-6 mt-6 fade-up" style="transition-delay:0.25s">
             <p class="text-zinc-400 text-sm md:text-base max-w-xs md:max-w-sm leading-relaxed">
                 Streamlining operations. Amplifying growth. We handle your back-office so you can focus on what matters.
@@ -741,9 +709,7 @@
                 Start a project ↗
             </a>
         </div>
-
         <div class="thin-line mt-12 fade-up" style="transition-delay:0.3s"></div>
-
         <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 fade-up" style="transition-delay:0.35s">
             <div>
                 <div class="stat-num" data-target="250">0</div>
@@ -762,304 +728,153 @@
                 <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">YEARS OF EXCELLENCE</div>
             </div>
         </div>
-
     </section>
 
     <!-- ─── MARQUEE ─── -->
     <div class="overflow-hidden py-4 border-y border-green-900/30 relative z-10">
-        <div class="marquee-track">
-            <span class="mono text-xs text-white font-bold tracking-widest uppercase">
-                Inbound Call Center &nbsp; ✦ &nbsp;
-                Outbound Calls &nbsp; ✦ &nbsp;
-                Customer Support &nbsp; ✦ &nbsp;
-                Technical Helpdesk &nbsp; ✦ &nbsp;
-                Lead Generation &nbsp; ✦ &nbsp;
-                Web Development &nbsp; ✦ &nbsp;
-                SEO & SEM &nbsp; ✦ &nbsp;
-                Social Media &nbsp; ✦ &nbsp;
-                Inbound Call Center &nbsp; ✦ &nbsp;
-                Outbound Calls &nbsp; ✦ &nbsp;
-                Customer Support &nbsp; ✦ &nbsp;
-                Technical Helpdesk &nbsp; ✦ &nbsp;
-                Lead Generation &nbsp; ✦ &nbsp;
-                Web Development &nbsp; ✦ &nbsp;
-                SEO & SEM &nbsp; ✦ &nbsp;
-                Social Media &nbsp; ✦ &nbsp;
-            </span>
-        </div>
+        <div class="marquee-track"><span class="mono text-xs text-white font-bold tracking-widest uppercase">Inbound Call Center &nbsp; ✦ &nbsp; Outbound Calls &nbsp; ✦ &nbsp; Customer Support &nbsp; ✦ &nbsp; Technical Helpdesk &nbsp; ✦ &nbsp; Lead Generation &nbsp; ✦ &nbsp; Web Development &nbsp; ✦ &nbsp; SEO & SEM &nbsp; ✦ &nbsp; Social Media &nbsp; ✦ &nbsp; Inbound Call Center &nbsp; ✦ &nbsp; Outbound Calls &nbsp; ✦ &nbsp; Customer Support &nbsp; ✦ &nbsp; Technical Helpdesk &nbsp; ✦ &nbsp; Lead Generation &nbsp; ✦ &nbsp; Web Development &nbsp; ✦ &nbsp; SEO & SEM &nbsp; ✦ &nbsp; Social Media &nbsp; ✦ &nbsp;</span></div>
     </div>
 
-    <!-- ─── SERVICES ─── -->
+    <!-- SERVICES SECTION (unchanged but preserved) -->
     <section id="services" class="section-px section-py px-8 md:px-16 py-20 relative">
-
         <div class="glow-dark-green" style="top:50%; left:-200px; opacity:0.6;"></div>
-
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 fade-up">
-            <h2 class="hero-text" style="font-size:clamp(30px,5vw,64px)">
-                OUR <span class="gradient-green">SERVICES</span>
-            </h2>
-            <span class="mono text-xs text-green-600/60 tracking-widest uppercase">Core Expertise</span>
+            <h2 class="hero-text" style="font-size:clamp(30px,5vw,64px)">OUR <span class="gradient-green">SERVICES</span></h2><span class="mono text-xs text-green-600/60 tracking-widest uppercase">Core Expertise</span>
         </div>
-
         <div class="space-y-0 divide-y divide-green-900/20">
-
-            <!-- Service 1 -->
             <div class="service-row fade-up pt-4 cursor-pointer">
                 <div class="grid grid-cols-12 items-start gap-2 md:gap-4 pb-4">
-                    <div class="col-span-2 md:col-span-1">
-                        <span class="service-num">01</span>
-                    </div>
+                    <div class="col-span-2 md:col-span-1"><span class="service-num">01</span></div>
                     <div class="col-span-8 md:col-span-9 pl-1 md:pl-8">
                         <div class="flex flex-wrap items-center gap-2 md:gap-4 mb-1">
-                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">
-                                BPO SERVICES
-                            </h3>
-                            <span class="key-point">Industry Leader</span>
+                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">BPO SERVICES</h3><span class="key-point">Industry Leader</span>
                         </div>
-                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">
-                            End-to-end business process outsourcing solutions designed to streamline operations, reduce costs, and enhance productivity.
-                        </p>
+                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">End-to-end business process outsourcing solutions designed to streamline operations, reduce costs, and enhance productivity.</p>
                         <div class="service-detail pt-3">
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="key-point">24/7 Customer Support</span>
-                                <span class="key-point">40% Cost Reduction</span>
-                                <span class="key-point">Global Operations</span>
-                                <span class="key-point">99.9% Uptime SLA</span>
-                            </div>
-                            <p class="text-white text-xs mt-3">
-                                Multi-channel support • Back-office automation • Quality assurance certified • Scalable teams
-                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2"><span class="key-point">24/7 Customer Support</span><span class="key-point">40% Cost Reduction</span><span class="key-point">Global Operations</span><span class="key-point">99.9% Uptime SLA</span></div>
+                            <p class="text-white text-xs mt-3">Multi-channel support • Back-office automation • Quality assurance certified • Scalable teams</p>
                         </div>
                     </div>
-                    <div class="col-span-2 flex justify-end items-start pt-2">
-                        <span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span>
-                    </div>
+                    <div class="col-span-2 flex justify-end items-start pt-2"><span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span></div>
                 </div>
             </div>
-
-            <!-- Service 2 -->
             <div class="service-row fade-up cursor-pointer">
                 <div class="grid grid-cols-12 items-start gap-2 md:gap-4 py-4">
-                    <div class="col-span-2 md:col-span-1">
-                        <span class="service-num">02</span>
-                    </div>
+                    <div class="col-span-2 md:col-span-1"><span class="service-num">02</span></div>
                     <div class="col-span-8 md:col-span-9 pl-1 md:pl-8">
                         <div class="flex flex-wrap items-center gap-2 md:gap-4 mb-1">
-                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">
-                                SALES & LEAD GEN
-                            </h3>
-                            <span class="key-point">High Conversion</span>
+                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">SALES & LEAD GEN</h3><span class="key-point">High Conversion</span>
                         </div>
-                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">
-                            Data-driven lead generation and sales development services that fill your pipeline with qualified prospects ready to convert.
-                        </p>
+                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">Data-driven lead generation and sales development services that fill your pipeline with qualified prospects ready to convert.</p>
                         <div class="service-detail pt-3">
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="key-point">Outbound Calling</span>
-                                <span class="key-point">Email Campaigns</span>
-                                <span class="key-point">LinkedIn Prospecting</span>
-                                <span class="key-point">3x ROI Average</span>
-                            </div>
-                            <p class="text-white text-xs mt-3">
-                                B2B lead qualification • Appointment setting • Account-based marketing • CRM integration
-                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2"><span class="key-point">Outbound Calling</span><span class="key-point">Email Campaigns</span><span class="key-point">LinkedIn Prospecting</span><span class="key-point">3x ROI Average</span></div>
+                            <p class="text-white text-xs mt-3">B2B lead qualification • Appointment setting • Account-based marketing • CRM integration</p>
                         </div>
                     </div>
-                    <div class="col-span-2 flex justify-end items-start pt-2">
-                        <span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span>
-                    </div>
+                    <div class="col-span-2 flex justify-end items-start pt-2"><span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span></div>
                 </div>
             </div>
-
-            <!-- Service 3 -->
             <div class="service-row fade-up cursor-pointer">
                 <div class="grid grid-cols-12 items-start gap-2 md:gap-4 py-4">
-                    <div class="col-span-2 md:col-span-1">
-                        <span class="service-num">03</span>
-                    </div>
+                    <div class="col-span-2 md:col-span-1"><span class="service-num">03</span></div>
                     <div class="col-span-8 md:col-span-9 pl-1 md:pl-8">
                         <div class="flex flex-wrap items-center gap-2 md:gap-4 mb-1">
-                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">
-                                WEB SOLUTIONS
-                            </h3>
-                            <span class="key-point">Custom Development</span>
+                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">WEB SOLUTIONS</h3><span class="key-point">Custom Development</span>
                         </div>
-                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">
-                            Modern, scalable web applications and platforms that drive business growth and deliver exceptional user experiences.
-                        </p>
+                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">Modern, scalable web applications and platforms that drive business growth and deliver exceptional user experiences.</p>
                         <div class="service-detail pt-3">
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="key-point">React / Next.js</span>
-                                <span class="key-point">Laravel / PHP</span>
-                                <span class="key-point">Cloud Hosting</span>
-                                <span class="key-point">Responsive Design</span>
-                            </div>
-                            <p class="text-white text-xs mt-3">
-                                E-commerce platforms • Custom CRM • API development • Maintenance & support
-                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2"><span class="key-point">React / Next.js</span><span class="key-point">Laravel / PHP</span><span class="key-point">Cloud Hosting</span><span class="key-point">Responsive Design</span></div>
+                            <p class="text-white text-xs mt-3">E-commerce platforms • Custom CRM • API development • Maintenance & support</p>
                         </div>
                     </div>
-                    <div class="col-span-2 flex justify-end items-start pt-2">
-                        <span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span>
-                    </div>
+                    <div class="col-span-2 flex justify-end items-start pt-2"><span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span></div>
                 </div>
             </div>
-
-            <!-- Service 4 -->
             <div class="service-row fade-up cursor-pointer">
                 <div class="grid grid-cols-12 items-start gap-2 md:gap-4 py-4">
-                    <div class="col-span-2 md:col-span-1">
-                        <span class="service-num">04</span>
-                    </div>
+                    <div class="col-span-2 md:col-span-1"><span class="service-num">04</span></div>
                     <div class="col-span-8 md:col-span-9 pl-1 md:pl-8">
                         <div class="flex flex-wrap items-center gap-2 md:gap-4 mb-1">
-                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">
-                                DIGITAL MARKETING
-                            </h3>
-                            <span class="key-point">Results-Driven</span>
+                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">DIGITAL MARKETING</h3><span class="key-point">Results-Driven</span>
                         </div>
-                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">
-                            Full-funnel digital marketing strategies that increase brand visibility, drive qualified traffic, and maximize conversion rates.
-                        </p>
+                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">Full-funnel digital marketing strategies that increase brand visibility, drive qualified traffic, and maximize conversion rates.</p>
                         <div class="service-detail pt-3">
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="key-point">SEO / SEM</span>
-                                <span class="key-point">Social Media Ads</span>
-                                <span class="key-point">Email Marketing</span>
-                                <span class="key-point">Analytics</span>
-                            </div>
-                            <p class="text-white text-xs mt-3">
-                                Content marketing • PPC campaigns • Social media management • Conversion rate optimization
-                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2"><span class="key-point">SEO / SEM</span><span class="key-point">Social Media Ads</span><span class="key-point">Email Marketing</span><span class="key-point">Analytics</span></div>
+                            <p class="text-white text-xs mt-3">Content marketing • PPC campaigns • Social media management • Conversion rate optimization</p>
                         </div>
                     </div>
-                    <div class="col-span-2 flex justify-end items-start pt-2">
-                        <span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span>
-                    </div>
+                    <div class="col-span-2 flex justify-end items-start pt-2"><span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span></div>
                 </div>
             </div>
-
         </div>
-
-        <div class="mt-12 text-center fade-up">
-            <a href="#contact" class="inline-flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm">
-                GET A FREE CONSULTATION →
-            </a>
-        </div>
-
+        <div class="mt-12 text-center fade-up"><a href="#contact" class="inline-flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm">GET A FREE CONSULTATION →</a></div>
     </section>
 
-    <!-- ─── ABOUT WITH BENTO GRID (BPO IMAGES) ─── -->
-<section id="about" class="section-px section-py px-8 md:px-16 py-24 relative">
-
-    <div class="glow-dark-green" style="top:20%; left:-150px; opacity:0.5;"></div>
-
-    <div class="about-grid grid md:grid-cols-2 gap-16 md:gap-20 items-center">
-
-        <!-- LEFT -->
-        <div class="fade-up">
-            <div class="mono text-xs text-green-500 tracking-widest uppercase mb-6">— Who We Are</div>
-
-            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8" style="letter-spacing:-0.02em; font-family:'Space Grotesk',sans-serif;">
-                Built for businesses<br />
-                that refuse to<br />
-                <span class="gradient-dark-green">compromise.</span>
-            </h2>
-
-            <p class="text-zinc-400 leading-relaxed mb-5 max-w-lg text-sm md:text-base">
-                Outwerk Solution is a premium BPO firm headquartered in Karachi. We partner with forward-thinking companies to deliver outsourcing solutions that don't just cut costs — they elevate performance.
-            </p>
-
-            <p class="text-zinc-500 leading-relaxed mb-8 text-sm max-w-lg">
-                Our teams are trained, certified, and embedded in your workflows. We don't believe in generic call centers. We build specialized units that operate as true extensions of your brand.
-            </p>
-
-            <div class="flex flex-wrap items-center gap-4">
-                <a href="#contact" class="pill-btn text-white">Work with us ↗</a>
-                <span class="mono text-xs text-green-700/60 tracking-widest">ISO 9001 Certified</span>
-            </div>
-
-            <div class="grid grid-cols-3 gap-4 md:gap-6 mt-12">
-                <div>
-                    <div class="text-xl md:text-2xl font-bold gradient-dark-green">250+</div>
-                    <div class="text-xs text-zinc-500 mt-1">Clients</div>
-                </div>
-                <div>
-                    <div class="text-xl md:text-2xl font-bold gradient-dark-green">12</div>
-                    <div class="text-xs text-zinc-500 mt-1">Countries</div>
-                </div>
-                <div>
-                    <div class="text-xl md:text-2xl font-bold gradient-dark-green">98%</div>
-                    <div class="text-xs text-zinc-500 mt-1">Retention</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- RIGHT — BENTO GRID -->
-        <div class="fade-up relative" style="transition-delay:0.15s">
-            <div class="grid grid-cols-2 grid-rows-2 gap-4 rounded-2xl overflow-hidden border border-green-900/30 blur-card">
-
-                <!-- IMAGE 1: Team working -->
-                <div class="relative overflow-hidden rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1581091012184-03b1a77f2ad0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJwb3xlbnwwfHx8fDE2OTk2ODk5MzE&ixlib=rb-4.0.3&q=80&w=400" 
-                         class="w-full h-full object-cover" alt="BPO Team working">
-                    <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
-                </div>
-
-                <!-- IMAGE 2: Call center -->
-                <div class="relative overflow-hidden rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1590608897129-79c7e8c3f7d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGNhbGwlMjBjZW50ZXJ8ZW58MHx8fHwxNjk5NjkwMDAy&ixlib=rb-4.0.3&q=80&w=400" 
-                         class="w-full h-full object-cover" alt="Call center">
-                    <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
-                </div>
-
-                <!-- IMAGE 3: Laptop & workflow -->
-                <div class="relative overflow-hidden rounded-xl">
-                    <img src="https://images.unsplash.com/photo-1581091215368-16863fcf3181?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJwb3xlbGllcyUyMHdvcmt8ZW58MHx8fHwxNjk5NjkwMDYy&ixlib=rb-4.0.3&q=80&w=400" 
-                         class="w-full h-full object-cover" alt="Team collaborating">
-                    <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
-                </div>
-
-                <!-- IMAGE 4: Branding + text overlay -->
-                <div class="relative overflow-hidden rounded-xl flex flex-col justify-center items-center">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGJwb3xlbG9nb3xlbnwwfHx8fDE2OTk2OTA0MjI&ixlib=rb-4.0.3&q=80&w=400" 
-                         class="w-full h-full object-cover" alt="Company Branding">
-                    <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-green-900/40"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="text-3xl md:text-4xl font-bold text-white/80" style="font-family:'Space Grotesk';">OUTWERK</div>
-                        <div class="mono text-xs tracking-widest text-green-400 mt-2">KARACHI, PAKISTAN</div>
-                        <div class="w-10 h-px bg-green-500/60 mx-auto my-2"></div>
-                        <div class="mono text-[10px] tracking-widest text-green-400/70">EST. 2019</div>
+    <!-- ABOUT (kept as original) -->
+    <section id="about" class="section-px section-py px-8 md:px-16 py-24 relative">
+        <div class="glow-dark-green" style="top:20%; left:-150px; opacity:0.5;"></div>
+        <div class="about-grid grid md:grid-cols-2 gap-16 md:gap-20 items-center">
+            <div class="fade-up">
+                <div class="mono text-xs text-green-500 tracking-widest uppercase mb-6">— Who We Are</div>
+                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8" style="letter-spacing:-0.02em; font-family:'Space Grotesk',sans-serif;">Built for businesses<br />that refuse to<br /><span class="gradient-dark-green">compromise.</span></h2>
+                <p class="text-zinc-400 leading-relaxed mb-5 max-w-lg text-sm md:text-base">Outwerk Solution is a premium BPO firm headquartered in Karachi. We partner with forward-thinking companies to deliver outsourcing solutions that don't just cut costs — they elevate performance.</p>
+                <p class="text-zinc-500 leading-relaxed mb-8 text-sm max-w-lg">Our teams are trained, certified, and embedded in your workflows. We don't believe in generic call centers. We build specialized units that operate as true extensions of your brand.</p>
+                <div class="flex flex-wrap items-center gap-4"><a href="#contact" class="pill-btn text-white">Work with us ↗</a><span class="mono text-xs text-green-700/60 tracking-widest">ISO 9001 Certified</span></div>
+                <div class="grid grid-cols-3 gap-4 md:gap-6 mt-12">
+                    <div>
+                        <div class="text-xl md:text-2xl font-bold gradient-dark-green">250+</div>
+                        <div class="text-xs text-zinc-500 mt-1">Clients</div>
+                    </div>
+                    <div>
+                        <div class="text-xl md:text-2xl font-bold gradient-dark-green">12</div>
+                        <div class="text-xs text-zinc-500 mt-1">Countries</div>
+                    </div>
+                    <div>
+                        <div class="text-xl md:text-2xl font-bold gradient-dark-green">98%</div>
+                        <div class="text-xs text-zinc-500 mt-1">Retention</div>
                     </div>
                 </div>
-
             </div>
-
-            <!-- Floating cards -->
-            <div class="floating-card absolute -bottom-8 -left-8 p-4 rounded-xl blur-card border border-green-900/30 w-36">
-                <div class="text-lg font-bold text-green-400">24/7</div>
-                <div class="text-xs text-zinc-500 mt-1">Support Coverage</div>
+            <div class="fade-up relative" style="transition-delay:0.15s">
+                <div class="grid grid-cols-2 grid-rows-2 gap-4 rounded-2xl overflow-hidden border border-green-900/30 blur-card">
+                    <div class="relative overflow-hidden rounded-xl"><img src="https://images.unsplash.com/photo-1581091012184-03b1a77f2ad0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJwb3xlbnwwfHx8fDE2OTk2ODk5MzE&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="BPO Team working">
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl"><img src="https://images.unsplash.com/photo-1590608897129-79c7e8c3f7d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGNhbGwlMjBjZW50ZXJ8ZW58MHx8fHwxNjk5NjkwMDAy&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="Call center">
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl"><img src="https://images.unsplash.com/photo-1581091215368-16863fcf3181?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJwb3xlbGllcyUyMHdvcmt8ZW58MHx8fHwxNjk5NjkwMDYy&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="Team collaborating">
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl flex flex-col justify-center items-center"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGJwb3xlbG9nb3xlbnwwfHx8fDE2OTk2OTA0MjI&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="Company Branding">
+                        <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-green-900/40"></div>
+                        <div class="relative z-10 text-center">
+                            <div class="text-3xl md:text-4xl font-bold text-white/80" style="font-family:'Space Grotesk';">OUTWERK</div>
+                            <div class="mono text-xs tracking-widest text-green-400 mt-2">KARACHI, PAKISTAN</div>
+                            <div class="w-10 h-px bg-green-500/60 mx-auto my-2"></div>
+                            <div class="mono text-[10px] tracking-widest text-green-400/70">EST. 2019</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card absolute -bottom-8 -left-8 p-4 rounded-xl blur-card border border-green-900/30 w-36">
+                    <div class="text-lg font-bold text-green-400">24/7</div>
+                    <div class="text-xs text-zinc-500 mt-1">Support Coverage</div>
+                </div>
+                <div class="floating-card absolute -top-8 -right-8 p-4 rounded-xl blur-card border border-green-900/30 w-40">
+                    <div class="text-lg font-bold text-green-400">40%</div>
+                    <div class="text-xs text-zinc-500 mt-1">Cost Reduction</div>
+                </div>
             </div>
-
-            <div class="floating-card absolute -top-8 -right-8 p-4 rounded-xl blur-card border border-green-900/30 w-40">
-                <div class="text-lg font-bold text-green-400">40%</div>
-                <div class="text-xs text-zinc-500 mt-1">Cost Reduction</div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- ─── PROCESS ─── -->
+    <!-- PROCESS SECTION -->
     <section id="work" class="section-px section-py px-8 md:px-16 py-20 border-t border-green-900/30">
-
         <div class="glow-dark-green" style="bottom:-100px; right:-100px; opacity:0.5;"></div>
-
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14 fade-up">
             <h2 class="hero-text" style="font-size:clamp(30px,5vw,64px)">HOW WE WORK</h2>
             <div class="mono text-xs text-green-700/60 tracking-widest">Our Process</div>
         </div>
-
         <div class="process-grid grid md:grid-cols-3 gap-px bg-green-900/20">
             <div class="process-card bg-black/30 backdrop-blur-sm p-8 md:p-10 fade-up hover:bg-black/50 transition-all duration-300 border border-green-800/30 rounded-t-xl md:rounded-l-xl md:rounded-tr-none">
                 <div class="mono text-xs text-green-500 tracking-widest mb-5">01 / DISCOVER</div>
@@ -1077,17 +892,256 @@
                 <p class="text-zinc-500 text-sm leading-relaxed">We measure, iterate, and expand with you. Monthly reporting, QA review, and growth roadmaps built into every engagement.</p>
             </div>
         </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS SECTION (ENHANCED SLIDER VERSION) ─── -->
+    <section id="testimonials" class="section-px section-py px-8 md:px-16 py-20 relative overflow-hidden">
+        <div class="glow-dark-green" style="top:40%; right:-100px; opacity:0.4;"></div>
+        <div class="glow-forest" style="bottom:20%; left:-120px; opacity:0.5;"></div>
+
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 fade-up">
+            <h2 class="hero-text" style="font-size:clamp(30px,5vw,64px)">
+                CLIENT <span class="gradient-green">VOICES</span>
+            </h2>
+            <span class="mono text-xs text-green-600/60 tracking-widest uppercase">Trusted by industry leaders</span>
+        </div>
+
+        <!-- Slider Container -->
+        <div class="relative max-w-6xl mx-auto">
+
+            <!-- Main Testimonial Slider -->
+            <div class="overflow-hidden" id="testimonialSlider">
+                <div class="flex transition-transform duration-500 ease-out" id="testimonialTrack">
+
+                    <!-- Slide 1 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="blur-card rounded-3xl p-8 md:p-10 border border-green-800/30 hover:border-green-700/50 transition-all duration-300 group">
+                            <!-- Quote Icon -->
+                            <div class="mb-6">
+                                <svg class="w-12 h-12 text-green-500/30 fill-current" viewBox="0 0 24 24">
+                                    <path d="M14 17h3l2-4V7h-6v6h3l-2 4zm-8 0h3l2-4V7H5v6h3l-2 4z" />
+                                </svg>
+                            </div>
+
+                            <p class="text-white text-lg md:text-2xl leading-relaxed mb-8 font-medium">
+                                "Outwerk transformed our customer support operations. Within 3 months, response times dropped by 62% and CSAT scores hit 94%. Their team feels like an extension of ours — seamless integration, exceptional quality, and genuine partnership."
+                            </p>
+
+                            <div class="flex items-center gap-4 pt-4 border-t border-green-900/30">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                    SJ
+                                </div>
+                                <div>
+                                    <div class="text-white text-lg font-semibold">Sarah Johnson</div>
+                                    <div class="mono text-xs text-green-500/70 tracking-wider">COO, TechScale Global</div>
+                                    <div class="flex gap-1 mt-2">
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="blur-card rounded-3xl p-8 md:p-10 border border-green-800/30 hover:border-green-700/50 transition-all duration-300 group">
+                            <div class="mb-6">
+                                <svg class="w-12 h-12 text-green-500/30 fill-current" viewBox="0 0 24 24">
+                                    <path d="M14 17h3l2-4V7h-6v6h3l-2 4zm-8 0h3l2-4V7H5v6h3l-2 4z" />
+                                </svg>
+                            </div>
+                            <p class="text-white text-lg md:text-2xl leading-relaxed mb-8 font-medium">
+                                "The lead generation team at Outwerk exceeded every KPI. They delivered 3x more qualified leads than our previous agency, with a 40% lower cost per acquisition. Their data-driven approach is truly unmatched in the industry."
+                            </p>
+                            <div class="flex items-center gap-4 pt-4 border-t border-green-900/30">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                    MR
+                                </div>
+                                <div>
+                                    <div class="text-white text-lg font-semibold">Michael Rodriguez</div>
+                                    <div class="mono text-xs text-green-500/70 tracking-wider">VP Sales, NexGen Solutions</div>
+                                    <div class="flex gap-1 mt-2">
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="blur-card rounded-3xl p-8 md:p-10 border border-green-800/30 hover:border-green-700/50 transition-all duration-300 group">
+                            <div class="mb-6">
+                                <svg class="w-12 h-12 text-green-500/30 fill-current" viewBox="0 0 24 24">
+                                    <path d="M14 17h3l2-4V7h-6v6h3l-2 4zm-8 0h3l2-4V7H5v6h3l-2 4z" />
+                                </svg>
+                            </div>
+                            <p class="text-white text-lg md:text-2xl leading-relaxed mb-8 font-medium">
+                                "Outwerk built our entire customer service infrastructure from scratch. 18 months later, we're operating at 40% lower cost with 99% SLA adherence. Absolute game-changer for our scalability and customer satisfaction."
+                            </p>
+                            <div class="flex items-center gap-4 pt-4 border-t border-green-900/30">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                    LC
+                                </div>
+                                <div>
+                                    <div class="text-white text-lg font-semibold">Lisa Chen</div>
+                                    <div class="mono text-xs text-green-500/70 tracking-wider">CEO, Bloom Retail Group</div>
+                                    <div class="flex gap-1 mt-2">
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="blur-card rounded-3xl p-8 md:p-10 border border-green-800/30 hover:border-green-700/50 transition-all duration-300 group">
+                            <div class="mb-6">
+                                <svg class="w-12 h-12 text-green-500/30 fill-current" viewBox="0 0 24 24">
+                                    <path d="M14 17h3l2-4V7h-6v6h3l-2 4zm-8 0h3l2-4V7H5v6h3l-2 4z" />
+                                </svg>
+                            </div>
+                            <p class="text-white text-lg md:text-2xl leading-relaxed mb-8 font-medium">
+                                "Their web development team delivered a complex e-commerce platform ahead of schedule. The attention to detail, security standards, and post-launch support has been exceptional. They're now our go-to technical partner."
+                            </p>
+                            <div class="flex items-center gap-4 pt-4 border-t border-green-900/30">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                    DP
+                                </div>
+                                <div>
+                                    <div class="text-white text-lg font-semibold">David Park</div>
+                                    <div class="mono text-xs text-green-500/70 tracking-wider">CTO, ModaStyle</div>
+                                    <div class="flex gap-1 mt-2">
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="w-full flex-shrink-0 px-4">
+                        <div class="blur-card rounded-3xl p-8 md:p-10 border border-green-800/30 hover:border-green-700/50 transition-all duration-300 group">
+                            <div class="mb-6">
+                                <svg class="w-12 h-12 text-green-500/30 fill-current" viewBox="0 0 24 24">
+                                    <path d="M14 17h3l2-4V7h-6v6h3l-2 4zm-8 0h3l2-4V7H5v6h3l-2 4z" />
+                                </svg>
+                            </div>
+                            <p class="text-white text-lg md:text-2xl leading-relaxed mb-8 font-medium">
+                                "Outwerk's SEO and content marketing strategy increased our organic traffic by 215% in 6 months. Their team truly understands the intersection of data, creativity, and conversion optimization. Remarkable results."
+                            </p>
+                            <div class="flex items-center gap-4 pt-4 border-t border-green-900/30">
+                                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                                    EW
+                                </div>
+                                <div>
+                                    <div class="text-white text-lg font-semibold">Emma Watson</div>
+                                    <div class="mono text-xs text-green-500/70 tracking-wider">Marketing Director, Elevate Brands</div>
+                                    <div class="flex gap-1 mt-2">
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                        <svg class="w-4 h-4 text-green-500 fill-current" viewBox="0 0 24 24">
+                                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button id="prevBtn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-900/40 backdrop-blur-md border border-green-500/30 hover:bg-green-700/60 hover:border-green-500 transition-all duration-300 flex items-center justify-center group z-10">
+                <svg class="w-5 h-5 md:w-6 md:h-6 text-green-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button id="nextBtn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-6 w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-900/40 backdrop-blur-md border border-green-500/30 hover:bg-green-700/60 hover:border-green-500 transition-all duration-300 flex items-center justify-center group z-10">
+                <svg class="w-5 h-5 md:w-6 md:h-6 text-green-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+
+            <!-- Dots Indicator -->
+            <div class="flex justify-center gap-2 mt-8 pt-4" id="dotsContainer"></div>
+
+        </div>
 
     </section>
 
-    <!-- ─── CONTACT CTA ─── -->
+    <!-- ─── CONTACT + FORM SECTION (Enhanced) ─── -->
     <section id="contact" class="section-px section-py-contact px-8 md:px-16 py-28 relative overflow-hidden">
-
         <div class="glow-dark-green" style="top:0; left:50%; transform:translateX(-50%); width:min(800px, 100vw); opacity:0.4;"></div>
         <div class="glow-forest" style="bottom:0; right:0; opacity:0.6;"></div>
-
         <div class="thin-line mb-14 md:mb-20 fade-up"></div>
-
         <div class="fade-up">
             <div class="mono text-xs text-green-500 tracking-widest uppercase mb-8">— Ready to grow?</div>
             <div class="cta-text">
@@ -1106,31 +1160,186 @@
             </div>
         </div>
 
-        <div class="contact-grid grid md:grid-cols-3 gap-8 mt-16 md:mt-24 pt-10 md:pt-12 border-t border-green-900/30 fade-up">
-            <div>
-                <div class="mono text-xs text-green-600/60 tracking-widest uppercase mb-3">Email</div>
-                <a href="mailto:hello@outerksolution.com" class="text-white text-base md:text-lg font-medium hover:text-green-400 transition-colors break-all">hello@outerksolution.com</a>
-            </div>
-            <div>
-                <div class="mono text-xs text-green-600/60 tracking-widest uppercase mb-3">Phone</div>
-                <a href="tel:+922112345678" class="text-white text-base md:text-lg font-medium hover:text-green-400 transition-colors">+92 21 1234 5678</a>
-            </div>
-            <div>
-                <div class="mono text-xs text-green-600/60 tracking-widest uppercase mb-3">Location</div>
-                <p class="text-white text-base md:text-lg font-medium">Karachi, Pakistan</p>
-            </div>
-        </div>
 
+
+        <!-- Original contact grid info (optional but kept for completeness) -->
+        <div class="contact-grid grid md:grid-cols-3 gap-8 mt-16 pt-8 border-t border-green-900/30 fade-up">
+    <div>
+        <div class="mono text-xs text-green-600/60 tracking-widest uppercase mb-3">Email</div>
+        <a href="mailto:hr@outwerksolution.com" class="text-white text-base md:text-lg font-medium hover:text-green-400 transition-colors break-all">hr@outwerksolution.com</a>
+    </div>
+    <div>
+        <div class="mono text-xs text-green-600/60 tracking-widest uppercase mb-3">Phone</div>
+        <a href="tel:+922112345678" class="text-white text-base md:text-lg font-medium hover:text-green-400 transition-colors">+92 21 1234 5678</a>
+    </div>
+    <div>
+        <div class="mono text-xs text-green-600/60 tracking-widest uppercase mb-3">Location</div>
+        <p class="text-white text-base md:text-lg font-medium">Karachi, Pakistan</p>
+    </div>
+</div>
     </section>
 
-    <!-- ─── FOOTER ─── -->
+
+
+    <script>
+        // Testimonial Slider Functionality
+        (function() {
+            const track = document.getElementById('testimonialTrack');
+            const slides = Array.from(track.children);
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('dotsContainer');
+            const slideCounter = document.getElementById('slideCounter');
+            const autoplayToggle = document.getElementById('autoplayToggle');
+            const autoplayIcon = document.getElementById('autoplayIcon');
+
+            let currentIndex = 0;
+            let autoplayInterval = null;
+            let isAutoplaying = true;
+            const slideCount = slides.length;
+
+            // Create dots
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < slideCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${i === currentIndex ? 'bg-green-500 w-6' : 'bg-green-700/50 hover:bg-green-600/70'}`;
+                    dot.setAttribute('data-index', i);
+                    dot.addEventListener('click', () => goToSlide(i));
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            // Update dots and counter
+            function updateDots() {
+                const dots = dotsContainer.children;
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].className = `transition-all duration-300 rounded-full ${i === currentIndex ? 'bg-green-500 w-6' : 'bg-green-700/50 hover:bg-green-600/70 w-2'}`;
+                }
+                if (slideCounter) {
+                    slideCounter.textContent = `${currentIndex + 1} / ${slideCount}`;
+                }
+            }
+
+            // Move to specific slide
+            function goToSlide(index) {
+                if (index < 0) index = 0;
+                if (index >= slideCount) index = 0;
+                currentIndex = index;
+                const offset = -currentIndex * 100;
+                track.style.transform = `translateX(${offset}%)`;
+                updateDots();
+                resetAutoplay();
+            }
+
+            // Next slide
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            // Previous slide
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            // Reset autoplay timer
+            function resetAutoplay() {
+                if (autoplayInterval) {
+                    clearInterval(autoplayInterval);
+                    if (isAutoplaying) {
+                        startAutoplay();
+                    }
+                } else if (isAutoplaying) {
+                    startAutoplay();
+                }
+            }
+
+            // Start autoplay
+            function startAutoplay() {
+                if (autoplayInterval) clearInterval(autoplayInterval);
+                autoplayInterval = setInterval(() => {
+                    nextSlide();
+                }, 5000);
+            }
+
+            // Stop autoplay
+            function stopAutoplay() {
+                if (autoplayInterval) {
+                    clearInterval(autoplayInterval);
+                    autoplayInterval = null;
+                }
+            }
+
+            // Toggle autoplay
+            function toggleAutoplay() {
+                isAutoplaying = !isAutoplaying;
+                if (isAutoplaying) {
+                    startAutoplay();
+                    autoplayIcon.innerHTML = '<path d="M8 5v14l11-7z"></path>';
+                } else {
+                    stopAutoplay();
+                    autoplayIcon.innerHTML = '<path d="M10 6v12M18 6v12"></path>';
+                }
+            }
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                if (!isAutoplaying) {
+                    // If manual navigation while paused, stay paused
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                if (!isAutoplaying) {
+                    // stay paused
+                }
+            });
+
+            autoplayToggle.addEventListener('click', toggleAutoplay);
+
+            // Pause autoplay on hover
+            const sliderContainer = document.getElementById('testimonialSlider');
+            sliderContainer.addEventListener('mouseenter', () => {
+                if (isAutoplaying) stopAutoplay();
+            });
+
+            sliderContainer.addEventListener('mouseleave', () => {
+                if (isAutoplaying) startAutoplay();
+            });
+
+            // Initialize
+            createDots();
+            if (isAutoplaying) startAutoplay();
+
+            // Add touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            sliderContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            sliderContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchEndX < touchStartX - 50) nextSlide();
+                if (touchEndX > touchStartX + 50) prevSlide();
+            });
+
+            // Optional: Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
+        })();
+    </script>
+
+    <!-- FOOTER -->
     <footer class="section-px px-8 md:px-16 pt-14 pb-8 border-t border-green-900/30">
         <div class="footer-grid grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
             <div class="col-span-2 md:col-span-1">
-                <div class="flex items-center gap-2 mb-4">
-                    <span class="dark-green-dot"></span>
-                    <span class="mono text-sm tracking-widest text-white">Outwerk<span class="gradient-dark-green">.</span></span>
-                </div>
+                <div class="flex items-center gap-2 mb-4"><span class="dark-green-dot"></span><span class="mono text-sm tracking-widest text-white">Outwerk<span class="gradient-dark-green">.</span></span></div>
                 <p class="text-zinc-600 text-xs leading-relaxed">Premium BPO solutions for businesses that demand more.</p>
             </div>
             <div>
@@ -1161,27 +1370,21 @@
             </div>
         </div>
         <div class="thin-line mb-6"></div>
-        <div class="flex flex-col md:flex-row justify-between items-center gap-3">
-            <span class="mono text-xs text-zinc-700">© 2025 Outwerk Solution. All rights reserved.</span>
-            <span class="mono text-xs text-green-700/40">Karachi, Pakistan — ISO 9001 Certified</span>
-        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-3"><span class="mono text-xs text-zinc-700">© 2025 Outwerk Solution. All rights reserved.</span><span class="mono text-xs text-green-700/40">Karachi, Pakistan — ISO 9001 Certified</span></div>
     </footer>
 
     <script>
-        /* CUSTOM CURSOR — only on pointer devices */
+        // Cursor logic (preserved)
         const cursor = document.getElementById('cursor');
         const ring = document.getElementById('cursor-ring');
         const isPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
         if (isPointer) {
             cursor.style.display = 'block';
             ring.style.display = 'block';
-
             let mx = -100,
                 my = -100,
                 rx = -100,
                 ry = -100;
-
             document.addEventListener('mousemove', e => {
                 mx = e.clientX;
                 my = e.clientY;
@@ -1197,7 +1400,6 @@
                 requestAnimationFrame(animateRing);
             }
             animateRing();
-
             document.querySelectorAll('a, button, .service-row, #chat-bubble').forEach(el => {
                 el.addEventListener('mouseenter', () => {
                     ring.style.width = '56px';
@@ -1211,32 +1413,26 @@
                 });
             });
         }
-
-        /* MOBILE MENU */
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-
-        document.querySelectorAll('.mobile-nav-link, #mobile-menu .pill-btn').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                mobileMenu.classList.toggle('open');
+                document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
             });
-        });
-
-        /* NAVBAR SCROLL */
+            document.querySelectorAll('.mobile-nav-link, #mobile-menu .pill-btn').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('open');
+                    mobileMenu.classList.remove('open');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 60);
         });
-
-        /* FADE UP */
         const fadeObserver = new IntersectionObserver(entries => {
             entries.forEach(e => {
                 if (e.isIntersecting) e.target.classList.add('visible');
@@ -1245,8 +1441,6 @@
             threshold: 0.1
         });
         document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
-
-        /* SCRIBBLE */
         const scribbleObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1260,8 +1454,6 @@
             threshold: 0.5
         });
         document.querySelectorAll('.scribble-wrap').forEach(el => scribbleObserver.observe(el));
-
-        /* SERVICE TOGGLE */
         document.querySelectorAll('.service-row').forEach(row => {
             row.addEventListener('click', () => {
                 const isOpen = row.classList.contains('open');
@@ -1270,7 +1462,6 @@
             });
         });
 
-        /* STAT COUNTER */
         function animateCount(el, target, duration = 1800) {
             let start = null;
 
@@ -1284,7 +1475,6 @@
             }
             requestAnimationFrame(step);
         }
-
         const statObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1296,22 +1486,6 @@
             threshold: 0.5
         });
         document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
-
-        /* TILT — desktop only */
-        const tiltImg = document.querySelector('.tilt-img');
-        if (tiltImg && isPointer) {
-            tiltImg.parentElement.addEventListener('mousemove', e => {
-                const rect = tiltImg.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                tiltImg.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
-            });
-            tiltImg.parentElement.addEventListener('mouseleave', () => {
-                tiltImg.style.transform = 'perspective(600px) rotateY(0deg) rotateX(0deg)';
-            });
-        }
-
-        /* SMOOTH SCROLL */
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 const target = document.querySelector(a.getAttribute('href'));
@@ -1323,6 +1497,23 @@
                 }
             });
         });
+
+        // Contact form toast & submission handling (FormSubmit will handle email)
+        const contactForm = document.getElementById('contactForm');
+        const toastDiv = document.createElement('div');
+        toastDiv.className = 'toast-notify';
+        toastDiv.innerHTML = '✓ Message sent! We’ll reply shortly.';
+        document.body.appendChild(toastDiv);
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                setTimeout(() => {
+                    toastDiv.classList.add('show');
+                    setTimeout(() => {
+                        toastDiv.classList.remove('show');
+                    }, 4000);
+                }, 100);
+            });
+        }
     </script>
 </body>
 
