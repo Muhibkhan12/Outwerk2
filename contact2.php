@@ -35,16 +35,42 @@
         }
 
         @media (hover: hover) and (pointer: fine) {
-            body { cursor: none; }
-            #cursor, #cursor-ring { display: block; }
-        }
-        @media (hover: none), (pointer: coarse) {
-            #cursor, #cursor-ring { display: none !important; }
-            body { cursor: auto; }
-            a, button, .contact-card, .location-card { cursor: pointer; }
+            body {
+                cursor: none;
+            }
+
+            #cursor,
+            #cursor-ring {
+                display: block;
+            }
         }
 
-        h1, h2, h3, .hero-text, .cta-text, .stat-num {
+        @media (hover: none),
+        (pointer: coarse) {
+
+            #cursor,
+            #cursor-ring {
+                display: none !important;
+            }
+
+            body {
+                cursor: auto;
+            }
+
+            a,
+            button,
+            .contact-card,
+            .location-card {
+                cursor: pointer;
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        .hero-text,
+        .cta-text,
+        .stat-num {
             font-family: 'Space Grotesk', sans-serif;
         }
 
@@ -66,6 +92,7 @@
             mix-blend-mode: difference;
             display: none;
         }
+
         #cursor-ring {
             width: 36px;
             height: 36px;
@@ -87,6 +114,7 @@
             pointer-events: none;
             filter: blur(40px);
         }
+
         .glow-forest {
             position: absolute;
             width: clamp(200px, 35vw, 400px);
@@ -115,6 +143,7 @@
             position: relative;
             display: inline-block;
         }
+
         .scribble-wrap svg {
             position: absolute;
             top: 50%;
@@ -124,6 +153,7 @@
             height: 160%;
             pointer-events: none;
         }
+
         .scribble-path {
             stroke: #2e7d32;
             stroke-width: 2.5;
@@ -132,11 +162,15 @@
             stroke-dashoffset: 900;
             stroke-linecap: round;
         }
+
         .scribble-path.animated {
             animation: draw-scribble 1.2s cubic-bezier(.4, 0, .2, 1) forwards;
         }
+
         @keyframes draw-scribble {
-            to { stroke-dashoffset: 0; }
+            to {
+                stroke-dashoffset: 0;
+            }
         }
 
         .pill-btn {
@@ -155,6 +189,7 @@
             backdrop-filter: blur(8px);
             white-space: nowrap;
         }
+
         .pill-btn:hover {
             background: #2e7d32;
             color: #030a05;
@@ -167,6 +202,7 @@
             transform: translateY(40px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
+
         .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
@@ -188,10 +224,12 @@
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.5);
         }
+
         #chat-bubble:hover {
             transform: scale(1.1);
             box-shadow: 0 0 30px rgba(46, 125, 50, 0.6);
         }
+
         #chat-bubble svg {
             width: 22px;
             height: 22px;
@@ -208,6 +246,7 @@
             backdrop-filter: blur(12px);
             background: rgba(3, 10, 5, 0.6);
         }
+
         #navbar.scrolled {
             background: rgba(3, 10, 5, 0.92);
             border-bottom: 1px solid rgba(46, 125, 50, 0.3);
@@ -228,7 +267,11 @@
             gap: 32px;
             backdrop-filter: blur(20px);
         }
-        #mobile-menu.open { display: flex; }
+
+        #mobile-menu.open {
+            display: flex;
+        }
+
         #mobile-menu a {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(28px, 8vw, 48px);
@@ -238,7 +281,10 @@
             letter-spacing: -0.01em;
             transition: color 0.2s;
         }
-        #mobile-menu a:hover { color: #66bb6a; }
+
+        #mobile-menu a:hover {
+            color: #66bb6a;
+        }
 
         .hamburger {
             display: none;
@@ -248,6 +294,7 @@
             padding: 4px;
             z-index: 101;
         }
+
         .hamburger span {
             display: block;
             width: 22px;
@@ -256,13 +303,31 @@
             border-radius: 2px;
             transition: all 0.3s;
         }
-        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .hamburger.open span:nth-child(2) { opacity: 0; }
-        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         @media (max-width: 768px) {
-            .hamburger { display: flex; }
-            .desktop-nav { display: none; }
-            .nav-get-in-touch { display: none; }
+            .hamburger {
+                display: flex;
+            }
+
+            .desktop-nav {
+                display: none;
+            }
+
+            .nav-get-in-touch {
+                display: none;
+            }
         }
 
         body::before {
@@ -270,7 +335,7 @@
             position: fixed;
             inset: 0;
             background-image: linear-gradient(rgba(46, 125, 50, 0.04) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(46, 125, 50, 0.04) 1px, transparent 1px);
+                linear-gradient(90deg, rgba(46, 125, 50, 0.04) 1px, transparent 1px);
             background-size: 80px 80px;
             pointer-events: none;
             z-index: 0;
@@ -286,6 +351,7 @@
             font-weight: 500;
             text-decoration: none;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -296,8 +362,14 @@
             background: #2e7d32;
             transition: width 0.3s;
         }
-        .nav-link:hover { color: #66bb6a; }
-        .nav-link:hover::after { width: 100%; }
+
+        .nav-link:hover {
+            color: #66bb6a;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
 
         .dark-green-dot {
             width: 8px;
@@ -322,38 +394,70 @@
             border: 1px solid rgba(46, 125, 50, 0.25);
         }
 
-        .contact-card, .location-card {
+        .contact-card,
+        .location-card {
             transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        .contact-card:hover, .location-card:hover {
+
+        .contact-card:hover,
+        .location-card:hover {
             transform: translateY(-5px);
             border-color: rgba(46, 125, 50, 0.8);
             box-shadow: 0 20px 35px -15px rgba(46, 125, 50, 0.3);
         }
 
-        .form-input, .form-textarea {
+        .form-input,
+        .form-textarea {
             background: rgba(3, 10, 5, 0.6);
             border: 1px solid rgba(46, 125, 50, 0.3);
             transition: all 0.3s ease;
             color: #eef5e8;
         }
-        .form-input:focus, .form-textarea:focus {
+
+        .form-input:focus,
+        .form-textarea:focus {
             outline: none;
             border-color: #2e7d32;
             box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #030a05; }
-        ::-webkit-scrollbar-thumb { background: #2e7d32; border-radius: 4px; }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
 
-        .section-px { padding-left: 2rem; padding-right: 2rem; }
-        @media (max-width: 768px) { .section-px { padding-left: 1.25rem !important; padding-right: 1.25rem !important; } }
+        ::-webkit-scrollbar-track {
+            background: #030a05;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2e7d32;
+            border-radius: 4px;
+        }
+
+        .section-px {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-px {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+            }
+        }
 
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(46, 125, 50, 0); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(46, 125, 50, 0);
+            }
         }
+
         .animate-pulse-glow {
             animation: pulse-glow 2s infinite;
         }
@@ -363,6 +467,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .map-placeholder::before {
             content: '';
             position: absolute;
@@ -414,43 +519,64 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="section-px min-h-[70vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden relative">
-        <div class="glow-dark-green" style="top:-100px; right:-100px;"></div>
-        <div class="glow-forest" style="bottom:100px; left:-80px;"></div>
+    <!-- Hero Section - Contact Page (Matching Outwerk Design) -->
+    <section class="relative overflow-hidden min-h-[70vh] flex items-center">
+        <!-- Background Glow Effects -->
+        <div class="glow-dark-green absolute top-0 left-0 w-[600px] h-[600px] opacity-40 pointer-events-none"></div>
+        <div class="glow-forest absolute bottom-0 right-0 w-[500px] h-[500px] opacity-30 pointer-events-none"></div>
 
-        <div class="flex items-center gap-4 mb-6 fade-up">
-            <span class="mono text-xs tracking-widest text-green-500 uppercase">— Let's Connect</span>
-            <div class="thin-line" style="width:60px;"></div>
-            <span class="mono text-xs tracking-widest text-zinc-500 uppercase">24/7 Support</span>
-        </div>
+        <!-- Grid Texture Overlay -->
+        <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(rgba(46, 125, 50, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 125, 50, 0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
-        <div class="hero-text text-white leading-none mb-6">
-            <div class="fade-up" style="transition-delay:0.05s">LET'S START</div>
-            <div class="fade-up" style="transition-delay:0.1s">A
-                <span class="scribble-wrap">
-                    CONVERSATION
-                    <svg viewBox="0 0 280 60" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="140" cy="30" rx="135" ry="26" class="scribble-path" />
-                    </svg>
-                </span>
+        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-16 py-20 md:py-28 w-full">
+            <!-- Breadcrumb / Navigation Hint -->
+            <div class="flex items-center gap-2 mb-8 fade-up">
+                <span class="mono text-xs tracking-widest text-green-500 uppercase">Contact</span>
+                <div class="thin-line w-12"></div>
+                <span class="mono text-xs tracking-widest text-zinc-500 uppercase">Get in Touch</span>
             </div>
-            <div class="fade-up flex flex-wrap items-baseline gap-x-4" style="transition-delay:0.15s">
-                <span>READY TO</span>
-                <span class="gradient-dark-green">GROW TOGETHER</span>
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Left Column - Heading with Scribble Effect -->
+                <div class="fade-up">
+                    <h1 class="hero-text text-white leading-tight">
+                        <span class="block">Contact</span>
+                        <span class="gradient-dark-green inline-flex items-center gap-2">
+                            Us
+                            <span class="scribble-wrap inline-block relative">
+                                <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[110%] h-[150%] pointer-events-none">
+                                    <ellipse cx="50" cy="20" rx="45" ry="16" class="scribble-path" stroke="#2e7d32" stroke-width="2.5" fill="none" stroke-dasharray="500" stroke-dashoffset="500" />
+                                </svg>
+                            </span>
+                        </span>
+                    </h1>
+                </div>
+
+                <!-- Right Column - Description with Modern Styling -->
+                <div class="fade-up" style="transition-delay: 0.1s">
+                    <div class="relative">
+                        <!-- Decorative accent line -->
+                        <div class="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-green-500 via-emerald-600 to-transparent"></div>
+
+                        <div class="space-y-6 pl-6">
+                            <p class="text-gray-300 leading-relaxed text-base md:text-lg font-light">
+                                Have a question or ready to start your project? We're here to help. Reach out and let's create something extraordinary together.
+                            </p>
+
+                            <!-- CTA Button -->
+                            <div class="pt-4">
+                                <a href="#contact-form" class="pill-btn text-white inline-flex items-center gap-2 group">
+                                    Send Message
+                                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div class="hero-sub-row flex flex-col md:flex-row md:items-end justify-between gap-6 mt-6 fade-up" style="transition-delay:0.2s">
-            <p class="text-zinc-400 text-sm md:text-base max-w-md leading-relaxed">
-                Have a project in mind? Need expert advice? We're just a message away. Let's build something extraordinary.
-            </p>
-            <a href="#contact-form" class="pill-btn text-white self-start">
-                Send Message ↗
-            </a>
-        </div>
-
-        <div class="thin-line mt-12 fade-up" style="transition-delay:0.25s"></div>
     </section>
 
     <!-- CONTACT CARDS - QUICK CONTACT -->
@@ -493,7 +619,7 @@
     <!-- CONTACT FORM + MAP SECTION -->
     <section id="contact-form" class="section-px py-16 relative">
         <div class="glow-dark-green absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
-        
+
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12 fade-up">
                 <div class="inline-flex items-center gap-2 mb-4">
@@ -561,13 +687,13 @@
                 <div class="space-y-6 fade-up" style="transition-delay:0.1s">
                     <!-- Interactive Map Placeholder -->
                     <div class="map-placeholder rounded-2xl overflow-hidden border border-green-900/40 h-64 relative">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231118.86804129908!2d66.87690483030454!3d24.860734165271778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3152c1e5e8e2f%3A0x2e5c8c5a5e5e5e5e!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231118.86804129908!2d66.87690483030454!3d24.860734165271778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3152c1e5e8e2f%3A0x2e5c8c5a5e5e5e5e!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                         <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
@@ -634,7 +760,7 @@
     <!-- FAQ SECTION - QUICK ANSWERS -->
     <section class="section-px py-16 relative">
         <div class="glow-forest absolute bottom-0 right-0 opacity-20"></div>
-        
+
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12 fade-up">
                 <div class="inline-flex items-center gap-2 mb-4">
@@ -742,13 +868,17 @@
         if (isPointer) {
             cursor.style.display = 'block';
             ring.style.display = 'block';
-            let mx = -100, my = -100, rx = -100, ry = -100;
+            let mx = -100,
+                my = -100,
+                rx = -100,
+                ry = -100;
             document.addEventListener('mousemove', e => {
                 mx = e.clientX;
                 my = e.clientY;
                 cursor.style.left = (mx - 5) + 'px';
                 cursor.style.top = (my - 5) + 'px';
             });
+
             function animateRing() {
                 rx += (mx - rx - 18) * 0.12;
                 ry += (my - ry - 18) * 0.12;
@@ -795,8 +925,12 @@
 
         // Fade up observer
         const fadeObserver = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, {
+            threshold: 0.1
+        });
         document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
         // Scribble animation
@@ -809,7 +943,9 @@
                     scribbleObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.5 });
+        }, {
+            threshold: 0.5
+        });
         document.querySelectorAll('.scribble-wrap').forEach(el => scribbleObserver.observe(el));
 
         // Form submission handling
@@ -828,7 +964,9 @@
                 const target = document.querySelector(a.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
         });

@@ -529,151 +529,207 @@
             </div>
         </div>
     </section>
+<!-- WORKPLACE EXCELLENCE SECTION - REDESIGNED -->
+<section class="section-px py-24 relative overflow-hidden">
+    <!-- Dynamic Background -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(46,125,50,0.08),transparent_50%)]"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl"></div>
+    </div>
 
-    <!-- OPEN POSITIONS SECTION -->
-    <section id="openings" class="section-px py-20 relative">
-        <div class="glow-dark-green absolute top-1/2 left-1/4 opacity-20"></div>
-        
-        <div class="text-center max-w-3xl mx-auto mb-12 fade-up">
-            <div class="inline-flex items-center gap-2 mb-4">
-                <div class="w-2 h-2 bg-green-500 rotate-45"></div>
-                <span class="mono text-xs text-green-500 tracking-widest uppercase">Current Openings</span>
-                <div class="w-2 h-2 bg-green-500 rotate-45"></div>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Join Our <span class="gradient-dark-green">Team</span></h2>
-            <p class="text-gray-400 max-w-2xl mx-auto">Find your perfect role and take the next step in your career journey.</p>
+    <!-- Section Header with Unique Design -->
+    <div class="text-center max-w-4xl mx-auto mb-20 fade-up">
+        <div class="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-4 py-2 mb-6">
+            <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+            <span class="mono text-[10px] text-green-400 tracking-widest uppercase">Behind the Scenes</span>
+            <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
         </div>
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.1]">
+            Where <span class="gradient-dark-green">Talent</span><br>
+            Becomes <span class="gradient-dark-green">Family</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            Not just a workplace — a launchpad for dreams, a community of innovators, and a place where you truly belong.
+        </p>
+    </div>
 
-        <div class="max-w-5xl mx-auto space-y-4">
-            <!-- Job 1 -->
-            <div class="job-card bg-black/30 border border-green-900/40 rounded-2xl p-6 hover:border-green-500/60 transition-all cursor-pointer fade-up">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-2 flex-wrap">
-                            <h3 class="text-xl font-bold text-white">Senior BPO Operations Manager</h3>
-                            <span class="key-point text-xs">Full-time</span>
-                            <span class="key-point text-xs">On-site</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-3">Lead and optimize our BPO operations, manage teams, and drive operational excellence for global clients.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs text-green-400/70"><i class="fas fa-map-marker-alt mr-1"></i> Karachi, Pakistan</span>
-                            <span class="text-xs text-green-400/70"><i class="fas fa-briefcase mr-1"></i> 5+ years experience</span>
-                        </div>
+    <!-- Core Values Journey (Interactive Timeline Style) -->
+    <div class="max-w-6xl mx-auto mb-24">
+        <div class="grid md:grid-cols-3 gap-0 border border-green-800/30">
+            <!-- Value 1 -->
+            <div class="relative p-8 text-center group border-b md:border-b-0 md:border-r border-green-800/30 hover:bg-green-500/5 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-b from-green-500/0 via-green-500/0 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-16 h-16 mx-auto mb-5 relative">
+                        <div class="absolute inset-0 bg-green-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <i class="fas fa-handshake text-3xl text-green-500 relative z-10"></i>
                     </div>
-                    <div class="flex-shrink-0">
-                        <a href="#apply" class="inline-flex items-center gap-2 px-5 py-2.5 border border-green-500/40 rounded-full text-sm text-green-400 hover:bg-green-500 hover:text-black transition-all group">
-                            Apply Now
-                            <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
-                        </a>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Trust & Transparency</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Radical honesty, open communication, and decisions made with integrity.</p>
                 </div>
             </div>
-
-            <!-- Job 2 -->
-            <div class="job-card bg-black/30 border border-green-900/40 rounded-2xl p-6 hover:border-green-500/60 transition-all cursor-pointer fade-up" style="transition-delay:0.05s">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-2 flex-wrap">
-                            <h3 class="text-xl font-bold text-white">Full Stack Developer (React + Node)</h3>
-                            <span class="key-point text-xs">Full-time</span>
-                            <span class="key-point text-xs">Remote/Hybrid</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-3">Build cutting-edge web applications, collaborate with design teams, and deliver high-quality code for enterprise clients.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs text-green-400/70"><i class="fas fa-map-marker-alt mr-1"></i> Remote (Pakistan)</span>
-                            <span class="text-xs text-green-400/70"><i class="fas fa-code mr-1"></i> React, Node.js, TypeScript</span>
-                        </div>
+            
+            <!-- Value 2 -->
+            <div class="relative p-8 text-center group border-b md:border-b-0 md:border-r border-green-800/30 hover:bg-green-500/5 transition-all duration-500">
+                <div class="relative z-10">
+                    <div class="w-16 h-16 mx-auto mb-5 relative">
+                        <div class="absolute inset-0 bg-green-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <i class="fas fa-rocket text-3xl text-green-500 relative z-10"></i>
                     </div>
-                    <div class="flex-shrink-0">
-                        <a href="#apply" class="inline-flex items-center gap-2 px-5 py-2.5 border border-green-500/40 rounded-full text-sm text-green-400 hover:bg-green-500 hover:text-black transition-all group">
-                            Apply Now
-                            <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
-                        </a>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Bold Innovation</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Fearless experimentation, embracing failure as growth, and pushing boundaries.</p>
                 </div>
             </div>
-
-            <!-- Job 3 -->
-            <div class="job-card bg-black/30 border border-green-900/40 rounded-2xl p-6 hover:border-green-500/60 transition-all cursor-pointer fade-up" style="transition-delay:0.1s">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-2 flex-wrap">
-                            <h3 class="text-xl font-bold text-white">Lead Generation Specialist</h3>
-                            <span class="key-point text-xs">Full-time</span>
-                            <span class="key-point text-xs">On-site</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-3">Drive B2B lead generation campaigns, qualify prospects, and support our sales team with high-quality leads.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs text-green-400/70"><i class="fas fa-map-marker-alt mr-1"></i> Lahore, Pakistan</span>
-                            <span class="text-xs text-green-400/70"><i class="fas fa-chart-line mr-1"></i> 2-4 years experience</span>
-                        </div>
+            
+            <!-- Value 3 -->
+            <div class="relative p-8 text-center group hover:bg-green-500/5 transition-all duration-500">
+                <div class="relative z-10">
+                    <div class="w-16 h-16 mx-auto mb-5 relative">
+                        <div class="absolute inset-0 bg-green-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                        <i class="fas fa-heart text-3xl text-green-500 relative z-10"></i>
                     </div>
-                    <div class="flex-shrink-0">
-                        <a href="#apply" class="inline-flex items-center gap-2 px-5 py-2.5 border border-green-500/40 rounded-full text-sm text-green-400 hover:bg-green-500 hover:text-black transition-all group">
-                            Apply Now
-                            <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Job 4 -->
-            <div class="job-card bg-black/30 border border-green-900/40 rounded-2xl p-6 hover:border-green-500/60 transition-all cursor-pointer fade-up" style="transition-delay:0.15s">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-2 flex-wrap">
-                            <h3 class="text-xl font-bold text-white">Customer Support Team Lead</h3>
-                            <span class="key-point text-xs">Full-time</span>
-                            <span class="key-point text-xs">On-site</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-3">Lead a team of support specialists, ensure exceptional service delivery, and optimize support processes.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs text-green-400/70"><i class="fas fa-map-marker-alt mr-1"></i> Islamabad, Pakistan</span>
-                            <span class="text-xs text-green-400/70"><i class="fas fa-headset mr-1"></i> 3+ years leadership</span>
-                        </div>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <a href="#apply" class="inline-flex items-center gap-2 px-5 py-2.5 border border-green-500/40 rounded-full text-sm text-green-400 hover:bg-green-500 hover:text-black transition-all group">
-                            Apply Now
-                            <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Job 5 -->
-            <div class="job-card bg-black/30 border border-green-900/40 rounded-2xl p-6 hover:border-green-500/60 transition-all cursor-pointer fade-up" style="transition-delay:0.2s">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-2 flex-wrap">
-                            <h3 class="text-xl font-bold text-white">SEO & Content Strategist</h3>
-                            <span class="key-point text-xs">Full-time</span>
-                            <span class="key-point text-xs">Remote</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-3">Develop SEO strategies, create content roadmaps, and drive organic growth for client websites.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs text-green-400/70"><i class="fas fa-map-marker-alt mr-1"></i> Remote (Worldwide)</span>
-                            <span class="text-xs text-green-400/70"><i class="fab fa-searchengin mr-1"></i> SEO, Content Strategy</span>
-                        </div>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <a href="#apply" class="inline-flex items-center gap-2 px-5 py-2.5 border border-green-500/40 rounded-full text-sm text-green-400 hover:bg-green-500 hover:text-black transition-all group">
-                            Apply Now
-                            <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
-                        </a>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Unwavering Support</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mentorship, mental wellness, and a culture that celebrates every individual.</p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="text-center mt-12 fade-up">
-            <p class="text-gray-500 text-sm mb-4">Can't find what you're looking for?</p>
-            <a href="#contact" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition">
-                <span>Send us your resume anyway</span>
-                <i class="fas fa-arrow-right text-xs"></i>
-            </a>
+    <!-- Immersive Experience Grid -->
+    <div class="max-w-7xl mx-auto mb-24">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Left Column: Experience Highlights -->
+            <div class="space-y-6 fade-up">
+                <div class="inline-flex items-center gap-2 mb-4">
+                    <div class="w-8 h-px bg-green-500/60"></div>
+                    <span class="mono text-xs text-green-500 tracking-widest">The Outwerk Experience</span>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-6">More Than Just<br>A 9-to-5</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex gap-4 p-4 border-l-2 border-green-500/40 hover:border-green-500 transition-all duration-300 group">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-all">
+                            <i class="fas fa-champagne-glasses text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold mb-1">Monthly Celebrations</h4>
+                            <p class="text-gray-500 text-sm">Birthdays, milestones, and wins — we celebrate every moment together.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 p-4 border-l-2 border-green-500/40 hover:border-green-500 transition-all duration-300 group">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-all">
+                            <i class="fas fa-brain text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold mb-1">Learning Fridays</h4>
+                            <p class="text-gray-500 text-sm">Weekly workshops, guest speakers, and skill-building sessions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-4 p-4 border-l-2 border-green-500/40 hover:border-green-500 transition-all duration-300 group">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-all">
+                            <i class="fas fa-tree text-green-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-semibold mb-1">Offsite Retreats</h4>
+                            <p class="text-gray-500 text-sm">Annual retreats to recharge, reconnect, and rediscover inspiration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Interactive Stats Cards -->
+            <div class="grid grid-cols-2 gap-4 fade-up">
+                <div class="blur-card p-6 text-center group hover:transform hover:-translate-y-2 transition-all duration-500">
+                    <div class="text-4xl font-bold gradient-dark-green mb-2">87%</div>
+                    <div class="text-gray-400 text-sm mb-3">Would Recommend<br>Working Here</div>
+                    <div class="h-px w-12 bg-green-500/30 mx-auto"></div>
+                </div>
+                <div class="blur-card p-6 text-center group hover:transform hover:-translate-y-2 transition-all duration-500">
+                    <div class="text-4xl font-bold gradient-dark-green mb-2">2.5x</div>
+                    <div class="text-gray-400 text-sm mb-3">Faster Career<br>Growth</div>
+                    <div class="h-px w-12 bg-green-500/30 mx-auto"></div>
+                </div>
+                <div class="blur-card p-6 text-center group hover:transform hover:-translate-y-2 transition-all duration-500">
+                    <div class="text-4xl font-bold gradient-dark-green mb-2">32hrs</div>
+                    <div class="text-gray-400 text-sm mb-3">Annual Learning<br>Per Employee</div>
+                    <div class="h-px w-12 bg-green-500/30 mx-auto"></div>
+                </div>
+                <div class="blur-card p-6 text-center group hover:transform hover:-translate-y-2 transition-all duration-500">
+                    <div class="text-4xl font-bold gradient-dark-green mb-2">15+</div>
+                    <div class="text-gray-400 text-sm mb-3">Nationalities<br>Represented</div>
+                    <div class="h-px w-12 bg-green-500/30 mx-auto"></div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Team Voices (Minimalist) -->
+    <div class="max-w-5xl mx-auto mb-20">
+        <div class="relative">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-32 h-32 bg-green-500/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="relative grid md:grid-cols-2 gap-6">
+                <div class="blur-card p-6 border-l-2 border-l-green-500">
+                    <i class="fas fa-quote-left text-green-500/30 text-2xl mb-3 block"></i>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">"The freedom to innovate, the support to grow, and the trust to lead — that's what Outwerk gave me in my first year."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center">
+                            <span class="text-white text-xs font-bold">RJ</span>
+                        </div>
+                        <div>
+                            <div class="text-white text-sm font-semibold">Rayan Javed</div>
+                            <div class="mono text-[9px] text-green-500/70">Tech Lead</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blur-card p-6 border-l-2 border-l-green-500">
+                    <i class="fas fa-quote-left text-green-500/30 text-2xl mb-3 block"></i>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-4">"Coming from a corporate background, I was amazed by the culture here. Everyone truly cares about your success."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center">
+                            <span class="text-white text-xs font-bold">SN</span>
+                        </div>
+                        <div>
+                            <div class="text-white text-sm font-semibold">Sara Naeem</div>
+                            <div class="mono text-[9px] text-green-500/70">Operations Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action with Visual -->
+    <div class="max-w-4xl mx-auto text-center fade-up">
+        <div class="relative overflow-hidden rounded-none border border-green-800/30 p-10 md:p-12">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
+            
+            <div class="relative z-10">
+                <div class="inline-flex items-center gap-2 bg-green-500/10 px-4 py-2 mb-6">
+                    <i class="fas fa-star text-xs text-green-500"></i>
+                    <span class="mono text-[10px] text-green-400 tracking-wider">Join the movement</span>
+                    <i class="fas fa-star text-xs text-green-500"></i>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Write Your Story?</h3>
+                <p class="text-gray-400 mb-8 max-w-md mx-auto">We're building something extraordinary. Come be part of it.</p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="#openings" class="inline-flex items-center gap-2 px-8 py-3 bg-green-700 text-white font-semibold hover:bg-green-600 transition-all duration-300 group">
+                        View Open Positions
+                        <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#apply" class="inline-flex items-center gap-2 px-8 py-3 border border-green-500/40 text-green-400 hover:bg-green-500/10 transition-all duration-300">
+                        <i class="fas fa-envelope"></i>
+                        Send Application
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- APPLICATION CTA -->
     <section id="apply" class="section-px py-20 relative">
