@@ -1,350 +1,597 @@
-<header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500" role="banner">
-    <!-- Premium Dark Background with Depth -->
-    <div class="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-900 to-gray-950"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30"></div>
-    
-    <!-- Dynamic Edge Glow -->
-    <div class="absolute top-0 left-1/4 w-1/2 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent"></div>
-    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
-    
-    <!-- Bold Geometric Corner Accents -->
-    <div class="absolute top-0 right-0 w-40 h-40">
-        <div class="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 border-emerald-500/30"></div>
-        <div class="absolute top-2 right-2 w-16 h-16 border-t border-r border-emerald-500/20"></div>
-    </div>
-    <div class="absolute bottom-0 left-0 w-40 h-40">
-        <div class="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-emerald-500/30"></div>
-        <div class="absolute bottom-2 left-2 w-16 h-16 border-b border-l border-emerald-500/20"></div>
-    </div>
-    
-    <!-- Diagonal Lines Pattern -->
-    <div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: repeating-linear-gradient(45deg, rgba(16,185,129,0.2) 0px, rgba(16,185,129,0.2) 1px, transparent 1px, transparent 20px);"></div>
-    
-    <!-- Subtle Noise Texture -->
-    <div class="absolute inset-0 pointer-events-none opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noise)" opacity="0.4"/%3E%3C/svg%3E'); background-size: 120px;"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Outwerk — Navigation Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <nav class="max-w-7xl mx-auto px-6 lg:px-8 h-20 lg:h-24 flex items-center justify-between relative z-10">
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-4 group relative">
-            <div class="absolute -inset-2 bg-emerald-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
-            
-            <div class="relative">
-                <div class="absolute inset-0 bg-emerald-500/30 -skew-x-12 blur-md group-hover:blur-xl transition-all duration-500"></div>
-                <div class="relative w-14 h-14 lg:w-16 lg:h-16 overflow-hidden border-2 border-emerald-500/60 group-hover:border-emerald-400 transition-all duration-300 shadow-xl group-hover:shadow-emerald-500/20">
-                    <img src="images/logo-main.webp" alt="One Stop Solutions Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                </div>
-                <div class="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-emerald-400"></div>
-                <div class="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-emerald-400"></div>
-            </div>
-            
-            <div class="leading-tight">
-                <div class="font-mono text-white text-xl lg:text-2xl font-bold tracking-tighter group-hover:tracking-tight transition-all duration-300">
-                    OUTWERK
-                    <span class="text-emerald-400">.</span>
-                </div>
-                <div class="font-mono text-emerald-400/80 text-[11px] lg:text-xs tracking-[0.2em] uppercase mt-0.5">SOLUTIONS</div>
+        body {
+            background: #030a05;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Custom cursor for non-touch devices */
+        @media (hover: hover) and (pointer: fine) {
+            body { cursor: none; }
+            #cursor, #cursor-ring { display: block; }
+        }
+        @media (hover: none), (pointer: coarse) {
+            #cursor, #cursor-ring { display: none !important; }
+            body { cursor: auto; }
+        }
+
+        #cursor {
+            width: 10px;
+            height: 10px;
+            background: #2e7d32;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            display: none;
+        }
+        #cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(46, 125, 50, 0.6);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transition: width 0.3s, height 0.3s;
+            display: none;
+        }
+
+        .dark-green-dot {
+            width: 12px;
+            height: 12px;
+            background: #2e7d32;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px rgba(46, 125, 50, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .gradient-dark-green {
+            background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .mono {
+            font-family: 'Plus Jakarta Sans', monospace;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+        }
+
+        .pill-btn {
+            border: 1px solid rgba(46, 125, 50, 0.5);
+            border-radius: 0px;
+            padding: 12px 28px;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(20, 83, 45, 0.2);
+            backdrop-filter: blur(8px);
+            white-space: nowrap;
+        }
+        .pill-btn:hover {
+            background: #2e7d32;
+            color: #030a05;
+            border-color: #2e7d32;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.4);
+        }
+
+        #navbar {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px);
+            max-width: 1600px;
+            z-index: 100;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(16px);
+            background: rgba(3, 10, 5, 0.85);
+            border: 1px solid rgba(46, 125, 50, 0.4);
+            padding: 0 32px;
+            opacity: 1;
+            visibility: visible;
+            height: 80px;
+        }
+        
+        /* Navbar hide on scroll down, show on scroll up */
+        #navbar.hide {
+            transform: translateX(-50%) translateY(-120%);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        #navbar.scrolled {
+            top: 0;
+            background: rgba(3, 10, 5, 0.95);
+            border-color: rgba(46, 125, 50, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            height: 70px;
+        }
+
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(3, 10, 5, 0.98);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            backdrop-filter: blur(24px);
+        }
+        #mobile-menu.open { display: flex; }
+        #mobile-menu a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(32px, 8vw, 56px);
+            font-weight: 700;
+            color: rgba(238, 245, 232, 0.85);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            transition: all 0.2s;
+            position: relative;
+        }
+        #mobile-menu a:hover { 
+            color: #66bb6a;
+            transform: translateX(8px);
+        }
+        #mobile-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
+            transition: width 0.3s;
+        }
+        #mobile-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 101;
+            background: rgba(46, 125, 50, 0.1);
+            width: 52px;
+            height: 52px;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(46, 125, 50, 0.3);
+        }
+        .hamburger:hover {
+            background: rgba(46, 125, 50, 0.2);
+            border-color: rgba(46, 125, 50, 0.6);
+        }
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #eef5e8;
+            border-radius: 0px;
+            transition: all 0.3s;
+        }
+        .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); width: 28px; }
+        .hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(-10px); }
+        .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); width: 28px; }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .desktop-nav { display: none; }
+            .nav-get-in-touch { display: none; }
+            #navbar {
+                top: 16px;
+                width: calc(100% - 32px);
+                padding: 0 20px;
+                height: 70px;
+            }
+            #navbar.scrolled {
+                height: 64px;
+            }
+            .pill-btn {
+                padding: 10px 24px;
+                font-size: 12px;
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(238, 245, 232, 0.8);
+            transition: color 0.3s;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 10px 0;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover { color: #eef5e8; }
+        .nav-link:hover::after { width: 100%; }
+
+        .section-px {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        @media (max-width: 768px) {
+            .section-px {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+            }
+        }
+
+        /* Demo content styling */
+        .demo-content {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+        .demo-content h1 {
+            font-size: clamp(48px, 10vw, 100px);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .demo-content p {
+            color: #9ca3af;
+            margin-top: 1rem;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+        .active-page {
+            color: #66bb6a !important;
+        }
+        .active-page::after {
+            width: 100% !important;
+        }
+        
+        /* Logo hover effect */
+        .logo-wrapper {
+            transition: all 0.3s ease;
+        }
+        .logo-wrapper:hover .dark-green-dot {
+            transform: scale(1.5);
+            box-shadow: 0 0 12px rgba(46, 125, 50, 0.8);
+        }
+        
+        /* Enhanced logo text */
+        .logo-text {
+            font-size: 18px;
+            letter-spacing: 0.12em;
+        }
+        
+        .logo-est {
+            font-size: 9px;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Sharp edges - no border radius */
+        #navbar, .pill-btn, .hamburger, .hamburger span {
+            border-radius: 0px;
+        }
+        
+        /* Desktop nav link spacing */
+        @media (min-width: 1024px) {
+            .desktop-nav {
+                gap: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu">
+        <a href="index.html" class="mobile-nav-link" data-page="home">Home</a>
+        <a href="services.html" class="mobile-nav-link" data-page="services">Services</a>
+        <a href="careers.html" class="mobile-nav-link" data-page="careers">Careers</a>
+        <a href="contact.html" class="mobile-nav-link" data-page="contact">Contact</a>
+        <a href="contact.html" class="pill-btn text-white mt-6">Get in touch <span>↗</span></a>
+    </div>
+
+    <!-- Navigation Header - Enhanced Size -->
+    <nav id="navbar" class="flex items-center justify-between">
+        <!-- Logo Section - Enhanced -->
+        <a href="index.html" class="logo-wrapper flex items-center gap-4 group cursor-pointer">
+            <span class="dark-green-dot"></span>
+            <div class="flex flex-col">
+                <span class="mono logo-text tracking-widest uppercase text-white leading-tight font-semibold">Outwerk<span class="gradient-dark-green">.</span></span>
+                <span class="logo-est text-green-600/60 tracking-wider hidden sm:block">est. 2019</span>
             </div>
         </a>
 
-        <!-- Desktop Navigation -->
-        <ul class="hidden lg:flex items-center gap-1">
-            <li>
-                <a href="index.html" class="nav-link relative px-5 py-2.5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-mono font-medium tracking-wide group">
-                    <span class="relative z-10">HOME</span>
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                </a>
-            </li>
+        <!-- Desktop Navigation Links - Enhanced Spacing -->
+        <div class="desktop-nav hidden md:flex items-center gap-10 lg:gap-12">
+            <a href="index.html" class="nav-link" data-page="home">Home</a>
+            <a href="services.html" class="nav-link" data-page="services">Services</a>
+            <a href="careers.html" class="nav-link" data-page="careers">Careers</a>
+            <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+        </div>
 
-            <!-- Services Dropdown -->
-            <li class="relative group">
-                <button class="nav-link relative px-5 py-2.5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-mono font-medium tracking-wide flex items-center gap-2 group">
-                    <span>SERVICES</span>
-                    <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                </button>
-
-                <div class="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                    <div class="relative">
-                        <div class="absolute -top-2 left-8 w-4 h-4 bg-gray-900 rotate-45 border-l border-t border-emerald-500/40 shadow-lg"></div>
-                        <div class="bg-gray-900/95 backdrop-blur-sm border border-emerald-500/30 shadow-2xl min-w-[320px] overflow-hidden">
-                            <div class="px-5 pt-4 pb-2 border-b border-gray-800">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-6 h-px bg-emerald-500"></div>
-                                    <span class="text-[10px] text-emerald-500 font-mono tracking-wider">EXPLORE</span>
-                                    <div class="w-6 h-px bg-emerald-500"></div>
-                                </div>
-                            </div>
-                            <div class="py-2">
-                                <a href="services.html#bpo-services" class="flex items-center justify-between px-5 py-3 text-gray-300 hover:text-white hover:bg-emerald-500/5 transition-all group/item border-l-2 border-transparent hover:border-emerald-500">
-                                    <span class="text-sm font-mono">BPO Services</span>
-                                    <span class="text-xs text-emerald-500 opacity-0 group-hover/item:opacity-100 transition-all translate-x-0 group-hover/item:translate-x-1">→</span>
-                                </a>
-                                <a href="services.html#web-services" class="flex items-center justify-between px-5 py-3 text-gray-300 hover:text-white hover:bg-emerald-500/5 transition-all group/item border-l-2 border-transparent hover:border-emerald-500">
-                                    <span class="text-sm font-mono">Web Development</span>
-                                    <span class="text-xs text-emerald-500 opacity-0 group-hover/item:opacity-100 transition-all translate-x-0 group-hover/item:translate-x-1">→</span>
-                                </a>
-                                <a href="services.html#sales-lead-generation" class="flex items-center justify-between px-5 py-3 text-gray-300 hover:text-white hover:bg-emerald-500/5 transition-all group/item border-l-2 border-transparent hover:border-emerald-500">
-                                    <span class="text-sm font-mono">Lead Generation</span>
-                                    <span class="text-xs text-emerald-500 opacity-0 group-hover/item:opacity-100 transition-all translate-x-0 group-hover/item:translate-x-1">→</span>
-                                </a>
-                                <a href="services.html#digital-marketing" class="flex items-center justify-between px-5 py-3 text-gray-300 hover:text-white hover:bg-emerald-500/5 transition-all group/item border-l-2 border-transparent hover:border-emerald-500">
-                                    <span class="text-sm font-mono">Digital Marketing</span>
-                                    <span class="text-xs text-emerald-500 opacity-0 group-hover/item:opacity-100 transition-all translate-x-0 group-hover/item:translate-x-1">→</span>
-                                </a>
-                            </div>
-                            <div class="border-t border-gray-800 p-3 bg-gradient-to-r from-emerald-500/5 to-transparent">
-                                <a href="services.html" class="group flex items-center justify-center gap-2 text-sm font-mono text-emerald-500 hover:text-emerald-400 transition">
-                                    <span>VIEW ALL SERVICES</span>
-                                    <span class="text-xs group-hover:translate-x-1 transition-transform">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Careers Dropdown -->
-            <li class="relative group">
-                <button class="nav-link relative px-5 py-2.5 text-gray-300 hover:text-white transition-all duration-300 text-sm font-mono font-medium tracking-wide flex items-center gap-2 group">
-                    <span>CAREERS</span>
-                    <svg class="w-3 h-3 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-emerald-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                </button>
-
-                <div class="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                    <div class="relative">
-                        <div class="absolute -top-2 left-8 w-4 h-4 bg-gray-900 rotate-45 border-l border-t border-emerald-500/40 shadow-lg"></div>
-                        <div class="bg-gray-900/95 backdrop-blur-sm border border-emerald-500/30 shadow-2xl min-w-[280px] overflow-hidden">
-                            <div class="px-5 pt-4 pb-2 border-b border-gray-800">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-6 h-px bg-emerald-500"></div>
-                                    <span class="text-[10px] text-emerald-500 font-mono tracking-wider">JOIN US</span>
-                                    <div class="w-6 h-px bg-emerald-500"></div>
-                                </div>
-                            </div>
-                            <div class="py-2">
-                                <a href="career.html#open-positions" class="flex items-center justify-between px-5 py-3 text-gray-300 hover:text-white hover:bg-emerald-500/5 transition-all group/item border-l-2 border-transparent hover:border-emerald-500">
-                                    <span class="text-sm font-mono">Open Positions</span>
-                                    <span class="text-xs text-emerald-500 opacity-0 group-hover/item:opacity-100 transition-all translate-x-0 group-hover/item:translate-x-1">→</span>
-                                </a>
-                                <a href="career.html#why-join-us" class="flex items-center justify-between px-5 py-3 text-gray-300 hover:text-white hover:bg-emerald-500/5 transition-all group/item border-l-2 border-transparent hover:border-emerald-500">
-                                    <span class="text-sm font-mono">Why Join Us</span>
-                                    <span class="text-xs text-emerald-500 opacity-0 group-hover/item:opacity-100 transition-all translate-x-0 group-hover/item:translate-x-1">→</span>
-                                </a>
-                                <a href="career.html#life-at-outwerk" class="flex items-center justify-between px-5 py-3 text-gray-300 hover:text-white hover:bg-emerald-500/5 transition-all group/item border-l-2 border-transparent hover:border-emerald-500">
-                                    <span class="text-sm font-mono">Life at Outwerk</span>
-                                    <span class="text-xs text-emerald-500 opacity-0 group-hover/item:opacity-100 transition-all translate-x-0 group-hover/item:translate-x-1">→</span>
-                                </a>
-                            </div>
-                            <div class="border-t border-gray-800 p-3 bg-gradient-to-r from-emerald-500/10 to-transparent">
-                                <a href="career.html#apply" class="group flex items-center justify-center gap-2 text-sm font-mono text-white bg-emerald-600 hover:bg-emerald-700 transition-all py-2.5 px-4">
-                                    <span>APPLY NOW</span>
-                                    <span class="text-xs group-hover:translate-x-1 transition-transform">→</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Contact Button -->
-            <li class="ml-4">
-                <a href="contact.html" class="group relative px-7 py-2.5 flex items-center gap-2 overflow-hidden transition-all duration-300 text-white text-sm font-mono font-semibold tracking-wide">
-                    <span class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500"></span>
-                    <span class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-white/50 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                    <span class="relative z-10">CONTACT</span>
-                    <svg class="relative z-10 w-3 h-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                </a>
-            </li>
-        </ul>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="lg:hidden relative w-12 h-12 flex flex-col items-center justify-center gap-1.5 group" aria-label="Toggle mobile menu">
-            <div class="absolute inset-0 border-2 border-gray-700 group-hover:border-emerald-500 transition-all duration-300"></div>
-            <div class="absolute inset-1 border border-gray-800 group-hover:border-emerald-500/30 transition-all duration-300"></div>
-            <span class="w-5 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-6"></span>
-            <span class="w-6 h-0.5 bg-white rounded-full transition-all duration-300"></span>
-            <span class="w-4 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-5"></span>
-        </button>
-    </nav>
-
-    <!-- Mobile Menu Panel -->
-    <div id="mobileMenu" class="fixed lg:hidden inset-0 bg-gray-950 z-40 transform translate-x-full transition-transform duration-500 ease-out">
-        <div class="flex flex-col h-full">
-            <div class="flex items-center justify-between px-6 pt-8 pb-6 border-b border-gray-800">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 overflow-hidden border-2 border-emerald-500/50 shadow-xl">
-                        <img src="images/logo-main.webp" alt="One Stop Solutions Logo" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <div class="text-white font-mono font-bold text-lg tracking-tighter">OUTWERK</div>
-                        <div class="text-emerald-500 text-[10px] tracking-[0.2em] uppercase mt-0.5">SOLUTIONS</div>
-                    </div>
-                </div>
-                <button id="closeMobileMenu" class="w-12 h-12 flex items-center justify-center border-2 border-gray-700 hover:border-emerald-500 transition-all duration-300">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <div class="flex-1 overflow-y-auto py-8 px-6">
-                <div class="space-y-2">
-                    <a href="index.html" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">HOME</a>
-
-                    <div>
-                        <button id="mobileServicesBtn" class="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">
-                            SERVICES
-                            <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div id="mobileServicesMenu" class="hidden ml-8 mt-2 space-y-1">
-                            <a href="services.html#bpo-services" class="block px-4 py-2.5 text-sm text-gray-500 hover:text-white hover:bg-gray-900 transition-all font-mono border-l border-gray-800 hover:border-emerald-500">BPO Services</a>
-                            <a href="services.html#web-services" class="block px-4 py-2.5 text-sm text-gray-500 hover:text-white hover:bg-gray-900 transition-all font-mono border-l border-gray-800 hover:border-emerald-500">Web Development</a>
-                            <a href="services.html#sales-lead-generation" class="block px-4 py-2.5 text-sm text-gray-500 hover:text-white hover:bg-gray-900 transition-all font-mono border-l border-gray-800 hover:border-emerald-500">Lead Generation</a>
-                            <a href="services.html#digital-marketing" class="block px-4 py-2.5 text-sm text-gray-500 hover:text-white hover:bg-gray-900 transition-all font-mono border-l border-gray-800 hover:border-emerald-500">Digital Marketing</a>
-                            <a href="services.html" class="block px-4 py-2.5 text-sm text-emerald-500 hover:text-emerald-400 transition-all font-mono mt-2">VIEW ALL →</a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <button id="mobileCareersBtn" class="flex items-center justify-between w-full px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">
-                            CAREERS
-                            <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div id="mobileCareersMenu" class="hidden ml-8 mt-2 space-y-1">
-                            <a href="career.html#open-positions" class="block px-4 py-2.5 text-sm text-gray-500 hover:text-white hover:bg-gray-900 transition-all font-mono border-l border-gray-800 hover:border-emerald-500">Open Positions</a>
-                            <a href="career.html#why-join-us" class="block px-4 py-2.5 text-sm text-gray-500 hover:text-white hover:bg-gray-900 transition-all font-mono border-l border-gray-800 hover:border-emerald-500">Why Join Us</a>
-                            <a href="career.html#life-at-outwerk" class="block px-4 py-2.5 text-sm text-gray-500 hover:text-white hover:bg-gray-900 transition-all font-mono border-l border-gray-800 hover:border-emerald-500">Life at Outwerk</a>
-                        </div>
-                    </div>
-
-                    <a href="contact.html" class="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-900 transition-all border-l-2 border-transparent hover:border-emerald-500 font-mono text-base">CONTACT</a>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 px-6 py-6 space-y-4">
-                <a href="career.html#apply" class="block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-mono font-semibold py-3.5 transition-all border border-emerald-500 text-base">APPLY NOW →</a>
-                <div class="grid grid-cols-2 gap-3">
-                    <a href="tel:+923001234567" class="flex items-center justify-center border-2 border-gray-700 hover:border-emerald-500 hover:bg-gray-900 py-3 text-gray-400 hover:text-white text-sm font-mono transition-all">CALL US</a>
-                    <a href="mailto:info@onestopsolutions.com" class="flex items-center justify-center border-2 border-gray-700 hover:border-emerald-500 hover:bg-gray-900 py-3 text-gray-400 hover:text-white text-sm font-mono transition-all">EMAIL US</a>
-                </div>
+        <!-- CTA Button + Hamburger - Enhanced -->
+        <div class="flex items-center gap-4">
+            <a href="contact.html" class="nav-get-in-touch pill-btn text-white hidden md:inline-flex">
+                Get in touch <span>↗</span>
+            </a>
+            <div class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
             </div>
         </div>
-    </div>
-</header>
+    </nav>
 
-<style>
-    #navbar {
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    #navbar.nav-hidden {
-        transform: translateY(-100%);
-    }
-    
-    #navbar.scrolled {
-        background: rgba(17, 24, 39, 0.98);
-        backdrop-filter: blur(12px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-    }
-    
-    body.menu-open {
-        overflow: hidden;
-    }
-    
-    .nav-link {
-        transition: all 0.3s ease;
-    }
-    
-    #navbar * {
-        box-sizing: border-box;
-    }
-</style>
-
-<script>
-    let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-    let ticking = false;
-
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            requestAnimationFrame(function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    navbar.classList.add('nav-hidden');
-                } else {
-                    navbar.classList.remove('nav-hidden');
-                }
-                
-                lastScrollTop = scrollTop;
-                ticking = false;
+    <script>
+        // ========== CUSTOM CURSOR ==========
+        const cursor = document.getElementById('cursor');
+        const ring = document.getElementById('cursor-ring');
+        const isPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        
+        if (isPointer) {
+            cursor.style.display = 'block';
+            ring.style.display = 'block';
+            let mx = -100, my = -100, rx = -100, ry = -100;
+            
+            document.addEventListener('mousemove', e => {
+                mx = e.clientX;
+                my = e.clientY;
+                cursor.style.left = (mx - 5) + 'px';
+                cursor.style.top = (my - 5) + 'px';
             });
-            ticking = true;
+            
+            function animateRing() {
+                rx += (mx - rx - 18) * 0.12;
+                ry += (my - ry - 18) * 0.12;
+                ring.style.left = rx + 'px';
+                ring.style.top = ry + 'px';
+                requestAnimationFrame(animateRing);
+            }
+            animateRing();
+            
+            document.querySelectorAll('a, button, .hamburger').forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    ring.style.width = '60px';
+                    ring.style.height = '60px';
+                    ring.style.borderColor = 'rgba(46,125,50,0.8)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    ring.style.width = '40px';
+                    ring.style.height = '40px';
+                    ring.style.borderColor = 'rgba(46,125,50,0.6)';
+                });
+            });
         }
-    });
 
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMobileMenu = document.getElementById('closeMobileMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileServicesBtn = document.getElementById('mobileServicesBtn');
-    const mobileServicesMenu = document.getElementById('mobileServicesMenu');
-    const mobileCareersBtn = document.getElementById('mobileCareersBtn');
-    const mobileCareersMenu = document.getElementById('mobileCareersMenu');
-    let servicesOpen = false;
-    let careersOpen = false;
-
-    function openMobileMenu() {
-        mobileMenu.classList.remove('translate-x-full');
-        mobileMenu.classList.add('translate-x-0');
-        document.body.classList.add('menu-open');
-    }
-
-    function closeMobileMenuFunc() {
-        mobileMenu.classList.add('translate-x-full');
-        mobileMenu.classList.remove('translate-x-0');
-        document.body.classList.remove('menu-open');
-    }
-
-    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
-    if (closeMobileMenu) closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
-
-    if (mobileServicesBtn) {
-        mobileServicesBtn.addEventListener('click', () => {
-            servicesOpen = !servicesOpen;
-            mobileServicesMenu.classList.toggle('hidden');
-            const icon = mobileServicesBtn.querySelector('svg');
-            if (icon) icon.style.transform = servicesOpen ? 'rotate(180deg)' : 'rotate(0)';
+        // ========== MOBILE MENU ==========
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
         });
-    }
-
-    if (mobileCareersBtn) {
-        mobileCareersBtn.addEventListener('click', () => {
-            careersOpen = !careersOpen;
-            mobileCareersMenu.classList.toggle('hidden');
-            const icon = mobileCareersBtn.querySelector('svg');
-            if (icon) icon.style.transform = careersOpen ? 'rotate(180deg)' : 'rotate(0)';
+        
+        document.querySelectorAll('.mobile-nav-link, #mobile-menu .pill-btn').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
         });
-    }
 
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-        link.addEventListener('click', closeMobileMenuFunc);
-    });
-</script>
+        // ========== NAVBAR SCROLL HIDE / SHOW ==========
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+        let scrollTimeout;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add scrolled class for styling
+            if (scrollTop > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Hide navbar on scroll down, show on scroll up
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                // Scrolling down - hide navbar
+                navbar.classList.add('hide');
+            } else if (scrollTop < lastScrollTop) {
+                // Scrolling up - show navbar
+                navbar.classList.remove('hide');
+            }
+            
+            // Also show navbar if at the top
+            if (scrollTop === 0) {
+                navbar.classList.remove('hide');
+            }
+            
+            lastScrollTop = scrollTop;
+            
+            // Clear previous timeout
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            
+            // Optional: Show navbar after scrolling stops
+            scrollTimeout = setTimeout(() => {
+                if (scrollTop > 100) {
+                    navbar.classList.remove('hide');
+                    setTimeout(() => {
+                        if (window.pageYOffset === scrollTop) {
+                            navbar.classList.add('hide');
+                        }
+                    }, 2000);
+                }
+            }, 3000);
+        });
+
+        // ========== ACTIVE PAGE HIGHLIGHTING ==========
+        function setActivePage(pageId) {
+            document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
+                link.classList.remove('active-page');
+            });
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.classList.remove('active-page');
+            });
+            
+            const desktopLink = document.querySelector(`.desktop-nav .nav-link[data-page="${pageId}"]`);
+            if (desktopLink) desktopLink.classList.add('active-page');
+            
+            const mobileLink = document.querySelector(`.mobile-nav-link[data-page="${pageId}"]`);
+            if (mobileLink) mobileLink.classList.add('active-page');
+        }
+        
+        function detectCurrentPage() {
+            const path = window.location.pathname;
+            const page = path.split('/').pop().split('.')[0] || 'index';
+            
+            if (page === 'index' || page === '') {
+                setActivePage('home');
+            } else if (page === 'services') {
+                setActivePage('services');
+            } else if (page === 'careers') {
+                setActivePage('careers');
+            } else if (page === 'contact') {
+                setActivePage('contact');
+            } else {
+                setActivePage('home');
+            }
+        }
+        
+        const demoHome = document.getElementById('demo-home');
+        const demoServices = document.getElementById('demo-services');
+        const demoCareers = document.getElementById('demo-careers');
+        const demoContact = document.getElementById('demo-contact');
+        const demoContent = document.getElementById('page-content');
+        
+        if (demoHome) {
+            demoHome.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('home');
+                demoContent.innerHTML = `<h1>Home Page</h1><p class="text-gray-500 max-w-md mx-auto mt-4">Welcome to Outwerk — Premium BPO & Digital Services</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+        }
+        
+        if (demoServices) {
+            demoServices.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('services');
+                demoContent.innerHTML = `<h1>Our Services</h1><p class="text-gray-500 max-w-md mx-auto mt-4">BPO, Call Center, Web Development, Digital Marketing & More</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+        }
+        
+        if (demoCareers) {
+            demoCareers.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('careers');
+                demoContent.innerHTML = `<h1>Careers at Outwerk</h1><p class="text-gray-500 max-w-md mx-auto mt-4">Join our team — Where talent thrives</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+        }
+        
+        if (demoContact) {
+            demoContact.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('contact');
+                demoContent.innerHTML = `<h1>Contact Us</h1><p class="text-gray-500 max-w-md mx-auto mt-4">Get in touch — Let's start a conversation</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+        }
+        
+        function reattachDemoListeners() {
+            document.getElementById('demo-home')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('home');
+                document.getElementById('page-content').innerHTML = `<h1>Home Page</h1><p class="text-gray-500 max-w-md mx-auto mt-4">Welcome to Outwerk — Premium BPO & Digital Services</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+            document.getElementById('demo-services')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('services');
+                document.getElementById('page-content').innerHTML = `<h1>Our Services</h1><p class="text-gray-500 max-w-md mx-auto mt-4">BPO, Call Center, Web Development, Digital Marketing & More</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+            document.getElementById('demo-careers')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('careers');
+                document.getElementById('page-content').innerHTML = `<h1>Careers at Outwerk</h1><p class="text-gray-500 max-w-md mx-auto mt-4">Join our team — Where talent thrives</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+            document.getElementById('demo-contact')?.addEventListener('click', (e) => {
+                e.preventDefault();
+                setActivePage('contact');
+                document.getElementById('page-content').innerHTML = `<h1>Contact Us</h1><p class="text-gray-500 max-w-md mx-auto mt-4">Get in touch — Let's start a conversation</p><div class="flex gap-4 mt-8 flex-wrap justify-center"><a href="#" class="pill-btn text-white" id="demo-home">Home</a><a href="#" class="pill-btn text-white" id="demo-services">Services</a><a href="#" class="pill-btn text-white" id="demo-careers">Careers</a><a href="#" class="pill-btn text-white" id="demo-contact">Contact</a></div><p class="text-xs text-gray-600 mt-8">Click any button to see active page state in header</p>`;
+                reattachDemoListeners();
+            });
+        }
+        
+        detectCurrentPage();
+        
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -810,63 +810,108 @@
         <div class="mt-12 text-center fade-up"><a href="#contact" class="inline-flex items-center gap-3 px-7 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm">GET A FREE CONSULTATION →</a></div>
     </section>
 
-    <!-- ABOUT (kept as original) -->
-    <section id="about" class="section-px section-py px-8 md:px-16 py-24 relative">
-        <div class="glow-dark-green" style="top:20%; left:-150px; opacity:0.5;"></div>
-        <div class="about-grid grid md:grid-cols-2 gap-16 md:gap-20 items-center">
-            <div class="fade-up">
-                <div class="mono text-xs text-green-500 tracking-widest uppercase mb-6">— Who We Are</div>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8" style="letter-spacing:-0.02em; font-family:'Space Grotesk',sans-serif;">Built for businesses<br />that refuse to<br /><span class="gradient-dark-green">compromise.</span></h2>
-                <p class="text-zinc-400 leading-relaxed mb-5 max-w-lg text-sm md:text-base">Outwerk Solution is a premium BPO firm headquartered in Karachi. We partner with forward-thinking companies to deliver outsourcing solutions that don't just cut costs — they elevate performance.</p>
-                <p class="text-zinc-500 leading-relaxed mb-8 text-sm max-w-lg">Our teams are trained, certified, and embedded in your workflows. We don't believe in generic call centers. We build specialized units that operate as true extensions of your brand.</p>
-                <div class="flex flex-wrap items-center gap-4"><a href="#contact" class="pill-btn text-white">Work with us ↗</a><span class="mono text-xs text-green-700/60 tracking-widest">ISO 9001 Certified</span></div>
-                <div class="grid grid-cols-3 gap-4 md:gap-6 mt-12">
-                    <div>
-                        <div class="text-xl md:text-2xl font-bold gradient-dark-green">250+</div>
-                        <div class="text-xs text-zinc-500 mt-1">Clients</div>
-                    </div>
-                    <div>
-                        <div class="text-xl md:text-2xl font-bold gradient-dark-green">12</div>
-                        <div class="text-xs text-zinc-500 mt-1">Countries</div>
-                    </div>
-                    <div>
-                        <div class="text-xl md:text-2xl font-bold gradient-dark-green">98%</div>
-                        <div class="text-xs text-zinc-500 mt-1">Retention</div>
-                    </div>
-                </div>
+ <!-- ABOUT SECTION - With Working Images -->
+<section id="about" class="section-px section-py px-8 md:px-16 py-24 relative overflow-hidden">
+    <div class="glow-dark-green absolute top-20 left-0 w-[600px] h-[600px] opacity-30 pointer-events-none"></div>
+    <div class="glow-forest absolute bottom-0 right-0 w-[500px] h-[500px] opacity-25 pointer-events-none"></div>
+    
+    <div class="about-grid grid md:grid-cols-2 gap-16 md:gap-20 items-center">
+        <!-- Left Column - Content -->
+        <div class="fade-up">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="dark-green-dot"></span>
+                <span class="mono text-xs text-green-500 tracking-widest uppercase">Who We Are</span>
+                <div class="w-12 h-px bg-green-500/40"></div>
             </div>
-            <div class="fade-up relative" style="transition-delay:0.15s">
-                <div class="grid grid-cols-2 grid-rows-2 gap-4 rounded-2xl overflow-hidden border border-green-900/30 blur-card">
-                    <div class="relative overflow-hidden rounded-xl"><img src="https://images.unsplash.com/photo-1581091012184-03b1a77f2ad0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDF8fGJwb3xlbnwwfHx8fDE2OTk2ODk5MzE&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="BPO Team working">
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-xl"><img src="https://images.unsplash.com/photo-1590608897129-79c7e8c3f7d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fGNhbGwlMjBjZW50ZXJ8ZW58MHx8fHwxNjk5NjkwMDAy&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="Call center">
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-xl"><img src="https://images.unsplash.com/photo-1581091215368-16863fcf3181?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJwb3xlbGllcyUyMHdvcmt8ZW58MHx8fHwxNjk5NjkwMDYy&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="Team collaborating">
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/40 to-green-900/50"></div>
-                    </div>
-                    <div class="relative overflow-hidden rounded-xl flex flex-col justify-center items-center"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGJwb3xlbG9nb3xlbnwwfHx8fDE2OTk2OTA0MjI&ixlib=rb-4.0.3&q=80&w=400" class="w-full h-full object-cover" alt="Company Branding">
-                        <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-green-900/40"></div>
-                        <div class="relative z-10 text-center">
-                            <div class="text-3xl md:text-4xl font-bold text-white/80" style="font-family:'Space Grotesk';">OUTWERK</div>
-                            <div class="mono text-xs tracking-widest text-green-400 mt-2">KARACHI, PAKISTAN</div>
-                            <div class="w-10 h-px bg-green-500/60 mx-auto my-2"></div>
-                            <div class="mono text-[10px] tracking-widest text-green-400/70">EST. 2019</div>
-                        </div>
-                    </div>
+            <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8" style="letter-spacing:-0.02em; font-family:'Space Grotesk',sans-serif;">
+                Built for businesses<br />that refuse to<br /><span class="gradient-dark-green">compromise.</span>
+            </h2>
+            <p class="text-zinc-400 leading-relaxed mb-5 max-w-lg text-sm md:text-base">
+                Outwerk Solution is a premium BPO firm headquartered in Karachi. We partner with forward-thinking companies to deliver outsourcing solutions that don't just cut costs — they elevate performance.
+            </p>
+            <p class="text-zinc-500 leading-relaxed mb-8 text-sm max-w-lg">
+                Our teams are trained, certified, and embedded in your workflows. We don't believe in generic call centers. We build specialized units that operate as true extensions of your brand.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#contact" class="pill-btn text-white">Work with us ↗</a>
+                <span class="mono text-xs text-green-700/60 tracking-widest">ISO 9001 Certified</span>
+            </div>
+            <div class="grid grid-cols-3 gap-4 md:gap-6 mt-12">
+                <div>
+                    <div class="text-xl md:text-2xl font-bold gradient-dark-green">250+</div>
+                    <div class="mono text-[10px] text-zinc-500 mt-1 tracking-wider">Clients</div>
                 </div>
-                <div class="floating-card absolute -bottom-8 -left-8 p-4 rounded-xl blur-card border border-green-900/30 w-36">
-                    <div class="text-lg font-bold text-green-400">24/7</div>
-                    <div class="text-xs text-zinc-500 mt-1">Support Coverage</div>
+                <div>
+                    <div class="text-xl md:text-2xl font-bold gradient-dark-green">12</div>
+                    <div class="mono text-[10px] text-zinc-500 mt-1 tracking-wider">Countries</div>
                 </div>
-                <div class="floating-card absolute -top-8 -right-8 p-4 rounded-xl blur-card border border-green-900/30 w-40">
-                    <div class="text-lg font-bold text-green-400">40%</div>
-                    <div class="text-xs text-zinc-500 mt-1">Cost Reduction</div>
+                <div>
+                    <div class="text-xl md:text-2xl font-bold gradient-dark-green">98%</div>
+                    <div class="mono text-[10px] text-zinc-500 mt-1 tracking-wider">Retention</div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Right Column - Image Grid with Reliable Images -->
+        <div class="fade-up relative" style="transition-delay:0.15s">
+            <div class="grid grid-cols-2 grid-rows-2 gap-4 rounded-none overflow-hidden border border-green-800/30 bg-black/30 backdrop-blur-sm p-3">
+                <!-- Image 1: Team working (Placeholder with gradient) -->
+                <div class="relative overflow-hidden aspect-square bg-gradient-to-br from-green-900/40 to-emerald-900/30 flex items-center justify-center border border-green-800/30 group hover:border-green-600/50 transition-all duration-300">
+                    <div class="text-center p-4">
+                        <svg class="w-10 h-10 text-green-500/50 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        <span class="text-green-400/70 text-xs font-mono">Team Collaboration</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/50 to-green-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <!-- Image 2: Call Center -->
+                <div class="relative overflow-hidden aspect-square bg-gradient-to-br from-green-900/40 to-emerald-900/30 flex items-center justify-center border border-green-800/30 group hover:border-green-600/50 transition-all duration-300">
+                    <div class="text-center p-4">
+                        <svg class="w-10 h-10 text-green-500/50 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <span class="text-green-400/70 text-xs font-mono">24/7 Support</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/50 to-green-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <!-- Image 3: Workflow -->
+                <div class="relative overflow-hidden aspect-square bg-gradient-to-br from-green-900/40 to-emerald-900/30 flex items-center justify-center border border-green-800/30 group hover:border-green-600/50 transition-all duration-300">
+                    <div class="text-center p-4">
+                        <svg class="w-10 h-10 text-green-500/50 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9h14M5 15h14M12 3v18m-7-8h2m10 0h2M7 5h10M7 19h10"></path>
+                        </svg>
+                        <span class="text-green-400/70 text-xs font-mono">Agile Workflow</span>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/50 to-green-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                <!-- Image 4: Branding with Text -->
+                <div class="relative overflow-hidden flex flex-col justify-center items-center bg-gradient-to-br from-green-900/50 to-emerald-900/40 border border-green-800/30 group hover:border-green-600/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/30 to-green-900/40"></div>
+                    <div class="relative z-10 text-center p-4">
+                        <div class="text-2xl md:text-3xl font-bold text-white/90 mb-2" style="font-family:'Space Grotesk';">OUTWERK</div>
+                        <div class="mono text-[10px] tracking-widest text-green-400">KARACHI, PAKISTAN</div>
+                        <div class="w-8 h-px bg-green-500/60 mx-auto my-2"></div>
+                        <div class="mono text-[9px] tracking-widest text-green-400/70">EST. 2019</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Floating Cards -->
+            <div class="floating-card absolute -bottom-6 -left-6 p-4 rounded-none blur-card border border-green-800/30 bg-black/60 backdrop-blur-md w-36">
+                <div class="text-xl font-bold text-green-400">24/7</div>
+                <div class="mono text-[10px] text-zinc-400 mt-1 tracking-wider">Support Coverage</div>
+            </div>
+            <div class="floating-card absolute -top-6 -right-6 p-4 rounded-none blur-card border border-green-800/30 bg-black/60 backdrop-blur-md w-40">
+                <div class="text-xl font-bold text-green-400">40%</div>
+                <div class="mono text-[10px] text-zinc-400 mt-1 tracking-wider">Cost Reduction</div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- PROCESS SECTION -->
     <section id="work" class="section-px section-py px-8 md:px-16 py-20 border-t border-green-900/30">

@@ -661,9 +661,6 @@
         <span class="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">SERVICES</span>
     </h2>
 </div>
-
-        
-
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
             <!-- Left Column - Core Capabilities -->
             <div class="reveal-left">

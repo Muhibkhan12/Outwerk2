@@ -730,7 +730,7 @@
                 Inbound Call Center &nbsp; ✦ &nbsp;
                 Outbound Calls &nbsp; ✦ &nbsp;
                 Customer Support &nbsp; ✦ &nbsp;
-                Technical Helpdesk &nbsp; ✦ &nbsp;
+                IT SUPPORT &nbsp; ✦ &nbsp;
                 Lead Generation &nbsp; ✦ &nbsp;
                 Web Development &nbsp; ✦ &nbsp;
                 SEO & SEM &nbsp; ✦ &nbsp;
@@ -739,7 +739,7 @@
                 Inbound Call Center &nbsp; ✦ &nbsp;
                 Outbound Calls &nbsp; ✦ &nbsp;
                 Customer Support &nbsp; ✦ &nbsp;
-                Technical Helpdesk &nbsp; ✦ &nbsp;
+                IT SUPPORT &nbsp; ✦ &nbsp;
                 Lead Generation &nbsp; ✦ &nbsp;
                 Web Development &nbsp; ✦ &nbsp;
                 SEO & SEM &nbsp; ✦ &nbsp;
@@ -898,7 +898,7 @@
                 </div>
             </div>
 
-            <!-- Service 5: TECHNICAL HELPDESK -->
+            <!-- Service 5: IT SUPPORT -->
             <div class="service-row fade-up cursor-pointer">
                 <div class="grid grid-cols-12 items-start gap-2 md:gap-4 py-4">
                     <div class="col-span-2 md:col-span-1">
@@ -907,7 +907,7 @@
                     <div class="col-span-8 md:col-span-9 pl-1 md:pl-8">
                         <div class="flex flex-wrap items-center gap-2 md:gap-4 mb-1">
                             <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">
-                                TECHNICAL HELPDESK
+                                IT SUPPORT
                             </h3>
                             <span class="key-point">IT Support</span>
                         </div>

@@ -430,63 +430,59 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="section-px min-h-[85vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden relative">
-        <div class="glow-dark-green" style="top:-100px; right:-100px;"></div>
-        <div class="glow-forest" style="bottom:100px; left:-80px;"></div>
+<!-- HERO SECTION -->
+<section class="section-px min-h-[85vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden relative">
+    <div class="glow-dark-green" style="top:-100px; right:-100px;"></div>
+    <div class="glow-forest" style="bottom:100px; left:-80px;"></div>
 
-        <div class="flex items-center gap-4 mb-6 fade-up">
-            <span class="mono text-xs tracking-widest text-green-500 uppercase">— Join the movement</span>
-            <div class="thin-line" style="width:60px;"></div>
-            <span class="mono text-xs tracking-widest text-zinc-500 uppercase">We're Hiring</span>
+    <div class="flex items-center gap-4 mb-6 fade-up">
+        <span class="mono text-xs tracking-widest text-green-500 uppercase">— Join the movement</span>
+        <div class="thin-line" style="width:60px;"></div>
+        <span class="mono text-xs tracking-widest text-zinc-500 uppercase">We're Hiring</span>
+    </div>
+
+    <div class="hero-text text-white leading-none mb-6">
+        <div class="fade-up" style="transition-delay:0.05s">START YOUR</div>
+        <div class="fade-up" style="transition-delay:0.1s">
+            <span class="scribble-wrap">
+                CAREER
+                <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="100" cy="25" rx="95" ry="20" class="scribble-path" />
+                </svg>
+            </span>
         </div>
+    </div>
 
-        <div class="hero-text text-white leading-none mb-6">
-            <div class="fade-up" style="transition-delay:0.05s">BUILD YOUR</div>
-            <div class="fade-up" style="transition-delay:0.1s">CAREER WITH
-                <span class="scribble-wrap">
-                    OUTWERK
-                    <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="100" cy="25" rx="95" ry="20" class="scribble-path" />
-                    </svg>
-                </span>
-            </div>
-            <div class="fade-up flex flex-wrap items-baseline gap-x-4" style="transition-delay:0.15s">
-                <span>WHERE TALENT</span>
-                <span class="gradient-dark-green">THRIVES</span>
-            </div>
+    <div class="hero-sub-row flex flex-col md:flex-row md:items-end justify-between gap-6 mt-6 fade-up" style="transition-delay:0.2s">
+        <p class="text-zinc-400 text-sm md:text-base max-w-md leading-relaxed">
+            Join a team of innovators, problem-solvers, and growth enthusiasts. We're looking for passionate individuals ready to make an impact.
+        </p>
+        <a href="#openings" class="pill-btn text-white self-start">
+            Explore Opportunities ↗
+        </a>
+    </div>
+
+    <div class="thin-line mt-12 fade-up" style="transition-delay:0.25s"></div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 fade-up" style="transition-delay:0.3s">
+        <div>
+            <div class="stat-num" data-target="150">0</div>
+            <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">TEAM MEMBERS</div>
         </div>
-
-        <div class="hero-sub-row flex flex-col md:flex-row md:items-end justify-between gap-6 mt-6 fade-up" style="transition-delay:0.2s">
-            <p class="text-zinc-400 text-sm md:text-base max-w-md leading-relaxed">
-                Join a team of innovators, problem-solvers, and growth enthusiasts. We're looking for passionate individuals ready to make an impact.
-            </p>
-            <a href="#openings" class="pill-btn text-white self-start">
-                Explore Opportunities ↗
-            </a>
+        <div>
+            <div class="stat-num" data-target="12">0</div>
+            <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">NATIONALITIES</div>
         </div>
-
-        <div class="thin-line mt-12 fade-up" style="transition-delay:0.25s"></div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 fade-up" style="transition-delay:0.3s">
-            <div>
-                <div class="stat-num" data-target="150">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">TEAM MEMBERS</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="12">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">NATIONALITIES</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="95">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">EMPLOYEE SATISFACTION</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="40">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">OPEN POSITIONS</div>
-            </div>
+        <div>
+            <div class="stat-num" data-target="95">0</div>
+            <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">EMPLOYEE SATISFACTION</div>
         </div>
-    </section>
+        <div>
+            <div class="stat-num" data-target="40">0</div>
+            <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">OPEN POSITIONS</div>
+        </div>
+    </div>
+</section>
 
     <!-- WHY JOIN US - PERKS SECTION -->
     <section class="section-px py-20 relative">
