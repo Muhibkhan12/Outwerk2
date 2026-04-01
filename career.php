@@ -18,6 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     
     <style>
+        /* Base Styles - Only for main content, not affecting header */
         * {
             margin: 0;
             padding: 0;
@@ -28,6 +29,11 @@
             font-family: 'Inter', sans-serif;
             background: #ffffff;
             overflow-x: hidden;
+        }
+        
+        /* Ensure proper spacing when header is included */
+        main {
+            padding-top: 80px; /* Space for fixed header */
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -97,16 +103,6 @@
             background: #059669;
         }
         
-        /* Navbar Styles */
-        #navbar {
-            transition: all 0.3s ease;
-        }
-        #navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-        
         /* Card Hover Effects */
         .value-card {
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
@@ -147,72 +143,76 @@
             border-color: #10b981;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
+        
+        /* Ensure header doesn't conflict with page content */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        
+        /* Prevent header styles from affecting main content */
+        #navbar * {
+            box-sizing: border-box;
+        }
+        
+        /* Hero section should start after header */
+        .hero-section {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        
+        /* Fix for any overlapping issues */
+        section {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center">
-                    <span class="text-white font-bold text-xl">O</span>
-                </div>
-                <span class="font-bold text-xl text-gray-800">One Stop<span class="text-emerald-500">Solutions</span></span>
-            </div>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#home" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Home</a>
-                <a href="#values" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Values</a>
-                <a href="#culture" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Culture</a>
-                <a href="#openings" class="text-gray-600 hover:text-emerald-500 transition-colors font-medium">Openings</a>
-                <a href="#apply" class="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">Apply</a>
-            </div>
-            <a href="#apply" class="bg-emerald-500 text-white px-5 py-2 rounded-full font-semibold hover:bg-emerald-600 transition-all shadow-md hover:shadow-lg">
-                <i class="fas fa-paper-plane mr-2"></i>Apply Now
-            </a>
-        </div>
-    </nav>
+<?php @include("header.php"); ?>
 
+<!-- Main content wrapper to handle spacing -->
+<main style="padding-top: 80px;">
     <!-- Hero Section - Career Focus -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-emerald-50/30">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-200/20 rounded-full blur-3xl rotate-slow"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-300/20 rounded-full blur-3xl rotate-slow" style="animation-direction: reverse;"></div>
-            <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-emerald-400/10 rounded-full blur-2xl"></div>
-            <div class="absolute top-20 left-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
-            <div class="absolute top-40 right-1/3 w-3 h-3 bg-emerald-500 rounded-full animate-pulse"></div>
-            <div class="absolute bottom-32 left-1/3 w-2 h-2 bg-emerald-300 rounded-full animate-bounce"></div>
-            <div class="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" style="animation-delay: 1s;"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 bg-emerald-100 rounded-full px-5 py-2.5 mb-8" data-aos="fade-up">
-                <span class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                <span class="text-sm font-medium text-emerald-700 tracking-wide">JOIN OUR TEAM</span>
+    <section class="hero-section">
+        <div class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+            <!-- Subtle pattern overlay -->
+            <div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2310b981" fill-opacity="0.3"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); background-repeat: repeat;"></div>
+            
+            <!-- Background Glow Orbs - Dark theme -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute w-[600px] h-[500px] -top-48 -left-32 rounded-full bg-emerald-500/20 blur-[100px]"></div>
+                <div class="absolute w-[450px] h-[400px] -bottom-24 -right-32 rounded-full bg-teal-500/15 blur-[100px]"></div>
+                <div class="absolute w-[350px] h-[350px] top-2/5 left-2/5 rounded-full bg-emerald-400/10 blur-[100px]"></div>
             </div>
             
-            <h1 class="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight" data-aos="fade-up" data-aos-delay="100">
-                <span class="gradient-text career-glow inline-block">Career</span>
-            </h1>
-            
-            <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                Build your future with us
-            </p>
-            
-            <div class="flex flex-wrap gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
-                <a href="#openings" class="inline-flex items-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-600 transition-all shadow-lg hover:shadow-xl hover:scale-105 duration-300">
-                    Explore Opportunities <i class="fas fa-arrow-right"></i>
-                </a>
-                <a href="#culture" class="inline-flex items-center gap-2 border-2 border-emerald-500 text-emerald-600 px-8 py-4 rounded-full font-semibold hover:bg-emerald-50 transition-all hover:scale-105 duration-300">
-                    Learn More <i class="fas fa-heart"></i>
-                </a>
-            </div>
-            
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce" data-aos="fade-up" data-aos-delay="400">
-                <span class="text-xs text-gray-400 tracking-wider uppercase">Scroll to explore</span>
-                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7-7-7m14-6l-7 7-7-7"></path>
-                </svg>
+            <!-- Dark overlay for depth -->
+            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <!-- Left Column - Heading -->
+                    <div class="animate-fade-up">
+                        <h1 class="font-['Space_Grotesk'] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+                            <span class="text-emerald-500">Career</span>
+                        </h1>
+                    </div>
+
+                    <!-- Right Column - Description -->
+                    <div class="animate-fade-up space-y-8">
+                        <div class="relative">
+                            <div class="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-emerald-500 to-teal-500 rounded-full"></div>
+                            <p class="font-['Space_Grotesk'] text-gray-300 leading-relaxed pl-6 max-w-md text-base sm:text-lg">
+                                We're a creative team driven by innovation, collaboration, and growth — building meaningful digital experiences while empowering our people to do their best work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -383,8 +383,6 @@
         </div>
     </section>
 
-
-
     <!-- Apply Now Section -->
     <section id="apply" class="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -515,17 +513,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-emerald-600 to-teal-600">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Make an Impact?</h2>
-            <p class="text-emerald-100 text-lg mb-8">Join us and be part of something extraordinary.</p>
-            <a href="#apply" class="inline-flex items-center gap-2 bg-white text-emerald-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-                Apply Now <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -569,32 +556,30 @@
             </div>
         </div>
     </footer>
+</main>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({ duration: 800, once: true, offset: 100 });
-        
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    // Initialize AOS
+    AOS.init({ duration: 800, once: true, offset: 100 });
+    
+    // Smooth scroll for anchor links - Account for header height
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || href === '') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const navbar = document.getElementById('navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                window.scrollTo({ 
+                    top: target.offsetTop - navbarHeight, 
+                    behavior: 'smooth' 
+                });
+            }
         });
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    const navbarHeight = navbar?.offsetHeight || 80;
-                    window.scrollTo({ top: target.offsetTop - navbarHeight, behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    });
+</script>
 </body>
 </html>

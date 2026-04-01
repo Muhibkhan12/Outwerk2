@@ -161,371 +161,378 @@
 
     
 
-    <section class="creative-digital-section">
-        <!-- Tailwind CSS CDN -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<section class="creative-digital-section">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-        <!-- Custom Tailwind Config Override -->
-        <style>
-            .creative-digital-section {
-                all: initial;
-                display: block;
-                font-family: 'Space Grotesk', sans-serif;
-            }
+    <!-- Custom Tailwind Config Override -->
+    <style>
+        .creative-digital-section {
+            all: initial;
+            display: block;
+            font-family: 'Space Grotesk', sans-serif;
+        }
 
-            .creative-digital-section * {
-                box-sizing: border-box;
-            }
+        .creative-digital-section * {
+            box-sizing: border-box;
+        }
 
-            @keyframes blink {
+        @keyframes blink {
 
-                0%,
-                100% {
-                    opacity: 1;
-                }
-
-                50% {
-                    opacity: 0.3;
-                }
-            }
-
-            @keyframes fadeUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(28px);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            @keyframes pulse {
-
-                0%,
-                100% {
-                    box-shadow: 0 0 0 14px rgba(34, 197, 94, 0.2), 0 0 0 28px rgba(34, 197, 94, 0.1);
-                }
-
-                50% {
-                    box-shadow: 0 0 0 20px rgba(34, 197, 94, 0.25), 0 0 0 38px rgba(34, 197, 94, 0.12);
-                }
-            }
-
-            .animate-fade-up {
-                animation: fadeUp 0.8s ease both;
-            }
-
-            .animate-fade-up-delay-1 {
-                animation-delay: 0.1s;
-            }
-
-            .animate-fade-up-delay-2 {
-                animation-delay: 0.25s;
-            }
-
-            .animate-fade-up-delay-3 {
-                animation-delay: 0.4s;
-            }
-
-            .animate-fade-up-delay-4 {
-                animation-delay: 0.55s;
-            }
-
-            .animate-blink {
-                animation: blink 2s ease infinite;
-            }
-
-            .animate-pulse-soft {
-                animation: pulse 2.8s ease infinite;
-            }
-
-            .play-btn .icon-pause {
-                display: none;
-            }
-
-            .video-overlay.playing .play-btn .icon-play {
-                display: none;
-            }
-
-            .video-overlay.playing .play-btn .icon-pause {
-                display: block;
-            }
-
-            .video-overlay.faded {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            .video-inner:hover .video-overlay.faded.paused {
+            0%,
+            100% {
                 opacity: 1;
-                pointer-events: auto;
             }
 
-            /* Fix for video container - ensure proper sizing */
-            .video-container-fixed {
-                position: relative;
-                width: 100%;
-                height: auto;
-                background: #dcfce7;
-                border-radius: 1rem;
-                overflow: hidden;
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
             }
 
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 14px rgba(34, 197, 94, 0.2), 0 0 0 28px rgba(34, 197, 94, 0.1);
+            }
+
+            50% {
+                box-shadow: 0 0 0 20px rgba(34, 197, 94, 0.25), 0 0 0 38px rgba(34, 197, 94, 0.12);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .animate-fade-up-delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .animate-fade-up-delay-2 {
+            animation-delay: 0.25s;
+        }
+
+        .animate-fade-up-delay-3 {
+            animation-delay: 0.4s;
+        }
+
+        .animate-fade-up-delay-4 {
+            animation-delay: 0.55s;
+        }
+
+        .animate-blink {
+            animation: blink 2s ease infinite;
+        }
+
+        .animate-pulse-soft {
+            animation: pulse 2.8s ease infinite;
+        }
+
+        .play-btn .icon-pause {
+            display: none;
+        }
+
+        .video-overlay.playing .play-btn .icon-play {
+            display: none;
+        }
+
+        .video-overlay.playing .play-btn .icon-pause {
+            display: block;
+        }
+
+        .video-overlay.faded {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .video-inner:hover .video-overlay.faded.paused {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Fix for video container - ensure proper sizing */
+        .video-container-fixed {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background: #dcfce7;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #1a2e1f;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay-element {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
             .video-wrapper {
-                position: relative;
-                width: 100%;
                 padding-bottom: 56.25%;
-                /* 16:9 Aspect Ratio */
-                height: 0;
-                overflow: hidden;
-                background: #1a2e1f;
+                /* Keep 16:9 on mobile too */
             }
+        }
+    </style>
 
-            .video-wrapper video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+    <!-- Background Elements - UPDATED WITH SOLID BG COLOR -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <!-- Optional: Add a subtle pattern overlay -->
+    <div class="absolute inset-0 pointer-events-none opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2310b981" fill-opacity="0.3"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); background-repeat: repeat;"></div>
+    
+    <!-- Background Glow Orbs - Adjusted for dark theme -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute w-[600px] h-[500px] -top-48 -left-32 rounded-full bg-emerald-500/20 blur-[100px]"></div>
+        <div class="absolute w-[450px] h-[400px] -bottom-24 -right-32 rounded-full bg-teal-500/15 blur-[100px]"></div>
+        <div class="absolute w-[350px] h-[350px] top-2/5 left-2/5 rounded-full bg-emerald-400/10 blur-[100px]"></div>
+    </div>
+    
+    <!-- Grid Pattern - Dark version -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.08]" style="background-image: linear-gradient(rgba(16,185,129,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.15) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    
+    <!-- Dark overlay for depth -->
+    <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
 
-            .video-overlay-element {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10;
-                cursor: pointer;
-            }
-
-            /* Responsive adjustments */
-            @media (max-width: 768px) {
-                .video-wrapper {
-                    padding-bottom: 56.25%;
-                    /* Keep 16:9 on mobile too */
-                }
-            }
-        </style>
-
-        <!-- Background Elements -->
-        <div class="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50">
-            <!-- Background Glow Orbs -->
-            <div class="absolute inset-0 pointer-events-none">
-                <div class="absolute w-[600px] h-[500px] -top-48 -left-32 rounded-full bg-green-400/10 blur-[100px]"></div>
-                <div class="absolute w-[450px] h-[400px] -bottom-24 -right-32 rounded-full bg-green-500/8 blur-[100px]"></div>
-                <div class="absolute w-[350px] h-[350px] top-2/5 left-2/5 rounded-full bg-green-400/5 blur-[100px]"></div>
-            </div>
-            <!-- Grid Pattern -->
-            <div class="absolute inset-0 pointer-events-none opacity-[0.08]" style="background-image: linear-gradient(rgba(34,197,94,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(34,197,94,0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
-
-            <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-                <!-- Hero Grid -->
-                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    <!-- Left Column -->
-                    <div class="animate-fade-up animate-fade-up-delay-1">
-                        <div class="inline-flex items-center gap-2 bg-green-100 border border-green-300 rounded-full px-4 py-2 mb-6">
-                            <span class="w-2 h-2 bg-green-500 rounded-full animate-blink"></span>
-                            <span class="text-xs font-medium text-green-700 tracking-wider uppercase">Establish &nbsp; 2011</span>
-                        </div>
-                        <h1 class="font-['Space_Grotesk'] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-gray-800">
-                            We Are <span class="text-green-500">Creative</span>
-                            <span class="block text-3xl sm:text-4xl lg:text-5xl mt-2">Digital Agency</span>
-                        </h1>
-                    </div>
-
-                    <!-- Right Column -->
-                    <div class="animate-fade-up animate-fade-up-delay-2 space-y-8">
-                        <p class="text-gray-600 leading-relaxed border-l-2 border-green-400 pl-5 max-w-md">
-                            We are a creative agency with several services focused on quality and innovation for your business — turning bold ideas into digital realities.
-                        </p>
-                        <div class="flex flex-wrap gap-8 sm:gap-10">
-                            <div class="stat-item" data-target="12">
-                                <div class="stat-num text-3xl sm:text-4xl font-bold text-gray-800">12<span class="text-green-500">+</span></div>
-                                <div class="text-xs text-gray-500 uppercase tracking-wide">Years of<br>Experience</div>
-                            </div>
-                            <div class="stat-item" data-target="83" data-suffix="K">
-                                <div class="stat-num text-3xl sm:text-4xl font-bold text-gray-800">83K<span class="text-green-500">+</span></div>
-                                <div class="text-xs text-gray-500 uppercase tracking-wide">Completed<br>Project</div>
-                            </div>
-                            <div class="stat-item" data-target="4.2" data-suffix="K" data-decimal="true">
-                                <div class="stat-num text-3xl sm:text-4xl font-bold text-gray-800">4.2K<span class="text-green-500">+</span></div>
-                                <div class="text-xs text-gray-500 uppercase tracking-wide">Trusted<br>Companies</div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <!-- Hero Grid -->
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Left Column -->
+            <div class="animate-fade-up animate-fade-up-delay-1">
+                <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-blink"></span>
+                    <span class="text-xs font-medium text-emerald-400 tracking-wider uppercase">Established 2011</span>
                 </div>
+                <h1 class="font-['Space_Grotesk'] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white">
+                    We Are <span class="text-emerald-500">Creative</span>
+                    <span class="block text-3xl sm:text-4xl lg:text-5xl mt-2 text-gray-200">Digital Agency</span>
+                </h1>
+            </div>
 
-                <!-- Video Section - FIXED VERSION WITH AUTO-PLAY -->
-                <div class="mt-12 sm:mt-16 animate-fade-up animate-fade-up-delay-3">
-                    <div class="video-container-fixed border border-green-200/50 shadow-2xl">
-                        <div class="video-wrapper">
-                            <video id="heroVideo" preload="auto" autoplay muted loop playsinline>
-                                <source src="home-page-video.mp4" type="video/mp4">
-                                <source src="home-page-video.mp4" type="video/webm">
-                                Your browser does not support the video tag.
-                            </video>
-
-                            <!-- Video Tint Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-green-900/60 via-green-800/10 to-green-900/30 pointer-events-none z-5"></div>
-
-                            <!-- Progress Bar -->
-                            <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-white/30 cursor-pointer z-20 group" id="videoProgress">
-                                <div class="progress-fill h-full w-0 bg-green-400 rounded-r-sm relative" id="progressFill">
-                                    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition"></div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Right Column -->
+            <div class="animate-fade-up animate-fade-up-delay-2 space-y-8">
+                <p class="text-gray-300 leading-relaxed border-l-2 border-emerald-500 pl-5 max-w-md">
+                    We are a creative agency with several services focused on quality and innovation for your business — turning bold ideas into digital realities.
+                </p>
+                <div class="flex flex-wrap gap-8 sm:gap-10">
+                    <div class="stat-item" data-target="12">
+                        <div class="stat-num text-3xl sm:text-4xl font-bold text-white">12<span class="text-emerald-500">+</span></div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wide">Years of<br>Experience</div>
+                    </div>
+                    <div class="stat-item" data-target="83" data-suffix="K">
+                        <div class="stat-num text-3xl sm:text-4xl font-bold text-white">83K<span class="text-emerald-500">+</span></div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wide">Completed<br>Project</div>
+                    </div>
+                    <div class="stat-item" data-target="4.2" data-suffix="K" data-decimal="true">
+                        <div class="stat-num text-3xl sm:text-4xl font-bold text-white">4.2K<span class="text-emerald-500">+</span></div>
+                        <div class="text-xs text-gray-400 uppercase tracking-wide">Trusted<br>Companies</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script>
-            (function() {
-                const container = document.querySelector('.relative.overflow-hidden');
+        <!-- Video Section - FIXED VERSION WITH AUTO-PLAY -->
+        <div class="mt-12 sm:mt-16 animate-fade-up animate-fade-up-delay-3">
+            <div class="video-container-fixed border border-emerald-500/30 shadow-2xl">
+                <div class="video-wrapper rounded-xl overflow-hidden">
+                    <video id="heroVideo" preload="auto" autoplay muted loop playsinline>
+                        <source src="home-page-video.mp4" type="video/mp4">
+                        <source src="home-page-video.mp4" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
 
-                // Video Controls
-                const video = container.querySelector('#heroVideo');
-                const overlay = container.querySelector('#videoOverlay');
-                const playBtn = container.querySelector('#playBtn');
-                const muteBtn = container.querySelector('#muteBtn');
-                const progressBar = container.querySelector('#videoProgress');
-                const fill = container.querySelector('#progressFill');
-                const iconMuted = container.querySelector('#iconMuted');
-                const iconUnmuted = container.querySelector('#iconUnmuted');
+                    <!-- Video Tint Overlay - Darker for dark theme -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/30 to-gray-900/20 pointer-events-none z-5"></div>
 
-                if (video && overlay && playBtn) {
-                    let isPlaying = true; // Set to true because video autoplays
+                    <!-- Progress Bar -->
+                    <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-white/20 cursor-pointer z-20 group" id="videoProgress">
+                        <div class="progress-fill h-full w-0 bg-emerald-500 rounded-r-sm relative" id="progressFill">
+                            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-emerald-500 rounded-full opacity-0 group-hover:opacity-100 transition"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                    // Ensure video starts playing
-                    const startVideo = () => {
-                        video.play().then(() => {
-                            isPlaying = true;
-                            overlay.classList.add('faded', 'playing');
-                            overlay.classList.remove('paused');
-                        }).catch(e => {
-                            console.log('Autoplay was prevented. User interaction needed:', e);
-                            isPlaying = false;
-                            overlay.classList.remove('faded', 'playing');
-                            overlay.classList.add('paused');
-                        });
-                    };
+    <script>
+        (function() {
+            const container = document.querySelector('.relative.overflow-hidden');
 
-                    // Start video automatically
-                    startVideo();
+            // Video Controls
+            const video = container.querySelector('#heroVideo');
+            const overlay = container.querySelector('#videoOverlay');
+            const playBtn = container.querySelector('#playBtn');
+            const muteBtn = container.querySelector('#muteBtn');
+            const progressBar = container.querySelector('#videoProgress');
+            const fill = container.querySelector('#progressFill');
+            const iconMuted = container.querySelector('#iconMuted');
+            const iconUnmuted = container.querySelector('#iconUnmuted');
 
-                    function togglePlay() {
-                        if (video.paused) {
-                            video.play().catch(e => console.log('Video play failed:', e));
-                            isPlaying = true;
-                            overlay.classList.add('faded', 'playing');
-                            overlay.classList.remove('paused');
-                        } else {
-                            video.pause();
-                            isPlaying = false;
-                            overlay.classList.remove('faded', 'playing');
-                            overlay.classList.add('paused');
-                        }
-                    }
+            if (video && overlay && playBtn) {
+                let isPlaying = true; // Set to true because video autoplays
 
-                    playBtn.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        togglePlay();
-                    });
-                    overlay.addEventListener('click', togglePlay);
-
-                    if (muteBtn) {
-                        muteBtn.addEventListener('click', function(e) {
-                            e.stopPropagation();
-                            video.muted = !video.muted;
-                            if (iconMuted && iconUnmuted) {
-                                iconMuted.style.display = video.muted ? 'block' : 'none';
-                                iconUnmuted.style.display = video.muted ? 'none' : 'block';
-                            }
-                        });
-                    }
-
-                    if (video && fill && progressBar) {
-                        video.addEventListener('timeupdate', function() {
-                            if (video.duration && !isNaN(video.duration)) {
-                                const percent = (video.currentTime / video.duration) * 100;
-                                fill.style.width = percent + '%';
-                            }
-                        });
-
-                        progressBar.addEventListener('click', function(e) {
-                            const rect = progressBar.getBoundingClientRect();
-                            const clickPosition = (e.clientX - rect.left) / rect.width;
-                            if (video.duration) {
-                                video.currentTime = clickPosition * video.duration;
-                            }
-                        });
-                    }
-
-                    video.addEventListener('ended', function() {
+                // Ensure video starts playing
+                const startVideo = () => {
+                    video.play().then(() => {
+                        isPlaying = true;
+                        overlay.classList.add('faded', 'playing');
+                        overlay.classList.remove('paused');
+                    }).catch(e => {
+                        console.log('Autoplay was prevented. User interaction needed:', e);
                         isPlaying = false;
-                        overlay.classList.remove('faded', 'playing', 'paused');
-                        if (fill) fill.style.width = '0%';
+                        overlay.classList.remove('faded', 'playing');
+                        overlay.classList.add('paused');
                     });
+                };
+
+                // Start video automatically
+                startVideo();
+
+                function togglePlay() {
+                    if (video.paused) {
+                        video.play().catch(e => console.log('Video play failed:', e));
+                        isPlaying = true;
+                        overlay.classList.add('faded', 'playing');
+                        overlay.classList.remove('paused');
+                    } else {
+                        video.pause();
+                        isPlaying = false;
+                        overlay.classList.remove('faded', 'playing');
+                        overlay.classList.add('paused');
+                    }
                 }
 
-                // Stats Counter Animation
-                function animateCounter(el, target, isDecimal, isK) {
-                    let current = 0;
-                    const duration = 1500;
-                    const steps = 60;
-                    const increment = target / steps;
-                    let step = 0;
+                playBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    togglePlay();
+                });
+                overlay.addEventListener('click', togglePlay);
 
-                    const updateCounter = () => {
-                        step++;
-                        current += increment;
-                        if (step < steps) {
-                            const display = isDecimal ? current.toFixed(1) : Math.floor(current);
-                            el.innerHTML = display + (isK ? 'K' : '') + '<span class="text-green-500">+</span>';
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            el.innerHTML = (isDecimal ? target.toFixed(1) : Math.floor(target)) + (isK ? 'K' : '') + '<span class="text-green-500">+</span>';
+                if (muteBtn) {
+                    muteBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        video.muted = !video.muted;
+                        if (iconMuted && iconUnmuted) {
+                            iconMuted.style.display = video.muted ? 'block' : 'none';
+                            iconUnmuted.style.display = video.muted ? 'none' : 'block';
                         }
-                    };
-                    requestAnimationFrame(updateCounter);
+                    });
                 }
 
-                const statsContainer = document.querySelector('.flex.flex-wrap.gap-8');
-                if (statsContainer) {
-                    const statItems = document.querySelectorAll('.stat-item');
-                    const obs = new IntersectionObserver(function(entries) {
-                        entries.forEach(function(entry) {
-                            if (entry.isIntersecting) {
-                                statItems.forEach(function(el) {
-                                    let target = parseFloat(el.getAttribute('data-target'));
-                                    const isDecimal = el.getAttribute('data-decimal') === 'true';
-                                    const isK = el.getAttribute('data-suffix') === 'K';
-                                    const numEl = el.querySelector('.stat-num');
-                                    if (numEl && target && !isNaN(target)) {
-                                        animateCounter(numEl, target, isDecimal, isK);
-                                    }
-                                });
-                                obs.disconnect();
-                            }
-                        });
-                    }, {
-                        threshold: 0.5
+                if (video && fill && progressBar) {
+                    video.addEventListener('timeupdate', function() {
+                        if (video.duration && !isNaN(video.duration)) {
+                            const percent = (video.currentTime / video.duration) * 100;
+                            fill.style.width = percent + '%';
+                        }
                     });
-                    obs.observe(statsContainer);
+
+                    progressBar.addEventListener('click', function(e) {
+                        const rect = progressBar.getBoundingClientRect();
+                        const clickPosition = (e.clientX - rect.left) / rect.width;
+                        if (video.duration) {
+                            video.currentTime = clickPosition * video.duration;
+                        }
+                    });
                 }
-            })();
-        </script>
-    </section>
+
+                video.addEventListener('ended', function() {
+                    isPlaying = false;
+                    overlay.classList.remove('faded', 'playing', 'paused');
+                    if (fill) fill.style.width = '0%';
+                });
+            }
+
+            // Stats Counter Animation
+            function animateCounter(el, target, isDecimal, isK) {
+                let current = 0;
+                const duration = 1500;
+                const steps = 60;
+                const increment = target / steps;
+                let step = 0;
+
+                const updateCounter = () => {
+                    step++;
+                    current += increment;
+                    if (step < steps) {
+                        const display = isDecimal ? current.toFixed(1) : Math.floor(current);
+                        el.innerHTML = display + (isK ? 'K' : '') + '<span class="text-emerald-500">+</span>';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        el.innerHTML = (isDecimal ? target.toFixed(1) : Math.floor(target)) + (isK ? 'K' : '') + '<span class="text-emerald-500">+</span>';
+                    }
+                };
+                requestAnimationFrame(updateCounter);
+            }
+
+            const statsContainer = document.querySelector('.flex.flex-wrap.gap-8');
+            if (statsContainer) {
+                const statItems = document.querySelectorAll('.stat-item');
+                const obs = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            statItems.forEach(function(el) {
+                                let target = parseFloat(el.getAttribute('data-target'));
+                                const isDecimal = el.getAttribute('data-decimal') === 'true';
+                                const isK = el.getAttribute('data-suffix') === 'K';
+                                const numEl = el.querySelector('.stat-num');
+                                if (numEl && target && !isNaN(target)) {
+                                    animateCounter(numEl, target, isDecimal, isK);
+                                }
+                            });
+                            obs.disconnect();
+                        }
+                    });
+                }, {
+                    threshold: 0.5
+                });
+                obs.observe(statsContainer);
+            }
+        })();
+    </script>
+</section>
 
     <!-- ===== ABOUT SECTION - Full Height ===== -->
     <section id="about" class="relative overflow-hidden bg-white min-h-screen-custom py-20 sm:py-28 md:py-32 px-5 sm:px-6 md:px-12 lg:px-20 flex items-center">
@@ -630,6 +637,9 @@
         </div>
     </section>
 
+
+    <!-- Core Capabilities & Services List (Two Column Layout) -->
+        
     <!-- ===== SERVICES SECTION ===== -->
 <section id="services" class="relative py-20 sm:py-28 md:py-32 px-5 sm:px-6 bg-white overflow-hidden">
     <!-- Background Decorations -->
@@ -646,21 +656,14 @@
     <div class="max-w-7xl mx-auto relative z-10">
         <!-- Section Header -->
         <div class="text-center mb-16 sm:mb-20 md:mb-24">
-            <div class="inline-flex items-center gap-2 mb-6">
-                <div class="w-2 h-2 bg-emerald-500 rotate-45"></div>
-                <span class="text-xs font-medium tracking-[0.2em] uppercase text-emerald-600 font-secondary">OUR SERVICES</span>
-                <div class="w-2 h-2 bg-emerald-500 rotate-45"></div>
-            </div>
-            <h2 class="font-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                <span class="text-gray-800">WHAT WE</span>
-                <span class="block mt-2 bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">EXCEL AT</span>
-            </h2>
-            <p class="text-base sm:text-lg max-w-xl mx-auto leading-relaxed text-gray-500 mt-4 font-secondary">
-                Comprehensive BPO and digital solutions tailored to your business needs
-            </p>
-        </div>
+    <h2 class="font-primary text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+        <span class="text-gray-800">OUR</span>
+        <span class="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">SERVICES</span>
+    </h2>
+</div>
 
-        <!-- Core Capabilities & Services List (Two Column Layout) -->
+        
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
             <!-- Left Column - Core Capabilities -->
             <div class="reveal-left">
@@ -721,334 +724,14 @@
             </div>
         </div>
 
-        <!-- BPO SERVICES Category -->
-        <div class="mb-20">
-            <div class="flex items-center gap-3 mb-10 sm:mb-12">
-                <div class="w-1 h-8 bg-emerald-500 rounded-full"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-emerald-600 font-primary">BPO SERVICES</h3>
-                <span class="text-sm font-light ml-2 text-emerald-400 font-secondary">/01</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- INBOUND CALLS Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-emerald-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-emerald-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Inbound call center" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-emerald-700/90 via-emerald-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">INBOUND CALLS</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">24/7 SUPPORT</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-emerald-600 to-teal-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">INBOUND CALLS</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Customer Service</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Order Processing</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Helpdesk & Troubleshooting</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">24/7 Call Handling</span></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- OUTBOUND CALLS Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-emerald-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-emerald-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop" alt="Outbound calls" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-emerald-700/90 via-emerald-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">OUTBOUND CALLS</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">PROACTIVE REACH</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-emerald-600 to-teal-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">OUTBOUND CALLS</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Telemarketing</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Appointment Setting</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Market Research</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Lead Qualification</span></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CUSTOMER SUPPORT Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-emerald-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-emerald-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&w=1973&auto=format&fit=crop" alt="Customer support" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-emerald-700/90 via-emerald-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">CUSTOMER SUPPORT</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">24/7 ASSISTANCE</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-emerald-600 to-teal-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">CUSTOMER SUPPORT</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Multi-channel Support</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Feedback Analysis</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">CRM Management</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Complaint Resolution</span></div>
-                                </div>
-  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TECHNICAL HELPDESK Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-teal-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-teal-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&w=1973&auto=format&fit=crop" alt="Technical helpdesk" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-teal-700/90 via-teal-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">TECHNICAL HELPDESK</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">REMOTE IT SUPPORT</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-teal-600 to-emerald-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">TECHNICAL HELPDESK</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Software & Application Support</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">System & Network Troubleshooting</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Remote User Assistance</span></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SALES & LEAD GENERATION Category -->
-        <div class="mb-20">
-            <div class="flex items-center gap-3 mb-10 sm:mb-12">
-                <div class="w-1 h-8 bg-emerald-500 rounded-full"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-emerald-600 font-primary">SALES & LEAD GENERATION</h3>
-                <span class="text-sm font-light ml-2 text-emerald-400 font-secondary">/02</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- LEAD GENERATION Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-emerald-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-emerald-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070&auto=format&fit=crop" alt="Lead generation" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-emerald-700/90 via-emerald-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">LEAD GENERATION</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">QUALIFIED LEADS</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-emerald-600 to-teal-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">LEAD GENERATION</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">B2B Prospecting</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Cold Calling Campaigns</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Appointment Setting</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Market Research</span></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- WEB SOLUTIONS Category -->
-        <div class="mb-20">
-            <div class="flex items-center gap-3 mb-10 sm:mb-12">
-                <div class="w-1 h-8 bg-teal-500 rounded-full"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-teal-600 font-primary">WEB SOLUTIONS</h3>
-                <span class="text-sm font-light ml-2 text-teal-400 font-secondary">/03</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- WEB DEVELOPMENT Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-teal-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-teal-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=2069&auto=format&fit=crop" alt="Web development" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-teal-700/90 via-teal-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">WEB DEVELOPMENT</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">DESIGN & DEVELOP</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-teal-600 to-emerald-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">WEB DEVELOPMENT</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Custom Web Development</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">E-commerce Solutions</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">API Integration</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Responsive Design</span></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- DIGITAL MARKETING Category -->
-        <div class="mb-20">
-            <div class="flex items-center gap-3 mb-10 sm:mb-12">
-                <div class="w-1 h-8 bg-teal-500 rounded-full"></div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-teal-600 font-primary">DIGITAL MARKETING</h3>
-                <span class="text-sm font-light ml-2 text-teal-400 font-secondary">/04</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- SEO & SEM Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-teal-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-teal-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="SEO & SEM" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-teal-700/90 via-teal-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">SEO & SEM</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">CAMPAIGN MANAGEMENT</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-teal-600 to-emerald-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">SEO & SEM</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Keyword Research & Strategy</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">PPC Campaign Setup</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Performance Analytics</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Conversion Optimization</span></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- SOCIAL MEDIA Card -->
-                <div class="service-card-wrapper group relative">
-                    <div class="service-card relative bg-white border-2 border-teal-200 rounded-2xl h-[420px] sm:h-[460px] overflow-hidden cursor-pointer transition-all duration-500 hover:border-teal-400">
-                        <div class="service-front absolute inset-0 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-[-20px]">
-                            <div class="service-image absolute inset-0 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=2070&auto=format&fit=crop" alt="Social Media" loading="lazy" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-110">
-                                <div class="absolute inset-0 bg-gradient-to-t from-teal-700/90 via-teal-600/60 to-transparent"></div>
-                            </div>
-                            <div class="service-content absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10">
-                                <div class="mb-4">
-                                    <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3 tracking-wide">SOCIAL MEDIA</h4>
-                                    <div class="w-12 h-0.5 bg-white/80 rounded-full"></div>
-                                </div>
-                                <div class="flex items-center justify-between pt-4 border-t border-white/20">
-                                    <span class="text-white text-xs tracking-widest font-secondary">MANAGEMENT</span>
-                                    <i class=""></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-back absolute inset-0 p-6 sm:p-8 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out bg-gradient-to-br from-teal-600 to-emerald-600">
-                            <div class="h-full flex flex-col">
-                                <h4 class="font-primary font-bold text-xl sm:text-2xl text-white mb-3">SOCIAL MEDIA MANAGEMENT</h4>
-                                <div class="w-12 h-0.5 bg-white/80 rounded-full mb-4"></div>
-                                <div class="space-y-3 mb-6">
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Multi-Platform Management</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Content Calendar Planning</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Community Engagement</span></div>
-                                    <div class="flex items-center gap-3"><div class="w-1.5 h-1.5 bg-white rounded-full"></div><span class="text-white text-xs sm:text-sm font-secondary">Analytics & Insights</span></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- CTA Section -->
         <div class="mt-16 sm:mt-20 md:mt-24 text-center">
             <div class="max-w-md mx-auto">
-                <h3 class="text-xl sm:text-2xl font-bold mb-4 tracking-tight text-gray-800 font-primary">Need a custom solution?</h3>
-                <p class="mb-6 sm:mb-8 text-sm text-gray-500 font-secondary">Let's discuss your specific requirements</p>
                 <a href="#contact" class="group inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-xl hover:scale-[1.02] transition-all font-secondary">
-                    <span>GET IN TOUCH</span>
+                    <span>EXPLORE MORE</span>
                     <i class="fas fa-arrow-right text-sm group-hover:translate-x-1 transition"></i>
                 </a>
-                <p class="text-xs mt-6 tracking-wider text-gray-400 font-secondary">TRUSTED · 24/7 · GLOBAL</p>
+            
             </div>
         </div>
     </div>
