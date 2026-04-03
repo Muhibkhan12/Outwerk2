@@ -519,7 +519,8 @@
         }
     </style>
 </head>
-
+<?php
+@include("header.php")?>
 <body>
 
     <div id="cursor"></div>
@@ -530,35 +531,6 @@
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
         </svg>
     </div>
-
-    <div id="mobile-menu">
-        <a href="index.html" class="mobile-nav-link">Home</a>
-        <a href="services.html" class="mobile-nav-link">Services</a>
-        <a href="careers.html" class="mobile-nav-link">Careers</a>
-        <a href="contact.html" class="mobile-nav-link">Contact</a>
-        <a href="#contact-form" class="pill-btn text-white mt-4">Message Us ↗</a>
-    </div>
-
-    <nav id="navbar" class="section-px py-5 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <span class="dark-green-dot"></span>
-            <span class="mono text-sm tracking-widest uppercase text-white">Outwerk<span class="gradient-dark-green">.</span></span>
-        </div>
-        <div class="desktop-nav hidden md:flex items-center gap-10">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="services.html" class="nav-link">Services</a>
-            <a href="careers.html" class="nav-link">Careers</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-        <div class="flex items-center gap-4">
-            <a href="#contact-form" class="nav-get-in-touch pill-btn text-white hidden md:inline-flex">
-                Get in Touch <span>↗</span>
-            </a>
-            <div class="hamburger" id="hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-    </nav>
 
     <!-- Hero Section - Contact Page -->
     <section class="relative overflow-hidden min-h-[70vh] flex items-center">
@@ -610,168 +582,184 @@
         </div>
     </section>
 
-    <!-- REDESIGNED FORM SECTION + MAP AT THE BOTTOM (FULL WIDTH) -->
-    <section id="contact-form" class="section-px py-16 relative">
-        <div class="glow-dark-green absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
+<!-- REDESIGNED FORM SECTION + MAP AT THE BOTTOM (FULL WIDTH) -->
+<section id="contact-form" class="section-px py-16 relative">
+    <div class="glow-dark-green absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
 
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-12 fade-up">
-                <div class="inline-flex items-center gap-2 mb-4">
-                    <div class="w-2 h-2 bg-green-500 rotate-45"></div>
-                    <span class="mono text-xs text-green-500 tracking-widest uppercase">Start a Conversation</span>
-                    <div class="w-2 h-2 bg-green-500 rotate-45"></div>
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Talk <span class="gradient-dark-green">Business</span></h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">Fill out the form below and we'll get back to you within 24 hours.</p>
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12 fade-up">
+            <div class="inline-flex items-center gap-2 mb-4">
+                <div class="w-2 h-2 bg-green-500 rotate-45"></div>
+                <span class="mono text-xs text-green-500 tracking-widest uppercase">Start a Conversation</span>
+                <div class="w-2 h-2 bg-green-500 rotate-45"></div>
             </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Talk <span class="gradient-dark-green">Business</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
 
-            <!-- Form and Contact Info Side by Side -->
-            <div class="grid lg:grid-cols-5 gap-8 mb-12">
-                <!-- Contact Form - 3 columns -->
-                <div class="lg:col-span-3 blur-card rounded-2xl p-6 md:p-8 fade-up" style="transition-delay:0.05s">
-                    <div class="flex items-center gap-3 mb-6 pb-3 border-b border-green-800/30">
-                        <i class="fas fa-pen-alt text-green-500 text-sm"></i>
-                        <span class="mono text-xs text-green-400 tracking-wider">REACH OUT TO US</span>
-                    </div>
-                    <form id="contactForm" action="#" method="POST">
-                        <div class="grid md:grid-cols-2 gap-5 mb-5">
-                            <div>
-                                <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Full Name *</label>
-                                <input type="text" name="name" required class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
-                            </div>
-                            <div>
-                                <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Email Address *</label>
-                                <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-5 mb-5">
-                            <div>
-                                <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Phone Number</label>
-                                <input type="tel" name="phone" class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
-                            </div>
-                            <div>
-                                <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Company</label>
-                                <input type="text" name="company" class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
-                            </div>
-                        </div>
-                        <div class="mb-5">
-                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Service Interest</label>
-                            <select name="service" class="form-select w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white appearance-none cursor-pointer">
-                                <option value="">Select a service</option>
-                                <option value="bpo">BPO Services</option>
-                                <option value="inbound">Inbound Calls</option>
-                                <option value="outbound">Outbound Calls</option>
-                                <option value="leadgen">Lead Generation</option>
-                                <option value="tech">Technical Helpdesk</option>
-                                <option value="web">Web Development</option>
-                                <option value="seo">SEO & SEM</option>
-                                <option value="social">Social Media</option>
-                                <option value="content">Content Marketing</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Your Message *</label>
-                            <textarea name="message" rows="5" required class="form-textarea w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 bg-gradient-to-r from-green-700 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 group">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane text-sm group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-                        <p class="text-xs text-gray-600 text-center mt-4">We respect your privacy. Your information is secure.</p>
-                    </form>
+        <!-- Form and Contact Info Side by Side -->
+        <div class="grid lg:grid-cols-5 gap-8 mb-12">
+            <!-- Contact Form - 3 columns -->
+            <div class="lg:col-span-3 blur-card rounded-2xl p-6 md:p-8 fade-up" style="transition-delay:0.05s">
+                <div class="flex items-center gap-3 mb-6 pb-3 border-b border-green-800/30">
+                    <i class="fas fa-pen-alt text-green-500 text-sm"></i>
+                    <span class="mono text-xs text-green-400 tracking-wider">REACH OUT TO US</span>
                 </div>
-
-                <!-- Contact Details Sidebar (2 columns) -->
-                <div class="lg:col-span-2 space-y-6 fade-up" style="transition-delay:0.1s">
-                    <!-- Main Contact Info Card -->
-                    <div class="blur-card rounded-2xl p-6 space-y-5">
-                        <div class="flex items-center gap-3 pb-2 border-b border-green-800/30">
-                            <i class="fas fa-map-marker-alt text-green-500 text-lg"></i>
-                            <span class="mono text-xs text-green-400 tracking-wider">HEADQUARTERS</span>
-                        </div>
-                        
-                        <!-- Address: Suite 101 & 111, Park Avenue, First Floor Shahra-e-Faisal, Block 6 PECHS, Karachi -->
-                        <div class="info-row flex gap-4 group transition-all">
-                            <div class="info-card-icon flex-shrink-0">
-                                <i class="fas fa-building text-green-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-white text-sm font-medium leading-relaxed">Suite 101 & 111, Park Avenue, First Floor</p>
-                                <p class="text-gray-400 text-xs mt-1 leading-relaxed">Shahra-e-Faisal, Shahrah-e-Faisal Block 6 PECHS, Karachi, Pakistan</p>
-                            </div>
-                        </div>
-
-                        <!-- Phone: (021) 34324522 -->
-                        <div class="info-row flex gap-4 group transition-all">
-                            <div class="info-card-icon flex-shrink-0">
-                                <i class="fas fa-phone-alt text-green-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <a href="tel:02134324522" class="text-white text-sm font-medium hover:text-green-400 transition">(021) 34324522</a>
-                                <p class="text-gray-500 text-xs mt-0.5">Direct Line</p>
-                            </div>
-                        </div>
-
-                        <!-- Working Hours: 24/7 -->
-                        <div class="info-row flex gap-4 group transition-all">
-                            <div class="info-card-icon flex-shrink-0">
-                                <i class="fas fa-clock text-green-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <span class="text-white text-sm font-medium">Support Hours:</span>
-                                    <span class="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full font-mono tracking-wide">24/7</span>
-                                </div>
-                                <p class="text-gray-400 text-xs mt-1">Always available — day or night, we're here for you.</p>
-                            </div>
-                        </div>
-
-                        <!-- Email & additional support -->
-                        <div class="info-row flex gap-4 group transition-all">
-                            <div class="info-card-icon flex-shrink-0">
-                                <i class="fas fa-envelope text-green-400 text-xl"></i>
-                            </div>
-                            <div>
-                                <a href="mailto:hello@outwerk.com" class="text-white text-sm hover:text-green-400 transition">hr@outwerksolutions.com</a>
-                                <a href="mailto:hello@outwerk.com" class="text-white text-sm hover:text-green-400 transition">info@outwerksolutions.com</a>
-                                <p class="text-gray-500 text-xs mt-0.5">24hr response</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Secondary CTA / Live Chat Card -->
-                    <div class="blur-card rounded-2xl p-5 flex items-center justify-between flex-wrap gap-3">
+                <form id="contactForm" action="#" method="POST">
+                    <div class="grid md:grid-cols-2 gap-5 mb-5">
                         <div>
-                            <h4 class="text-sm font-bold text-white">Need immediate assistance?</h4>
-                            <p class="text-gray-400 text-xs mt-1">Our team is online right now.</p>
+                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Full Name *</label>
+                            <input type="text" name="name" required class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
                         </div>
-                        <button onclick="alert('Live chat would open here')" class="px-5 py-2 bg-green-600/20 border border-green-500/40 rounded-full text-green-400 text-xs font-semibold hover:bg-green-600 hover:text-black transition-all flex items-center gap-2">
-                            <i class="fas fa-comment-dots"></i> Start Chat
-                        </button>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Email Address *</label>
+                            <input type="email" name="email" required class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
+                        </div>
                     </div>
-                </div>
+                    <div class="grid md:grid-cols-2 gap-5 mb-5">
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Phone Number</label>
+                            <input type="tel" name="phone" class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Company</label>
+                            <input type="text" name="company" class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Service Interest</label>
+                        <select name="service" class="form-select w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white appearance-none cursor-pointer">
+                            <option value="">Select a service</option>
+                            <option value="bpo">BPO Services</option>
+                            <option value="inbound">Inbound Calls</option>
+                            <option value="outbound">Outbound Calls</option>
+                            <option value="leadgen">Lead Generation</option>
+                            <option value="tech">Technical Helpdesk</option>
+                            <option value="web">Web Development</option>
+                            <option value="seo">SEO & SEM</option>
+                            <option value="social">Social Media</option>
+                            <option value="content">Content Marketing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Your Message *</label>
+                        <textarea name="message" rows="5" required class="form-textarea w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white resize-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-green-700 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 group">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane text-sm group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <p class="text-xs text-gray-600 text-center mt-4">We respect your privacy. Your information is secure.</p>
+                </form>
             </div>
 
-            <!-- FULL WIDTH MAP SECTION - Placed below the form with rounded borders -->
-            <div class="fade-up mt-8" style="transition-delay:0.15s">
-                <div class="flex items-center gap-3 mb-5">
-                    <div class="w-1 h-6 bg-green-500/60 rounded-full"></div>
-                    <span class="mono text-xs text-green-400 tracking-wider uppercase">Find Us Here</span>
-                    <div class="flex-1 h-px bg-gradient-to-r from-green-500/30 to-transparent"></div>
+            <!-- Contact Details Sidebar (2 columns) -->
+            <div class="lg:col-span-2 space-y-6 fade-up" style="transition-delay:0.1s">
+                <!-- Main Contact Info Card -->
+                <div class="blur-card rounded-2xl p-6 space-y-5">
+                    <div class="flex items-center gap-3 pb-2 border-b border-green-800/30">
+                        <i class="fas fa-map-marker-alt text-green-500 text-lg"></i>
+                        <span class="mono text-xs text-green-400 tracking-wider">HEADQUARTERS</span>
+                    </div>
+                    
+                    <!-- Address -->
+                    <div class="info-row flex gap-4 group transition-all">
+                        <div class="info-card-icon flex-shrink-0">
+                            <i class="fas fa-building text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-white text-sm font-medium leading-relaxed">Suite 101 & 111, Park Avenue, First Floor</p>
+                            <p class="text-gray-400 text-xs mt-1 leading-relaxed">Shahra-e-Faisal, Shahrah-e-Faisal Block 6 PECHS, Karachi, Pakistan</p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="info-row flex gap-4 group transition-all">
+                        <div class="info-card-icon flex-shrink-0">
+                            <i class="fas fa-phone-alt text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <a href="tel:02134324522" class="text-white text-sm font-medium hover:text-green-400 transition">(021) 34324522</a>
+                            <p class="text-gray-500 text-xs mt-0.5">Direct Line</p>
+                        </div>
+                    </div>
+
+                    <!-- Working Hours -->
+                    <div class="info-row flex gap-4 group transition-all">
+                        <div class="info-card-icon flex-shrink-0">
+                            <i class="fas fa-clock text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="text-white text-sm font-medium">Support Hours:</span>
+                                <span class="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full font-mono tracking-wide">24/7</span>
+                            </div>
+                            <p class="text-gray-400 text-xs mt-1">Always available — day or night, we're here for you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-row flex gap-4 group transition-all">
+                        <div class="info-card-icon flex-shrink-0">
+                            <i class="fas fa-envelope text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <a href="mailto:hr@outwerksolutions.com" class="text-white text-sm hover:text-green-400 transition block">hr@outwerksolutions.com</a>
+                            <a href="mailto:info@outwerksolutions.com" class="text-white text-sm hover:text-green-400 transition block mt-1">info@outwerksolutions.com</a>
+                            <p class="text-gray-500 text-xs mt-1">24hr response</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="full-width-map rounded-2xl">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.7522152195497!2d67.051166!3d24.860734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e6c8e8e8e8f%3A0x2e5c8c5a5e5e5e5e!2sShahrah-e-Faisal%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+
+                <!-- NEW: Social Media Connect Box -->
+                <div class="blur-card rounded-2xl p-6 space-y-5">
+                    <div class="flex items-center gap-3 pb-2 border-b border-green-800/30">
+                        <i class="fas fa-share-alt text-green-500 text-lg"></i>
+                        <span class="mono text-xs text-green-400 tracking-wider">CONNECT WITH US</span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/outwerk-solutions" target="_blank" class="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-[#0077b5]/20 border border-green-800/30 hover:border-[#0077b5]/50 transition-all duration-300 group">
+                            <div class="w-8 h-8 rounded-full bg-[#0077b5]/20 flex items-center justify-center group-hover:bg-[#0077b5]/40 transition-all">
+                                <i class="fab fa-linkedin-in text-[#0077b5] text-sm group-hover:text-white transition-all"></i>
+                            </div>
+                            <span class="text-white text-xs font-medium group-hover:text-[#0077b5] transition">LinkedIn</span>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/OWSolutioners/" target="_blank" class="flex items-center gap-3 p-3 rounded-xl bg-white/5 hover:bg-[#1877f2]/20 border border-green-800/30 hover:border-[#1877f2]/50 transition-all duration-300 group">
+                            <div class="w-8 h-8 rounded-full bg-[#1877f2]/20 flex items-center justify-center group-hover:bg-[#1877f2]/40 transition-all">
+                                <i class="fab fa-facebook-f text-[#1877f2] text-sm group-hover:text-white transition-all"></i>
+                            </div>
+                            <span class="text-white text-xs font-medium group-hover:text-[#1877f2] transition">Facebook</span>
+                        </a>
+                    </div>
                 </div>
-                <p class="text-center text-gray-500 text-xs mt-3">Suite 101 & 111, Park Avenue, First Floor, Shahra-e-Faisal, Block 6 PECHS, Karachi</p>
             </div>
         </div>
-    </section>
+
+        <!-- FULL WIDTH MAP SECTION -->
+        <div class="fade-up mt-8" style="transition-delay:0.15s">
+            <div class="flex items-center gap-3 mb-5">
+                <div class="w-1 h-6 bg-green-500/60 rounded-full"></div>
+                <span class="mono text-xs text-green-400 tracking-wider uppercase">Find Us Here</span>
+                <div class="flex-1 h-px bg-gradient-to-r from-green-500/30 to-transparent"></div>
+            </div>
+            <div class="full-width-map rounded-2xl overflow-hidden border border-green-800/30">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.7522152195497!2d67.051166!3d24.860734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e6c8e8e8e8f%3A0x2e5c8c5a5e5e5e5e!2sShahrah-e-Faisal%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    style="width:100%; height: 300px; border:0;">
+                </iframe>
+            </div>
+            <p class="text-center text-gray-500 text-xs mt-3">Suite 101 & 111, Park Avenue, First Floor, Shahra-e-Faisal, Block 6 PECHS, Karachi</p>
+        </div>
+    </div>
+</section>
 
     <!-- FAQ SECTION -->
     <section class="section-px py-16 relative">
