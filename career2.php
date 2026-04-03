@@ -535,58 +535,289 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="section-px min-h-[85vh] flex flex-col justify-center pt-32 pb-16 overflow-hidden relative">
-        <div class="glow-dark-green" style="top:-100px; right:-100px;"></div>
-        <div class="glow-forest" style="bottom:100px; left:-80px;"></div>
+<!-- Hero Section - Career Page (Matching Outwerk Design) -->
+<section class="relative overflow-hidden min-h-[70vh] flex items-center">
+    <!-- Background Glow Effects -->
+    <div class="glow-dark-green absolute top-0 left-0 w-[600px] h-[600px] opacity-40 pointer-events-none"></div>
+    <div class="glow-forest absolute bottom-0 right-0 w-[500px] h-[500px] opacity-30 pointer-events-none"></div>
 
-        <div class="flex items-center gap-4 mb-6 fade-up">
-            <span class="mono text-xs tracking-widest text-green-500 uppercase">— Join the movement</span>
-            <div class="thin-line" style="width:60px;"></div>
-            <span class="mono text-xs tracking-widest text-zinc-500 uppercase">We're Hiring</span>
+    <!-- Grid Texture Overlay -->
+    <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(rgba(46, 125, 50, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 125, 50, 0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <!-- Floating Particles -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-20 left-[10%] w-1 h-1 bg-green-500/30 rounded-full animate-float-slow"></div>
+        <div class="absolute top-40 right-[15%] w-2 h-2 bg-emerald-500/20 rounded-full animate-float-medium" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-32 left-[20%] w-1.5 h-1.5 bg-green-400/20 rounded-full animate-float-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/2 right-[25%] w-1 h-1 bg-emerald-500/25 rounded-full animate-float-medium" style="animation-delay: 3s;"></div>
+        <div class="absolute bottom-40 right-[10%] w-2 h-2 bg-green-500/15 rounded-full animate-float-slow" style="animation-delay: 1.5s;"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-16 py-20 md:py-28 w-full">
+        <!-- Breadcrumb / Navigation Hint -->
+        <div class="flex items-center gap-2 mb-8 fade-up">
+            <span class="mono text-xs tracking-widest text-green-500 uppercase">Careers</span>
+            <div class="thin-line w-12"></div>
+            <span class="mono text-xs tracking-widest text-zinc-500 uppercase">Join Our Team</span>
         </div>
 
-        <div class="hero-text text-white leading-none mb-6">
-            <div class="fade-up" style="transition-delay:0.05s">START YOUR</div>
-            <div class="fade-up" style="transition-delay:0.1s">
-                <span class="scribble-wrap">
-                    CAREER
-                    <svg viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="100" cy="25" rx="95" ry="20" class="scribble-path" />
-                    </svg>
-                </span>
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Left Column - Heading with Scribble Effect -->
+            <div class="fade-up">
+                <h1 class="hero-text text-white leading-tight">
+                    <span class="block">START YOUR</span>
+                    <span class="gradient-dark-green inline-flex items-center gap-2">
+                        CAREER
+                        <span class="scribble-wrap inline-block relative">
+                            <svg viewBox="0 0 140 45" xmlns="http://www.w3.org/2000/svg" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[115%] h-[150%] pointer-events-none">
+                                <ellipse cx="70" cy="22" rx="65" ry="18" class="scribble-path" stroke="#2e7d32" stroke-width="2.5" fill="none" stroke-dasharray="500" stroke-dashoffset="500" />
+                            </svg>
+                        </span>
+                    </span>
+                </h1>
+            </div>
+
+            <!-- Right Column - Description with Modern Styling -->
+            <div class="fade-up" style="transition-delay: 0.1s">
+                <div class="relative">
+                    <!-- Decorative accent line -->
+                    <div class="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-green-500 via-emerald-600 to-transparent"></div>
+
+                    <div class="space-y-6 pl-6">
+                        <p class="text-gray-300 leading-relaxed text-base md:text-lg font-light">
+                            Join a team of innovators, problem-solvers, and growth enthusiasts. We're looking for passionate individuals ready to make an impact — where your ideas matter and your career accelerates.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="hero-sub-row flex flex-col md:flex-row md:items-end justify-between gap-6 mt-6 fade-up" style="transition-delay:0.2s">
-            <p class="text-zinc-400 text-sm md:text-base max-w-md leading-relaxed">
-                Join a team of innovators, problem-solvers, and growth enthusiasts. We're looking for passionate individuals ready to make an impact.
-            </p>
-            <a href="#openings" class="pill-btn text-white self-start">
-                Explore Opportunities ↗
-            </a>
-        </div>
+<style>
+    /* Additional animations for career hero */
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        50% { transform: translateY(-20px) translateX(10px); opacity: 0.8; }
+    }
+    
+    @keyframes float-medium {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+        50% { transform: translateY(-15px) translateX(-8px); opacity: 0.6; }
+    }
+    
+    .animate-float-slow {
+        animation: float-slow 8s ease-in-out infinite;
+    }
+    
+    .animate-float-medium {
+        animation: float-medium 10s ease-in-out infinite;
+    }
+    
+    /* Ensure the scribble animation works */
+    .scribble-path.animated {
+        animation: draw-scribble 1.2s cubic-bezier(.4, 0, .2, 1) forwards;
+    }
 
-        <div class="thin-line mt-12 fade-up" style="transition-delay:0.25s"></div>
+    @keyframes draw-scribble {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 fade-up" style="transition-delay:0.3s">
-            <div>
-                <div class="stat-num" data-target="150">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">TEAM MEMBERS</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="12">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">NATIONALITIES</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="95">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">EMPLOYEE SATISFACTION</div>
-            </div>
-            <div>
-                <div class="stat-num" data-target="40">0</div>
-                <div class="mono text-xs text-zinc-500 mt-1 tracking-widest">OPEN POSITIONS</div>
-            </div>
-        </div>
-    </section>
+    /* Fade-up animation */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mini stat numbers */
+    .stat-number-mini {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+        font-feature-settings: "tnum";
+        font-variant-numeric: tabular-nums;
+    }
+
+    /* Hero text responsive */
+    .hero-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(42px, 8vw, 100px);
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+        font-weight: 800;
+    }
+
+    /* Glow effects */
+    .glow-dark-green {
+        position: absolute;
+        width: clamp(300px, 50vw, 600px);
+        height: clamp(300px, 50vw, 600px);
+        background: radial-gradient(circle, rgba(20, 83, 45, 0.5) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(40px);
+    }
+    
+    .glow-forest {
+        position: absolute;
+        width: clamp(200px, 35vw, 400px);
+        height: clamp(200px, 35vw, 400px);
+        background: radial-gradient(circle, rgba(21, 94, 60, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        filter: blur(60px);
+    }
+
+    /* Thin line divider */
+    .thin-line {
+        height: 1px;
+        background: rgba(46, 125, 50, 0.3);
+        width: 100%;
+    }
+
+    /* Gradient text */
+    .gradient-dark-green {
+        background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Pill button styling */
+    .pill-btn {
+        border: 1px solid rgba(46, 125, 50, 0.5);
+        border-radius: 999px;
+        padding: 10px 24px;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background: rgba(20, 83, 45, 0.2);
+        backdrop-filter: blur(8px);
+        white-space: nowrap;
+        text-decoration: none;
+    }
+    
+    .pill-btn:hover {
+        background: #2e7d32;
+        color: #030a05;
+        border-color: #2e7d32;
+        transform: translateY(-2px);
+    }
+
+    /* Mono text */
+    .mono {
+        font-family: 'Plus Jakarta Sans', monospace;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+    }
+</style>
+
+<script>
+    // Trigger scribble animation when the section comes into view
+    (function() {
+        const heroSection = document.querySelector('section.relative');
+        const scribblePaths = document.querySelectorAll('.scribble-path');
+
+        const scribbleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    scribblePaths.forEach(path => {
+                        setTimeout(() => {
+                            path.classList.add('animated');
+                        }, 400);
+                    });
+                    scribbleObserver.disconnect();
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        if (scribblePaths.length) {
+            scribbleObserver.observe(heroSection || document.querySelector('section.relative'));
+        }
+
+        // Fade up animation observer
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+        
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // Mini stat counter animation
+        const statNumbers = document.querySelectorAll('.stat-number-mini');
+        let countersStarted = false;
+        
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersStarted) {
+                    countersStarted = true;
+                    statNumbers.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'), 10);
+                        if (isNaN(target)) return;
+                        
+                        let current = 0;
+                        const increment = target / 55;
+                        const interval = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                counter.textContent = target;
+                                clearInterval(interval);
+                            } else {
+                                counter.textContent = Math.floor(current);
+                            }
+                        }, 30);
+                    });
+                    statObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsContainer = document.querySelector('.grid.grid-cols-2.gap-4');
+        if (statsContainer) statObserver.observe(statsContainer);
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    })();
+</script>
 
     <!-- AGENDA / TIMELINE SECTION -->
     <section class="section-px py-24 relative overflow-hidden">

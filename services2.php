@@ -1077,9 +1077,8 @@
             </a>
         </div>
     </section>
-    <!-- development journey -->
-<!-- development journey -->
-<!-- development journey -->
+
+
 <!-- development journey -->
 <section class="development-journey-section">
   <style>

@@ -407,7 +407,8 @@
         }
 
         .form-input,
-        .form-textarea {
+        .form-textarea,
+        .form-select {
             background: rgba(3, 10, 5, 0.6);
             border: 1px solid rgba(46, 125, 50, 0.3);
             transition: all 0.3s ease;
@@ -415,7 +416,8 @@
         }
 
         .form-input:focus,
-        .form-textarea:focus {
+        .form-textarea:focus,
+        .form-select:focus {
             outline: none;
             border-color: #2e7d32;
             box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
@@ -462,19 +464,58 @@
             animation: pulse-glow 2s infinite;
         }
 
-        .map-placeholder {
-            background: linear-gradient(135deg, #0a1508 0%, #051002 100%);
-            position: relative;
+        .full-width-map {
+            width: 100%;
+            border-radius: 1rem;
             overflow: hidden;
+            border: 1px solid rgba(46, 125, 50, 0.3);
+            position: relative;
+            background: linear-gradient(135deg, #0a1508 0%, #051002 100%);
+            min-height: 380px;
         }
 
-        .map-placeholder::before {
+        .full-width-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            display: block;
+            border: 0;
+        }
+
+        .full-width-map::before {
             content: '';
             position: absolute;
             inset: 0;
             background-image: radial-gradient(circle at 30% 40%, rgba(46, 125, 50, 0.1) 1px, transparent 1px);
             background-size: 30px 30px;
             pointer-events: none;
+            z-index: 1;
+            border-radius: 1rem;
+        }
+
+        .info-card-icon {
+            background: rgba(46, 125, 50, 0.15);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .info-row:hover .info-card-icon {
+            background: rgba(46, 125, 50, 0.3);
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .full-width-map {
+                min-height: 280px;
+            }
+            .full-width-map iframe {
+                min-height: 280px;
+            }
         }
     </style>
 </head>
@@ -519,17 +560,13 @@
         </div>
     </nav>
 
-    <!-- Hero Section - Contact Page (Matching Outwerk Design) -->
+    <!-- Hero Section - Contact Page -->
     <section class="relative overflow-hidden min-h-[70vh] flex items-center">
-        <!-- Background Glow Effects -->
         <div class="glow-dark-green absolute top-0 left-0 w-[600px] h-[600px] opacity-40 pointer-events-none"></div>
         <div class="glow-forest absolute bottom-0 right-0 w-[500px] h-[500px] opacity-30 pointer-events-none"></div>
-
-        <!-- Grid Texture Overlay -->
         <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(rgba(46, 125, 50, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(46, 125, 50, 0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 md:px-16 py-20 md:py-28 w-full">
-            <!-- Breadcrumb / Navigation Hint -->
             <div class="flex items-center gap-2 mb-8 fade-up">
                 <span class="mono text-xs tracking-widest text-green-500 uppercase">Contact</span>
                 <div class="thin-line w-12"></div>
@@ -537,7 +574,6 @@
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                <!-- Left Column - Heading with Scribble Effect -->
                 <div class="fade-up">
                     <h1 class="hero-text text-white leading-tight">
                         <span class="block">Contact</span>
@@ -552,18 +588,13 @@
                     </h1>
                 </div>
 
-                <!-- Right Column - Description with Modern Styling -->
                 <div class="fade-up" style="transition-delay: 0.1s">
                     <div class="relative">
-                        <!-- Decorative accent line -->
                         <div class="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-green-500 via-emerald-600 to-transparent"></div>
-
                         <div class="space-y-6 pl-6">
                             <p class="text-gray-300 leading-relaxed text-base md:text-lg font-light">
                                 Have a question or ready to start your project? We're here to help. Reach out and let's create something extraordinary together.
                             </p>
-
-                            <!-- CTA Button -->
                             <div class="pt-4">
                                 <a href="#contact-form" class="pill-btn text-white inline-flex items-center gap-2 group">
                                     Send Message
@@ -579,44 +610,7 @@
         </div>
     </section>
 
-    <!-- CONTACT CARDS - QUICK CONTACT -->
-    <section class="section-px py-12 relative">
-        <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <div class="contact-card blur-card rounded-2xl p-8 text-center fade-up" style="transition-delay:0.05s">
-                <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-5">
-                    <i class="fas fa-envelope text-2xl text-green-500"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Email Us</h3>
-                <p class="text-gray-400 text-sm mb-4">Get a response within 24 hours</p>
-                <a href="mailto:hello@outwerk.com" class="text-green-400 hover:text-green-300 transition text-sm break-all">hello@outwerk.com</a>
-                <a href="mailto:support@outwerk.com" class="text-green-400/70 hover:text-green-300 transition text-sm block mt-1">support@outwerk.com</a>
-            </div>
-
-            <div class="contact-card blur-card rounded-2xl p-8 text-center fade-up" style="transition-delay:0.1s">
-                <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-5">
-                    <i class="fas fa-phone-alt text-2xl text-green-500"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Call Us</h3>
-                <p class="text-gray-400 text-sm mb-4">Mon-Fri, 9am-6pm PKT</p>
-                <a href="tel:+922112345678" class="text-green-400 hover:text-green-300 transition text-sm block">+92 21 1234 5678</a>
-                <a href="tel:+923001234567" class="text-green-400/70 hover:text-green-300 transition text-sm block mt-1">+92 300 1234567</a>
-            </div>
-
-            <div class="contact-card blur-card rounded-2xl p-8 text-center fade-up" style="transition-delay:0.15s">
-                <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-5">
-                    <i class="fas fa-comments text-2xl text-green-500"></i>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">Live Chat</h3>
-                <p class="text-gray-400 text-sm mb-4">Chat with our team instantly</p>
-                <button onclick="alert('Live chat would open here')" class="inline-flex items-center gap-2 px-6 py-2.5 border border-green-500/40 rounded-full text-sm text-green-400 hover:bg-green-500 hover:text-black transition-all">
-                    <i class="fas fa-comment-dots"></i>
-                    Start Chat
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT FORM + MAP SECTION -->
+    <!-- REDESIGNED FORM SECTION + MAP AT THE BOTTOM (FULL WIDTH) -->
     <section id="contact-form" class="section-px py-16 relative">
         <div class="glow-dark-green absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
 
@@ -624,16 +618,21 @@
             <div class="text-center mb-12 fade-up">
                 <div class="inline-flex items-center gap-2 mb-4">
                     <div class="w-2 h-2 bg-green-500 rotate-45"></div>
-                    <span class="mono text-xs text-green-500 tracking-widest uppercase">Send a Message</span>
+                    <span class="mono text-xs text-green-500 tracking-widest uppercase">Start a Conversation</span>
                     <div class="w-2 h-2 bg-green-500 rotate-45"></div>
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Let's Talk <span class="gradient-dark-green">Business</span></h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">Fill out the form below and we'll get back to you within 24 hours.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Contact Form -->
-                <div class="blur-card rounded-2xl p-6 md:p-8 fade-up" style="transition-delay:0.05s">
+            <!-- Form and Contact Info Side by Side -->
+            <div class="grid lg:grid-cols-5 gap-8 mb-12">
+                <!-- Contact Form - 3 columns -->
+                <div class="lg:col-span-3 blur-card rounded-2xl p-6 md:p-8 fade-up" style="transition-delay:0.05s">
+                    <div class="flex items-center gap-3 mb-6 pb-3 border-b border-green-800/30">
+                        <i class="fas fa-pen-alt text-green-500 text-sm"></i>
+                        <span class="mono text-xs text-green-400 tracking-wider">REACH OUT TO US</span>
+                    </div>
                     <form id="contactForm" action="#" method="POST">
                         <div class="grid md:grid-cols-2 gap-5 mb-5">
                             <div>
@@ -657,7 +656,7 @@
                         </div>
                         <div class="mb-5">
                             <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Service Interest</label>
-                            <select name="service" class="form-input w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white">
+                            <select name="service" class="form-select w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white appearance-none cursor-pointer">
                                 <option value="">Select a service</option>
                                 <option value="bpo">BPO Services</option>
                                 <option value="inbound">Inbound Calls</option>
@@ -673,7 +672,7 @@
                         </div>
                         <div class="mb-6">
                             <label class="block text-xs text-gray-400 mb-2 uppercase tracking-wider">Your Message *</label>
-                            <textarea name="message" rows="5" required class="form-textarea w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white"></textarea>
+                            <textarea name="message" rows="5" required class="form-textarea w-full px-4 py-3 rounded-xl bg-black/40 border border-green-900/40 focus:border-green-500 transition text-white resize-none"></textarea>
                         </div>
                         <button type="submit" class="w-full py-4 bg-gradient-to-r from-green-700 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 group">
                             <span>Send Message</span>
@@ -683,84 +682,100 @@
                     </form>
                 </div>
 
-                <!-- Map & Office Info -->
-                <div class="space-y-6 fade-up" style="transition-delay:0.1s">
-                    <!-- Interactive Map Placeholder -->
-                    <div class="map-placeholder rounded-2xl overflow-hidden border border-green-900/40 h-64 relative">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231118.86804129908!2d66.87690483030454!3d24.860734165271778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3152c1e5e8e2f%3A0x2e5c8c5a5e5e5e5e!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-                            width="100%"
-                            height="100%"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                <!-- Contact Details Sidebar (2 columns) -->
+                <div class="lg:col-span-2 space-y-6 fade-up" style="transition-delay:0.1s">
+                    <!-- Main Contact Info Card -->
+                    <div class="blur-card rounded-2xl p-6 space-y-5">
+                        <div class="flex items-center gap-3 pb-2 border-b border-green-800/30">
+                            <i class="fas fa-map-marker-alt text-green-500 text-lg"></i>
+                            <span class="mono text-xs text-green-400 tracking-wider">HEADQUARTERS</span>
+                        </div>
+                        
+                        <!-- Address: Suite 101 & 111, Park Avenue, First Floor Shahra-e-Faisal, Block 6 PECHS, Karachi -->
+                        <div class="info-row flex gap-4 group transition-all">
+                            <div class="info-card-icon flex-shrink-0">
+                                <i class="fas fa-building text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white text-sm font-medium leading-relaxed">Suite 101 & 111, Park Avenue, First Floor</p>
+                                <p class="text-gray-400 text-xs mt-1 leading-relaxed">Shahra-e-Faisal, Shahrah-e-Faisal Block 6 PECHS, Karachi, Pakistan</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone: (021) 34324522 -->
+                        <div class="info-row flex gap-4 group transition-all">
+                            <div class="info-card-icon flex-shrink-0">
+                                <i class="fas fa-phone-alt text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <a href="tel:02134324522" class="text-white text-sm font-medium hover:text-green-400 transition">(021) 34324522</a>
+                                <p class="text-gray-500 text-xs mt-0.5">Direct Line</p>
+                            </div>
+                        </div>
+
+                        <!-- Working Hours: 24/7 -->
+                        <div class="info-row flex gap-4 group transition-all">
+                            <div class="info-card-icon flex-shrink-0">
+                                <i class="fas fa-clock text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="text-white text-sm font-medium">Support Hours:</span>
+                                    <span class="bg-green-500/20 text-green-400 text-xs px-2 py-0.5 rounded-full font-mono tracking-wide">24/7</span>
+                                </div>
+                                <p class="text-gray-400 text-xs mt-1">Always available — day or night, we're here for you.</p>
+                            </div>
+                        </div>
+
+                        <!-- Email & additional support -->
+                        <div class="info-row flex gap-4 group transition-all">
+                            <div class="info-card-icon flex-shrink-0">
+                                <i class="fas fa-envelope text-green-400 text-xl"></i>
+                            </div>
+                            <div>
+                                <a href="mailto:hello@outwerk.com" class="text-white text-sm hover:text-green-400 transition">hr@outwerksolutions.com</a>
+                                <a href="mailto:hello@outwerk.com" class="text-white text-sm hover:text-green-400 transition">info@outwerksolutions.com</a>
+                                <p class="text-gray-500 text-xs mt-0.5">24hr response</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Office Locations -->
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <div class="location-card blur-card rounded-xl p-5">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-building text-green-500 text-xl"></i>
-                                <h4 class="font-bold text-white">Karachi (HQ)</h4>
-                            </div>
-                            <p class="text-gray-400 text-xs leading-relaxed">Plot 123, Main Shahrah-e-Faisal,<br>Karachi, Pakistan</p>
+                    <!-- Secondary CTA / Live Chat Card -->
+                    <div class="blur-card rounded-2xl p-5 flex items-center justify-between flex-wrap gap-3">
+                        <div>
+                            <h4 class="text-sm font-bold text-white">Need immediate assistance?</h4>
+                            <p class="text-gray-400 text-xs mt-1">Our team is online right now.</p>
                         </div>
-                        <div class="location-card blur-card rounded-xl p-5">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-building text-green-500 text-xl"></i>
-                                <h4 class="font-bold text-white">Lahore Office</h4>
-                            </div>
-                            <p class="text-gray-400 text-xs leading-relaxed">34-Gulberg III, MM Alam Road,<br>Lahore, Pakistan</p>
-                        </div>
-                        <div class="location-card blur-card rounded-xl p-5">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-building text-green-500 text-xl"></i>
-                                <h4 class="font-bold text-white">Islamabad</h4>
-                            </div>
-                            <p class="text-gray-400 text-xs leading-relaxed">Suite 7, Blue Area,<br>Islamabad, Pakistan</p>
-                        </div>
-                        <div class="location-card blur-card rounded-xl p-5">
-                            <div class="flex items-center gap-3 mb-3">
-                                <i class="fas fa-globe text-green-500 text-xl"></i>
-                                <h4 class="font-bold text-white">Remote Support</h4>
-                            </div>
-                            <p class="text-gray-400 text-xs leading-relaxed">Global coverage with<br>24/7 support teams</p>
-                        </div>
-                    </div>
-
-                    <!-- Business Hours -->
-                    <div class="blur-card rounded-xl p-5">
-                        <div class="flex items-center gap-3 mb-4">
-                            <i class="fas fa-clock text-green-500 text-xl"></i>
-                            <h4 class="font-bold text-white">Business Hours</h4>
-                        </div>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span class="text-gray-400">Monday - Friday</span>
-                                <span class="text-white">9:00 AM - 6:00 PM PKT</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-400">Saturday - Sunday</span>
-                                <span class="text-white">Support Only (24/7)</span>
-                            </div>
-                            <div class="flex justify-between pt-2 border-t border-green-900/30 mt-2">
-                                <span class="text-gray-400">Emergency Support</span>
-                                <span class="text-green-400">Available 24/7</span>
-                            </div>
-                        </div>
+                        <button onclick="alert('Live chat would open here')" class="px-5 py-2 bg-green-600/20 border border-green-500/40 rounded-full text-green-400 text-xs font-semibold hover:bg-green-600 hover:text-black transition-all flex items-center gap-2">
+                            <i class="fas fa-comment-dots"></i> Start Chat
+                        </button>
                     </div>
                 </div>
+            </div>
+
+            <!-- FULL WIDTH MAP SECTION - Placed below the form with rounded borders -->
+            <div class="fade-up mt-8" style="transition-delay:0.15s">
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="w-1 h-6 bg-green-500/60 rounded-full"></div>
+                    <span class="mono text-xs text-green-400 tracking-wider uppercase">Find Us Here</span>
+                    <div class="flex-1 h-px bg-gradient-to-r from-green-500/30 to-transparent"></div>
+                </div>
+                <div class="full-width-map rounded-2xl">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.7522152195497!2d67.051166!3d24.860734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e6c8e8e8e8f%3A0x2e5c8c5a5e5e5e5e!2sShahrah-e-Faisal%2C%20Karachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p class="text-center text-gray-500 text-xs mt-3">Suite 101 & 111, Park Avenue, First Floor, Shahra-e-Faisal, Block 6 PECHS, Karachi</p>
             </div>
         </div>
     </section>
 
-    <!-- FAQ SECTION - QUICK ANSWERS -->
+    <!-- FAQ SECTION -->
     <section class="section-px py-16 relative">
         <div class="glow-forest absolute bottom-0 right-0 opacity-20"></div>
-
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12 fade-up">
                 <div class="inline-flex items-center gap-2 mb-4">
@@ -778,7 +793,7 @@
                         <span class="font-semibold text-white">How quickly can I expect a response?</span>
                         <i class="fas fa-chevron-down text-green-500 group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="text-gray-400 text-sm mt-3 pt-3 border-t border-green-900/30">We typically respond within 24 hours during business days. For urgent inquiries, please call our support line.</p>
+                    <p class="text-gray-400 text-sm mt-3 pt-3 border-t border-green-900/30">We typically respond within 24 hours during business days. For urgent inquiries, please call our support line (24/7).</p>
                 </details>
                 <details class="blur-card rounded-xl p-5 group open:border-green-500/50 transition-all">
                     <summary class="flex items-center justify-between cursor-pointer list-none">
@@ -805,21 +820,22 @@
         </div>
     </section>
 
-    <!-- SOCIAL CONNECT SECTION -->
+    <!-- Social & Footer -->
     <section class="section-px py-16 border-t border-green-900/30">
-        <div class="max-w-4xl mx-auto text-center fade-up">
-            <div class="flex items-center justify-center gap-3 mb-6">
+    <div class="max-w-4xl mx-auto text-center fade-up">
+        <div class="flex items-center justify-center gap-3 mb-6">
+            <a href="https://www.linkedin.com/company/outwerk-solutions" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-110">
                 <i class="fab fa-linkedin text-2xl text-green-500/50 hover:text-green-400 transition cursor-pointer"></i>
-                <i class="fab fa-twitter text-2xl text-green-500/50 hover:text-green-400 transition cursor-pointer"></i>
-                <i class="fab fa-instagram text-2xl text-green-500/50 hover:text-green-400 transition cursor-pointer"></i>
+            </a>
+            <a href="https://www.facebook.com/OWSolutioners/" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-110">
                 <i class="fab fa-facebook text-2xl text-green-500/50 hover:text-green-400 transition cursor-pointer"></i>
-            </div>
-            <p class="text-gray-500 text-sm">Follow us for updates, insights, and industry news</p>
-            <div class="thin-line w-24 mx-auto mt-6"></div>
+            </a>
         </div>
-    </section>
+        <p class="text-gray-500 text-sm">Follow us for updates, insights, and industry news</p>
+        <div class="thin-line w-24 mx-auto mt-6"></div>
+    </div>
+</section>
 
-    <!-- FOOTER -->
     <footer class="section-px pt-14 pb-8 border-t border-green-900/30">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div class="col-span-2 md:col-span-1">
@@ -848,37 +864,34 @@
             <div>
                 <div class="mono text-xs text-green-600/60 tracking-widest uppercase mb-4">Connect</div>
                 <ul class="space-y-2 text-xs text-zinc-500">
-                    <li><a href="mailto:hello@outwerk.com" class="hover:text-green-400 transition">hello@outwerk.com</a></li>
-                    <li><a href="tel:+922112345678" class="hover:text-green-400 transition">+92 21 1234 5678</a></li>
+                    <li><a href="mailto:hello@outwerk.com" class="hover:text-green-400 transition">hr@outwerksolutions.com</a></li>
+                    <li><a href="mailto:hello@outwerk.com" class="hover:text-green-400 transition">info@outwerksolutions.com</a></li>
+                    <li><a href="tel:02134324522" class="hover:text-green-400 transition">(021) 34324522</a></li>
                 </ul>
             </div>
         </div>
         <div class="thin-line mb-6"></div>
         <div class="flex flex-col md:flex-row justify-between items-center gap-3">
             <span class="mono text-xs text-zinc-700">© 2025 Outwerk Solution. All rights reserved.</span>
-            <span class="mono text-xs text-green-700/40">Karachi, Pakistan — Global Reach</span>
+            <span class="mono text-xs text-green-700/40">Karachi, Pakistan — Global Reach | 24/7 Support</span>
         </div>
     </footer>
 
     <script>
-        // Custom cursor
+        // Custom cursor, mobile menu, navbar scroll, fade observer, scribble, form handler
         const cursor = document.getElementById('cursor');
         const ring = document.getElementById('cursor-ring');
         const isPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
         if (isPointer) {
             cursor.style.display = 'block';
             ring.style.display = 'block';
-            let mx = -100,
-                my = -100,
-                rx = -100,
-                ry = -100;
+            let mx = -100, my = -100, rx = -100, ry = -100;
             document.addEventListener('mousemove', e => {
                 mx = e.clientX;
                 my = e.clientY;
                 cursor.style.left = (mx - 5) + 'px';
                 cursor.style.top = (my - 5) + 'px';
             });
-
             function animateRing() {
                 rx += (mx - rx - 18) * 0.12;
                 ry += (my - ry - 18) * 0.12;
@@ -901,7 +914,6 @@
             });
         }
 
-        // Mobile menu
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
         hamburger.addEventListener('click', () => {
@@ -917,38 +929,24 @@
             });
         });
 
-        // Navbar scroll
         const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 60);
-        });
+        window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
 
-        // Fade up observer
         const fadeObserver = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) e.target.classList.add('visible');
-            });
-        }, {
-            threshold: 0.1
-        });
+            entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+        }, { threshold: 0.1 });
         document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
-        // Scribble animation
         const scribbleObserver = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.querySelectorAll('.scribble-path').forEach(p => p.classList.add('animated'));
-                    }, 400);
+                    setTimeout(() => entry.target.querySelectorAll('.scribble-path').forEach(p => p.classList.add('animated')), 400);
                     scribbleObserver.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.5
-        });
+        }, { threshold: 0.5 });
         document.querySelectorAll('.scribble-wrap').forEach(el => scribbleObserver.observe(el));
 
-        // Form submission handling
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -958,15 +956,12 @@
             });
         }
 
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
                 const target = document.querySelector(a.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
