@@ -898,6 +898,40 @@
                 </div>
             </div>
 
+                        <!-- Service 6: WEB DEVELOPMENT -->
+            <div class="service-row fade-up cursor-pointer">
+                <div class="grid grid-cols-12 items-start gap-2 md:gap-4 py-4">
+                    <div class="col-span-2 md:col-span-1">
+                        <span class="service-num">06</span>
+                    </div>
+                    <div class="col-span-8 md:col-span-9 pl-1 md:pl-8">
+                        <div class="flex flex-wrap items-center gap-2 md:gap-4 mb-1">
+                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">
+                                WEB DEVELOPMENT
+                            </h3>
+                            <span class="key-point">Custom Development</span>
+                        </div>
+                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">
+                            Custom development, e-commerce, API integration, responsive design.
+                        </p>
+                        <div class="service-detail pt-3">
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="key-point">React / Next.js</span>
+                                <span class="key-point">E-commerce</span>
+                                <span class="key-point">API Integration</span>
+                                <span class="key-point">Responsive Design</span>
+                            </div>
+                            <p class="text-white text-xs mt-3">
+                                Custom CRM • Cloud hosting • Maintenance & support • Scalable solutions
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-span-2 flex justify-end items-start pt-2">
+                        <span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Service 5: IT SUPPORT -->
             <div class="service-row fade-up cursor-pointer">
                 <div class="grid grid-cols-12 items-start gap-2 md:gap-4 py-4">
@@ -932,39 +966,7 @@
                 </div>
             </div>
 
-            <!-- Service 6: WEB DEVELOPMENT -->
-            <div class="service-row fade-up cursor-pointer">
-                <div class="grid grid-cols-12 items-start gap-2 md:gap-4 py-4">
-                    <div class="col-span-2 md:col-span-1">
-                        <span class="service-num">06</span>
-                    </div>
-                    <div class="col-span-8 md:col-span-9 pl-1 md:pl-8">
-                        <div class="flex flex-wrap items-center gap-2 md:gap-4 mb-1">
-                            <h3 class="text-xl md:text-4xl font-semibold tracking-tight uppercase text-white">
-                                WEB DEVELOPMENT
-                            </h3>
-                            <span class="key-point">Custom Development</span>
-                        </div>
-                        <p class="text-white text-sm service-detail pt-2 leading-relaxed">
-                            Custom development, e-commerce, API integration, responsive design.
-                        </p>
-                        <div class="service-detail pt-3">
-                            <div class="flex flex-wrap gap-2 mt-2">
-                                <span class="key-point">React / Next.js</span>
-                                <span class="key-point">E-commerce</span>
-                                <span class="key-point">API Integration</span>
-                                <span class="key-point">Responsive Design</span>
-                            </div>
-                            <p class="text-white text-xs mt-3">
-                                Custom CRM • Cloud hosting • Maintenance & support • Scalable solutions
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-span-2 flex justify-end items-start pt-2">
-                        <span class="plus-icon text-green-500 text-2xl leading-none select-none">+</span>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Service 7: SEO & SEM -->
             <div class="service-row fade-up cursor-pointer">
@@ -1075,490 +1077,700 @@
             </a>
         </div>
     </section>
+    <!-- development journey -->
+<!-- development journey -->
+<!-- development journey -->
+<!-- development journey -->
+<section class="development-journey-section">
+  <style>
+    /* Match the page's dark theme */
+    .development-journey-section {
+      background-color: #030a05;
+      color: #eef5e8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      display: block;
+      width: 100%;
+      position: relative;
+    }
 
+    /* Glow effects matching page */
+    .development-journey-section .glow-dark-green {
+      position: absolute;
+      width: clamp(300px, 50vw, 600px);
+      height: clamp(300px, 50vw, 600px);
+      background: radial-gradient(circle, rgba(20, 83, 45, 0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(40px);
+    }
 
-    <!-- ─── DEVELOPMENT JOURNEY SECTION (ENHANCED PREMIUM VERSION) ─── -->
-    <section id="development-journey" class="section-px px-8 md:px-16 py-24 relative overflow-hidden">
-        <!-- Background Glow Effects - Enhanced -->
-        <div class="glow-dark-green absolute top-1/4 left-1/4 w-[600px] h-[600px] opacity-30 pointer-events-none animate-pulse-slow"></div>
-        <div class="glow-forest absolute bottom-0 right-0 w-[500px] h-[500px] opacity-25 pointer-events-none animate-pulse-slow" style="animation-delay: 2s;"></div>
+    .development-journey-section .glow-forest {
+      position: absolute;
+      width: clamp(200px, 35vw, 400px);
+      height: clamp(200px, 35vw, 400px);
+      background: radial-gradient(circle, rgba(21, 94, 60, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(60px);
+    }
 
-        <!-- Floating Particles -->
-        <div class="absolute inset-0 pointer-events-none overflow-hidden">
-            <div class="absolute top-20 left-[10%] w-1 h-1 bg-green-500/30 rounded-full animate-float"></div>
-            <div class="absolute top-40 right-[15%] w-2 h-2 bg-emerald-500/20 rounded-full animate-float" style="animation-delay: 1s; animation-duration: 6s;"></div>
-            <div class="absolute bottom-32 left-[20%] w-1.5 h-1.5 bg-green-400/20 rounded-full animate-float" style="animation-delay: 2s; animation-duration: 7s;"></div>
-            <div class="absolute top-1/2 right-[25%] w-1 h-1 bg-emerald-500/25 rounded-full animate-float" style="animation-delay: 3s; animation-duration: 5s;"></div>
+    /* Steps section container */
+    .development-journey-section .steps-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 5vw;
+      position: relative;
+      z-index: 2;
+    }
+
+    .development-journey-section .step-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(46, 125, 50, 0.15);
+      gap: 4rem;
+      opacity: 0;
+      transform: translateY(48px);
+      transition: opacity 0.7s cubic-bezier(.22,1,.36,1), transform 0.7s cubic-bezier(.22,1,.36,1);
+    }
+    .development-journey-section .step-row.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Alternating layout */
+    .development-journey-section .step-row.odd .text-col  { order: 1; }
+    .development-journey-section .step-row.odd .num-col   { order: 2; }
+    .development-journey-section .step-row.even .num-col  { order: 1; }
+    .development-journey-section .step-row.even .text-col { order: 2; }
+
+    /* Text column styling */
+    .development-journey-section .text-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .development-journey-section .step-index {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #2e7d32;
+      font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .development-journey-section .step-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #eef5e8;
+      font-weight: 700;
+    }
+    .development-journey-section .step-heading .gradient {
+      background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .development-journey-section .step-desc {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #9ca3af;
+      max-width: 400px;
+      font-weight: 350;
+    }
+    .development-journey-section .step-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+    .development-journey-section .pill-timeline {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      background: rgba(46, 125, 50, 0.15);
+      padding: 0.25rem 1rem;
+      border-radius: 40px;
+      color: #4caf50;
+      text-transform: uppercase;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .development-journey-section .duration {
+      font-family: monospace;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #9ca3af;
+    }
+
+    /* KEY POINTS TAGS */
+    .development-journey-section .key-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
+    }
+    .development-journey-section .key-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.02em;
+      background: rgba(46, 125, 50, 0.1);
+      border: 1px solid rgba(46, 125, 50, 0.3);
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      color: #7bcb7f;
+      font-weight: 450;
+      transition: all 0.2s;
+    }
+    .development-journey-section .key-tag:hover {
+      border-color: #2e7d32;
+      background: rgba(46, 125, 50, 0.2);
+    }
+
+    /* ─── NUMBER COLUMN WITH MASK EFFECT (image ONLY inside number shape) ─── */
+    .development-journey-section .num-col {
+      position: relative;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a140c;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    /* Container for the masked image */
+    .num-mask-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* The image with clip-path mask - image is ONLY visible inside the number shape */
+    .num-mask-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    /* Different clip paths for each step - the number shape acts as the mask */
+    .mask-01 {
+      clip-path: url(#numberShape01);
+    }
+    .mask-02 {
+      clip-path: url(#numberShape02);
+    }
+    .mask-03 {
+      clip-path: url(#numberShape03);
+    }
+    .mask-04 {
+      clip-path: url(#numberShape04);
+    }
+
+    /* Fallback for browsers that don't support clip-path */
+    @supports not (clip-path: url(#numberShape01)) {
+      .num-mask-image {
+        opacity: 0.85;
+      }
+    }
+
+    /* Outline number overlay (stroke only, no fill) */
+    .num-outline-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .num-outline-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(8rem, 20vw, 16rem);
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(46, 125, 50, 0.6);
+      line-height: 1;
+      user-select: none;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Image zoom on hover */
+    .development-journey-section .num-col:hover .num-mask-image {
+      transform: scale(1.08);
+    }
+
+    /* Accent tag overlay */
+    .development-journey-section .num-tag {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      background: #2e7d32;
+      color: #030a05;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      font-weight: 700;
+      z-index: 3;
+      backdrop-filter: blur(2px);
+      border-radius: 30px;
+      pointer-events: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .development-journey-section .step-row.even .num-tag {
+      left: auto;
+      right: 1.25rem;
+    }
+
+    /* Stats bar - matching page dark theme */
+    .development-journey-section .stats-mini-bar {
+      background: rgba(3, 10, 5, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(46, 125, 50, 0.25);
+      color: #eef5e8;
+      margin-top: 5rem;
+      padding: 2.5rem 2rem;
+      border-radius: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .development-journey-section .stat-item {
+      text-align: center;
+      flex: 1;
+    }
+    .development-journey-section .stat-number-lg {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.8rem;
+      background: linear-gradient(135deg, #2e7d32, #4caf50, #66bb6a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+      font-weight: 700;
+    }
+    .development-journey-section .stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(238, 245, 232, 0.6);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* CTA button */
+    .development-journey-section .journey-cta {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
+    .development-journey-section .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: linear-gradient(135deg, #1a4a2a, #0d2a18);
+      color: #eef5e8;
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+      border: 1px solid rgba(46, 125, 50, 0.4);
+      text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .development-journey-section .cta-button:hover {
+      background: linear-gradient(135deg, #2e7d32, #1a4a2a);
+      transform: translateY(-3px);
+      gap: 1rem;
+      border-color: #4caf50;
+    }
+
+    /* Section header styling */
+    .development-journey-section .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .development-journey-section .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(46, 125, 50, 0.15);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      margin-bottom: 1.5rem;
+    }
+    .development-journey-section .section-label .dot {
+      width: 6px;
+      height: 6px;
+      background: #4caf50;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+    .development-journey-section .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .development-journey-section .section-subtitle {
+      color: #9ca3af;
+      max-width: 600px;
+      margin: 1rem auto 0;
+    }
+
+    /* Step button styling */
+    .development-journey-section .step-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #eef5e8;
+      font-weight: 600;
+      margin-top: 0.5rem;
+      position: relative;
+      width: fit-content;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .development-journey-section .step-btn::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: #2e7d32;
+      transition: width 0.35s ease;
+    }
+    .development-journey-section .step-btn:hover::after {
+      width: 100%;
+    }
+    .development-journey-section .step-btn:hover {
+      color: #4caf50;
+    }
+    .development-journey-section .step-btn svg {
+      transition: transform 0.3s ease;
+    }
+    .development-journey-section .step-btn:hover svg {
+      transform: translateX(5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .development-journey-section .step-row { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 0; }
+      .development-journey-section .step-row.even .num-col,
+      .development-journey-section .step-row.even .text-col,
+      .development-journey-section .step-row.odd .text-col,
+      .development-journey-section .step-row.odd .num-col { order: unset; }
+      .development-journey-section .step-row.even .num-col { order: 1; }
+      .development-journey-section .step-row.even .text-col { order: 2; }
+      .development-journey-section .stats-mini-bar { flex-direction: column; align-items: center; text-align: center; }
+      .development-journey-section .num-tag { font-size: 0.55rem; padding: 0.25rem 0.7rem; }
+    }
+
+    @media (max-width: 640px) {
+      .development-journey-section .step-heading { font-size: 2rem; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+
+  <!-- SVG Defs for clip-path masks (number shapes - image will ONLY appear inside these shapes) -->
+  <svg style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
+    <defs>
+      <!-- Number 01 mask - bold digit shape -->
+      <clipPath id="numberShape01" clipPathUnits="objectBoundingBox">
+        <path d="M0.38,0.08 L0.52,0.08 L0.52,0.38 L0.68,0.38 L0.68,0.52 L0.52,0.52 L0.52,0.92 L0.38,0.92 L0.38,0.52 L0.22,0.52 L0.22,0.38 L0.38,0.38 Z" />
+      </clipPath>
+      <!-- Number 02 mask -->
+      <clipPath id="numberShape02" clipPathUnits="objectBoundingBox">
+        <path d="M0.22,0.18 Q0.22,0.08 0.42,0.08 Q0.62,0.08 0.62,0.18 Q0.62,0.28 0.47,0.38 L0.22,0.58 L0.22,0.92 L0.78,0.92 L0.78,0.78 L0.42,0.78 L0.42,0.68 L0.67,0.5 Q0.82,0.4 0.82,0.22 Q0.82,0.08 0.58,0.08 Q0.32,0.08 0.22,0.18 Z" />
+      </clipPath>
+      <!-- Number 03 mask -->
+      <clipPath id="numberShape03" clipPathUnits="objectBoundingBox">
+        <path d="M0.78,0.22 Q0.78,0.08 0.58,0.08 Q0.35,0.08 0.22,0.22 L0.38,0.32 Q0.42,0.2 0.58,0.2 Q0.7,0.2 0.7,0.32 Q0.7,0.44 0.58,0.44 L0.38,0.44 L0.38,0.58 L0.58,0.58 Q0.7,0.58 0.7,0.7 Q0.7,0.82 0.58,0.82 Q0.42,0.82 0.38,0.7 L0.22,0.8 Q0.32,0.94 0.58,0.94 Q0.78,0.94 0.78,0.8 Q0.78,0.7 0.68,0.62 Q0.78,0.54 0.78,0.45 Q0.78,0.35 0.68,0.28 Q0.78,0.22 0.78,0.22 Z" />
+      </clipPath>
+      <!-- Number 04 mask -->
+      <clipPath id="numberShape04" clipPathUnits="objectBoundingBox">
+        <path d="M0.68,0.08 L0.68,0.48 L0.85,0.48 L0.85,0.62 L0.68,0.62 L0.68,0.92 L0.52,0.92 L0.52,0.62 L0.18,0.62 L0.18,0.48 L0.52,0.48 L0.52,0.08 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <!-- Section Header -->
+  <div class="steps-section">
+    <div class="section-header fade-up">
+      <div class="section-label">
+        <span class="dot"></span>
+        <span class="text-xs tracking-widest uppercase text-green-500">Our Workflow</span>
+        <span class="dot"></span>
+      </div>
+      <h2 class="section-title">
+        DEVELOPMENT <span class="gradient">JOURNEY</span>
+      </h2>
+      <p class="section-subtitle text-sm">
+        A streamlined workflow that transforms ideas into exceptional solutions through a structured, transparent process.
+      </p>
+      <div class="w-20 h-px bg-gradient-to-r from-transparent via-green-500 to-transparent mx-auto mt-6"></div>
+    </div>
+  </div>
+
+  <!-- MAIN PROCESS STEPS (Image masked inside number shape only) -->
+  <div class="steps-section">
+
+    <!-- STEP 01 — Discovery & Planning -->
+    <div class="step-row odd" data-step>
+      <div class="text-col">
+        <span class="step-index">PHASE 01</span>
+        <h2 class="step-heading">Discovery & <span class="gradient">Planning</span></h2>
+        <div class="step-meta">
+          <span class="pill-timeline">Timeline</span>
+          <span class="duration">2-3 weeks</span>
         </div>
-
-        <!-- Section Header with Animated Underline -->
-        <div class="text-center max-w-4xl mx-auto mb-16 fade-up">
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <span class="dark-green-dot animate-pulse-gentle"></span>
-                <span class="mono text-xs text-green-500 tracking-widest uppercase relative">
-                    Our Workflow
-                    <span class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500 to-transparent"></span>
-                </span>
-                <span class="dark-green-dot animate-pulse-gentle"></span>
-            </div>
-            <h2 class="hero-text text-white mb-6 relative inline-block" style="font-size: clamp(42px, 8vw, 80px);">
-                DEVELOPMENT <span class="gradient-dark-green relative inline-block">
-                    JOURNEY
-                    <svg class="absolute -bottom-2 left-0 w-full" height="4" viewBox="0 0 200 4" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 2 L200 2" stroke="url(#gradientLine)" stroke-width="2" stroke-dasharray="6 6" stroke-dashoffset="0">
-                            <animate attributeName="stroke-dashoffset" from="12" to="0" dur="1.5s" repeatCount="indefinite" />
-                        </path>
-                        <defs>
-                            <linearGradient id="gradientLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stop-color="#2e7d32" />
-                                <stop offset="50%" stop-color="#4caf50" />
-                                <stop offset="100%" stop-color="#2e7d32" />
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                </span>
-            </h2>
-            <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                A streamlined workflow that transforms ideas into exceptional solutions through a structured, transparent process.
-            </p>
-            <div class="thin-line w-24 mx-auto mt-8 relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-green-500 to-transparent animate-shimmer"></div>
-            </div>
+        <p class="step-desc">Deep discovery, stakeholder workshops, and strategic blueprint — we map every requirement before writing a single line of code.</p>
+        <div class="key-tags">
+          <span class="key-tag">Requirement Analysis</span>
+          <span class="key-tag">Strategy Formulation</span>
+          <span class="key-tag">Roadmap Creation</span>
         </div>
-
-        <!-- Timeline Journey - Enhanced with Cards -->
-        <div class="relative max-w-7xl mx-auto mt-12">
-
-            <!-- Vertical Line with Gradient Animation -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-green-500/60 to-transparent hidden lg:block">
-                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
-                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-green-500 rounded-full animate-ping" style="animation-delay: 3s;"></div>
-            </div>
-
-            <!-- Journey Steps with Enhanced Cards -->
-            <div class="space-y-16 lg:space-y-24">
-
-                <!-- Step 1 - Discovery & Planning -->
-                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up">
-                    <div class="lg:text-right order-2 lg:order-1">
-                        <div class="lg:pr-12">
-                            <div class="flex items-center gap-3 lg:justify-end mb-4">
-                                <span class="relative">
-                                    <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                                    <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 01</span>
-                                </span>
-                                <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[-8px] lg:group-hover:translate-x-0 transition-transform duration-300">
-                                Discovery & <span class="gradient-dark-green">Planning</span>
-                            </h3>
-                            <div class="flex items-center gap-3 mb-4 lg:justify-end">
-                                <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
-                                    <span class="relative z-10">TIMELINE</span>
-                                </span>
-                                <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors">2-3 WEEKS</span>
-                            </div>
-                            <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
-                                Comprehensive analysis and strategic planning to establish project foundations.
-                            </p>
-                            <div class="flex flex-wrap gap-2 lg:justify-end">
-                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Requirement Analysis</span>
-                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Strategy Formulation</span>
-                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Roadmap Creation</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Timeline Node - Enhanced -->
-                    <div class="relative order-1 lg:order-2 flex justify-center lg:justify-start">
-                        <div class="relative cursor-pointer">
-                            <!-- Outer Glow Ring -->
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <!-- Main Node -->
-                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
-                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">01</span>
-                            </div>
-                            <!-- Pulsing Rings -->
-                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
-                            <!-- Glow Effect -->
-                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        </div>
-                    </div>
-
-                    <div class="hidden lg:block order-3"></div>
-                </div>
-
-                <!-- Step 2 - Design & Development -->
-                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up" style="transition-delay: 0.1s">
-                    <div class="hidden lg:block"></div>
-
-                    <div class="relative flex justify-center lg:justify-end order-1">
-                        <div class="relative cursor-pointer">
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
-                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">02</span>
-                            </div>
-                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
-                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        </div>
-                    </div>
-
-                    <div class="lg:pl-12">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
-                            <span class="relative">
-                                <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                                <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 02</span>
-                            </span>
-                        </div>
-                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[8px] transition-transform duration-300">
-                            Design & <span class="gradient-dark-green">Development</span>
-                        </h3>
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
-                                <span class="relative z-10">TIMELINE</span>
-                            </span>
-                            <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors">3-4 WEEKS</span>
-                        </div>
-                        <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
-                            Crafting exceptional digital experiences through innovative design and development.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">UI/UX Design</span>
-                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Agile Development</span>
-                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Code Implementation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 - Testing & Implementation -->
-                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up" style="transition-delay: 0.2s">
-                    <div class="lg:text-right order-2 lg:order-1">
-                        <div class="lg:pr-12">
-                            <div class="flex items-center gap-3 lg:justify-end mb-4">
-                                <span class="relative">
-                                    <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                                    <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 03</span>
-                                </span>
-                                <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
-                            </div>
-                            <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[-8px] lg:group-hover:translate-x-0 transition-transform duration-300">
-                                Testing & <span class="gradient-dark-green">Implementation</span>
-                            </h3>
-                            <div class="flex items-center gap-3 mb-4 lg:justify-end">
-                                <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
-                                    <span class="relative z-10">TIMELINE</span>
-                                </span>
-                                <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors">1-2 WEEKS</span>
-                            </div>
-                            <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
-                                Comprehensive testing protocols and smooth deployment strategies.
-                            </p>
-                            <div class="flex flex-wrap gap-2 lg:justify-end">
-                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Quality Assurance</span>
-                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Performance Testing</span>
-                                <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Deployment</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative order-1 lg:order-2 flex justify-center lg:justify-start">
-                        <div class="relative cursor-pointer">
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
-                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">03</span>
-                            </div>
-                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
-                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        </div>
-                    </div>
-
-                    <div class="hidden lg:block order-3"></div>
-                </div>
-
-                <!-- Step 4 - Support & Optimization -->
-                <div class="relative lg:grid lg:grid-cols-2 gap-12 items-center group fade-up" style="transition-delay: 0.3s">
-                    <div class="hidden lg:block"></div>
-
-                    <div class="relative flex justify-center lg:justify-end order-1">
-                        <div class="relative cursor-pointer">
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="w-24 h-24 lg:w-28 lg:h-28 rounded-full bg-gradient-to-br from-green-600/30 to-emerald-600/30 border-2 border-green-500/60 flex items-center justify-center group-hover:scale-110 transition-all duration-500 backdrop-blur-sm shadow-xl group-hover:shadow-2xl group-hover:shadow-green-500/30">
-                                <span class="text-5xl lg:text-6xl font-bold gradient-dark-green group-hover:scale-110 transition-transform duration-300">04</span>
-                            </div>
-                            <div class="absolute inset-0 rounded-full bg-green-500/30 animate-ping-slow opacity-75"></div>
-                            <div class="absolute inset-0 rounded-full bg-green-500/20 animate-ping-slower opacity-50"></div>
-                            <div class="absolute -inset-4 rounded-full bg-green-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        </div>
-                    </div>
-
-                    <div class="lg:pl-12">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-px bg-green-500/40 hidden lg:block group-hover:w-16 transition-all duration-500"></div>
-                            <span class="relative">
-                                <span class="absolute -inset-1 bg-green-500/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                                <span class="mono text-xs text-green-500 tracking-wider relative">PHASE 04</span>
-                            </span>
-                        </div>
-                        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4 font-['Space_Grotesk'] group-hover:translate-x-[8px] transition-transform duration-300">
-                            Support & <span class="gradient-dark-green">Optimization</span>
-                        </h3>
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="pill-btn text-[11px] !py-1 !px-3 relative overflow-hidden group-hover:shadow-glow transition-all">
-                                <span class="relative z-10">TIMELINE</span>
-                            </span>
-                            <span class="text-emerald-400 font-mono text-sm font-bold group-hover:text-emerald-300 transition-colors relative">
-                                ONGOING
-                                <span class="absolute -bottom-1 left-0 w-full h-px bg-emerald-500/50 animate-pulse"></span>
-                            </span>
-                        </div>
-                        <p class="text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">
-                            Continuous improvement and maintenance for optimal performance.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Ongoing Support</span>
-                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Performance Optimization</span>
-                            <span class="key-point text-xs group-hover:border-green-500/60 transition-all">Continuous Updates</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <a href="#" class="step-btn">
+          Explore phase
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="num-col">
+        <div class="num-mask-container">
+          <!-- Image is masked by the number 01 shape - image ONLY visible inside the number -->
+          <img class="num-mask-image mask-01" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&q=80" alt="Discovery meeting" />
         </div>
-
-        <!-- Journey Stats / CTA - Enhanced -->
-        <div class="max-w-6xl mx-auto mt-20 pt-8 fade-up" style="transition-delay: 0.4s">
-            <!-- Stats with Animated Counters -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                <div class="text-center group-stats">
-                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2 relative inline-block">
-                        <span class="stat-number" data-target="98">0</span>%
-                        <div class="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                    </div>
-                    <div class="mono text-xs text-gray-500 mt-1">Project Success Rate</div>
-                </div>
-                <div class="text-center group-stats">
-                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2">
-                        <span class="stat-number" data-target="250">0</span>+
-                    </div>
-                    <div class="mono text-xs text-gray-500 mt-1">Delivered Projects</div>
-                </div>
-                <div class="text-center group-stats">
-                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2">24<span class="stat-number" data-target="7">0</span></div>
-                    <div class="mono text-xs text-gray-500 mt-1">Support Coverage</div>
-                </div>
-                <div class="text-center group-stats">
-                    <div class="text-3xl md:text-4xl font-bold gradient-dark-green mb-2">
-                        <span class="stat-number" data-target="100">0</span>%
-                    </div>
-                    <div class="mono text-xs text-gray-500 mt-1">Client Satisfaction</div>
-                </div>
-            </div>
-
-            <!-- Enhanced CTA -->
-            <div class="text-center relative">
-                <div class="absolute inset-0 flex items-center justify-center">
-                    <div class="w-64 h-64 bg-green-500/10 rounded-full blur-3xl animate-pulse-slow"></div>
-                </div>
-                <a href="#contact" class="relative inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-green-700 to-emerald-600 text-white font-semibold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 group overflow-hidden">
-                    <span class="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                    <span class="relative z-10">Start Your Journey Today</span>
-                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                    </svg>
-                </a>
-                <p class="text-xs text-gray-600 mt-4">No obligation. Free consultation to discuss your vision.</p>
-            </div>
+        <div class="num-outline-overlay">
+          <span class="num-outline-text">01</span>
         </div>
-    </section>
+        <span class="num-tag">Discovery</span>
+      </div>
+    </div>
 
-    <style>
-        /* Enhanced Animations */
-        @keyframes growLine {
-            0% {
-                height: 0%;
-                opacity: 0;
-            }
+    <!-- STEP 02 — Design & Development -->
+    <div class="step-row even" data-step>
+      <div class="num-col">
+        <div class="num-mask-container">
+          <img class="num-mask-image mask-02" src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=1000&q=80" alt="Design & development" />
+        </div>
+        <div class="num-outline-overlay">
+          <span class="num-outline-text">02</span>
+        </div>
+        <span class="num-tag">Creation</span>
+      </div>
+      <div class="text-col">
+        <span class="step-index">PHASE 02</span>
+        <h2 class="step-heading">Design & <span class="gradient">Development</span></h2>
+        <div class="step-meta">
+          <span class="pill-timeline">Timeline</span>
+          <span class="duration">3-4 weeks</span>
+        </div>
+        <p class="step-desc">Agile sprints, iterative UI/UX, and clean code architecture — we transform concepts into high-performance digital experiences.</p>
+        <div class="key-tags">
+          <span class="key-tag">UI/UX Design</span>
+          <span class="key-tag">Agile Development</span>
+          <span class="key-tag">Code Implementation</span>
+        </div>
+        <a href="#" class="step-btn">
+          Explore phase
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
 
-            100% {
-                height: 100%;
-                opacity: 1;
-            }
-        }
+    <!-- STEP 03 — Testing & Implementation -->
+    <div class="step-row odd" data-step>
+      <div class="text-col">
+        <span class="step-index">PHASE 03</span>
+        <h2 class="step-heading">Testing & <span class="gradient">Implementation</span></h2>
+        <div class="step-meta">
+          <span class="pill-timeline">Timeline</span>
+          <span class="duration">1-2 weeks</span>
+        </div>
+        <p class="step-desc">Rigorous QA, performance benchmarking, and zero-downtime deployment strategies that ensure bulletproof launches.</p>
+        <div class="key-tags">
+          <span class="key-tag">Quality Assurance</span>
+          <span class="key-tag">Performance Testing</span>
+          <span class="key-tag">Seamless Deployment</span>
+        </div>
+        <a href="#" class="step-btn">
+          Explore phase
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+      <div class="num-col">
+        <div class="num-mask-container">
+          <img class="num-mask-image mask-03" src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=1000&q=80" alt="Testing automation" />
+        </div>
+        <div class="num-outline-overlay">
+          <span class="num-outline-text">03</span>
+        </div>
+        <span class="num-tag">Validation</span>
+      </div>
+    </div>
 
-        @keyframes pulse-slow {
+    <!-- STEP 04 — Support & Optimization -->
+    <div class="step-row even" data-step>
+      <div class="num-col">
+        <div class="num-mask-container">
+          <img class="num-mask-image mask-04" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&q=80" alt="Ongoing support" />
+        </div>
+        <div class="num-outline-overlay">
+          <span class="num-outline-text">04</span>
+        </div>
+        <span class="num-tag">Evolution</span>
+      </div>
+      <div class="text-col">
+        <span class="step-index">PHASE 04</span>
+        <h2 class="step-heading">Support & <span class="gradient">Optimization</span></h2>
+        <div class="step-meta">
+          <span class="pill-timeline">Timeline</span>
+          <span class="duration relative">Ongoing</span>
+        </div>
+        <p class="step-desc">Continuous monitoring, performance tuning, and iterative enhancements — we stay as your long-term partner for growth.</p>
+        <div class="key-tags">
+          <span class="key-tag">Ongoing Support</span>
+          <span class="key-tag">Performance Optimization</span>
+          <span class="key-tag">Continuous Updates</span>
+        </div>
+        <a href="#" class="step-btn">
+          Explore phase
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
-            0%,
-            100% {
-                opacity: 0.3;
-                transform: scale(1);
-            }
+  <!-- STATS & CTA -->
+  <div class="steps-section">
+    <div class="stats-mini-bar">
+      <div class="stat-item">
+        <div class="stat-number-lg"><span class="counter-num" data-target="98">0</span>%</div>
+        <div class="stat-label">Success Rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number-lg"><span class="counter-num" data-target="250">0</span>+</div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number-lg">24/<span class="counter-num" data-target="7">0</span></div>
+        <div class="stat-label">Support Coverage</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number-lg"><span class="counter-num" data-target="100">0</span>%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
 
-            50% {
-                opacity: 0.6;
-                transform: scale(1.05);
-            }
-        }
+    <div class="journey-cta">
+      <a href="#" class="cta-button">
+        Start your journey today
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 9h12M11 5l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <p class="text-xs text-gray-500 mt-4 tracking-wide">No obligation · free consultation to explore your vision</p>
+    </div>
+  </div>
 
-        @keyframes ping-slow {
-            0% {
-                transform: scale(1);
-                opacity: 0.8;
-            }
+  <script>
+    (function() {
+      // Intersection Observer for step rows (reveal on scroll)
+      const rows = document.querySelectorAll('.development-journey-section .step-row[data-step]');
+      const stepObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, idx) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, idx * 100);
+            stepObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: "0px 0px -30px 0px" });
+      
+      rows.forEach(r => stepObserver.observe(r));
 
-            75%,
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
+      // Fade up observer for section header
+      const fadeElements = document.querySelectorAll('.development-journey-section .fade-up');
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      fadeElements.forEach(el => fadeObserver.observe(el));
 
-        @keyframes ping-slower {
-            0% {
-                transform: scale(1);
-                opacity: 0.6;
-            }
-
-            75%,
-            100% {
-                transform: scale(2);
-                opacity: 0;
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px) translateX(0px);
-                opacity: 0.3;
-            }
-
-            50% {
-                transform: translateY(-20px) translateX(10px);
-                opacity: 0.8;
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(100%);
-            }
-        }
-
-        .animate-pulse-slow {
-            animation: pulse-slow 4s ease-in-out infinite;
-        }
-
-        .animate-ping-slow {
-            animation: ping-slow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-
-        .animate-ping-slower {
-            animation: ping-slow 3.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-        }
-
-        .animate-float {
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .animate-shimmer {
-            animation: shimmer 2s infinite;
-        }
-
-        .shadow-glow {
-            box-shadow: 0 0 20px rgba(46, 125, 50, 0.5);
-        }
-
-        /* Stat Counter Animation */
-        .stat-number {
-            display: inline-block;
-        }
-
-        /* Hover Effects */
-        .group-stats {
-            transition: all 0.3s ease;
-        }
-
-        .group-stats:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1023px) {
-
-            .group:hover .w-24,
-            .group:hover .lg\:w-28 {
-                transform: scale(1.05);
-            }
-        }
-    </style>
-
-    <script>
-        // Enhanced Intersection Observer with Counter Animation
-        (function() {
-            // Timeline items animation
-            const timelineItems = document.querySelectorAll('#development-journey .group');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.2,
-                rootMargin: '50px'
+      // Counter animation for stats
+      const counters = document.querySelectorAll('.development-journey-section .counter-num');
+      let counted = false;
+      const statsSection = document.querySelector('.development-journey-section .stats-mini-bar');
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !counted) {
+            counted = true;
+            counters.forEach(counter => {
+              const target = parseInt(counter.getAttribute('data-target'), 10);
+              if (isNaN(target)) return;
+              let current = 0;
+              const increment = target / 55;
+              const interval = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  counter.textContent = target;
+                  clearInterval(interval);
+                } else {
+                  counter.textContent = Math.floor(current);
+                }
+              }, 30);
             });
-
-            timelineItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(30px)';
-                item.style.transition = `opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15}s, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.15}s`;
-                observer.observe(item);
-            });
-
-            // Stat counter animation
-            const statNumbers = document.querySelectorAll('.stat-number');
-
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const target = parseInt(el.getAttribute('data-target'));
-                        let current = 0;
-                        const increment = target / 50;
-                        const duration = 2000;
-                        const stepTime = duration / 50;
-
-                        const counter = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                el.textContent = target;
-                                clearInterval(counter);
-                            } else {
-                                el.textContent = Math.floor(current);
-                            }
-                        }, stepTime);
-
-                        counterObserver.unobserve(el);
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-
-            statNumbers.forEach(el => counterObserver.observe(el));
-        })();
-    </script>
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      
+      if (statsSection) counterObserver.observe(statsSection);
+      
+      // Add pulse animation to Ongoing text
+      const ongoingSpan = document.querySelector('.development-journey-section .duration.relative');
+      if (ongoingSpan) {
+        const pulseSpan = document.createElement('span');
+        pulseSpan.className = 'absolute -bottom-1 left-0 w-full h-px bg-green-500 animate-pulse';
+        ongoingSpan.appendChild(pulseSpan);
+      }
+    })();
+  </script>
+</section>
 
     <!-- ─── CONTACT CTA ─── -->
     <section id="contact" class="section-px py-28 relative overflow-hidden">
